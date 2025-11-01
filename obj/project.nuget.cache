@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6T2pQsbE+BU=",
+  "dgSpecHash": "+lHelJ+Pylk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\DKSKMaui.csproj",
+  "projectFilePath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\DKSKMaui.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kimri\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\kimri\\.nuget\\packages\\closedxml\\0.102.3\\closedxml.0.102.3.nupkg.sha512",

@@ -69,18 +69,30 @@
     {
         try
         {
-            await CompanyService.SaveCompanyAsync(company);
-
-            NotificationService.Notify(new Radzen.NotificationMessage
+            bool result = await CompanyService.SaveCompanyAsync(company);
+            if (result)
             {
-                Severity = Radzen.NotificationSeverity.Success,
-                Summary = "Success",
-                Detail = $"Company '{company.Name}' added successfully",
-                Duration = 3000
-            });
+                NotificationService.Notify(new Radzen.NotificationMessage
+                {
+                    Severity = Radzen.NotificationSeverity.Success,
+                    Summary = "Success",
+                    Detail = $"Company '{company.Name}' added successfully",
+                    Duration = 3000
+                });
 
-            // Reset form for new entry
-            company = new Companny();
+                // Reset form for new entry
+                company = new Companny();
+            }
+            else
+            {
+                NotificationService.Notify(new Radzen.NotificationMessage
+                {
+                    Severity = Radzen.NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = $"Failed to add company: A company with the name '{company.Name}' already exists",
+                    Duration = 5000
+                });
+            }
         }
         catch (Exception ex)
         {

@@ -37,11 +37,27 @@ public class CompanyService
         {
             if (company.Id == 0)
             {
+                // Check if a company with the same name already exists
+                var existingCompany = await _context.Companny
+                    .FirstOrDefaultAsync(c => c.Name == company.Name);
+                if (existingCompany != null)
+                {
+                    _logger.LogWarning("Attempted to create a company with a duplicate name: {Name}", company.Name);
+                    return false; // Indicate failure due to duplicate
+                }
                 // Create new company
                 _context.Companny.Add(company);
             }
             else
             {
+                // For updates, check if another company has the same name (excluding the current one)
+                var existingCompany = await _context.Companny
+                    .FirstOrDefaultAsync(c => c.Name == company.Name && c.Id != company.Id);
+                if (existingCompany != null)
+                {
+                    _logger.LogWarning("Attempted to update a company to a duplicate name: {Name}", company.Name);
+                    return false; // Indicate failure due to duplicate
+                }
                 // Update existing company
                 _context.Companny.Update(company);
             }

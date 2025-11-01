@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using DKSKMaui.Backend.Data;
 using DKSKMaui.Backend.Services;
 using Radzen;
+using System.IO;
 
 namespace DKSKMaui;
 
@@ -25,7 +26,11 @@ public static class MauiProgram
 			// Configure SQLite DbContext for MAUI with better error handling
 			try
 			{
-				var dbPath = Path.Combine(FileSystem.AppDataDirectory, "app.db");
+				// Create Database directory if it doesn't exist
+				var databaseDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database");
+				Directory.CreateDirectory(databaseDir);
+				
+				var dbPath = Path.Combine(databaseDir, "app.db");
 				System.Diagnostics.Debug.WriteLine($"Database path: {dbPath}");
 				
 				builder.Services.AddDbContext<AppDbContext>(options =>

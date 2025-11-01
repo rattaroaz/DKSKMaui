@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\DKSKMaui.csproj": {}
+    "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\DKSKMaui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\DKSKMaui.csproj": {
+    "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\DKSKMaui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\DKSKMaui.csproj",
+        "projectUniqueName": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\DKSKMaui.csproj",
         "projectName": "DKSKMaui",
-        "projectPath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\DKSKMaui.csproj",
+        "projectPath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\DKSKMaui.csproj",
         "packagesPath": "C:\\Users\\kimri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\obj\\",
+        "outputPath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -133,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

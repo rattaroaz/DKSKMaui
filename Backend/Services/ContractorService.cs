@@ -35,11 +35,27 @@ public class ContractorService
         {
             if (contractor.Id == 0)
             {
+                // Check if a contractor with the same name already exists
+                var existingContractor = await _context.Contractor
+                    .FirstOrDefaultAsync(c => c.Name == contractor.Name);
+                if (existingContractor != null)
+                {
+                    _logger.LogWarning("Attempted to create a contractor with a duplicate name: {Name}", contractor.Name);
+                    return false; // Indicate failure due to duplicate
+                }
                 // Create new contractor
                 _context.Contractor.Add(contractor);
             }
             else
             {
+                // For updates, check if another contractor has the same name (excluding the current one)
+                var existingContractor = await _context.Contractor
+                    .FirstOrDefaultAsync(c => c.Name == contractor.Name && c.Id != contractor.Id);
+                if (existingContractor != null)
+                {
+                    _logger.LogWarning("Attempted to update a contractor to a duplicate name: {Name}", contractor.Name);
+                    return false; // Indicate failure due to duplicate
+                }
                 // Update existing contractor
                 _context.Contractor.Update(contractor);
             }

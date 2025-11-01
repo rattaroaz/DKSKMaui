@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.1985" branch-rate="0.1477" version="1.9" timestamp="1761971448" lines-covered="191" lines-valid="962" branches-covered="39" branches-valid="264">
+<coverage line-rate="0.1985" branch-rate="0.1477" version="1.9" timestamp="1762022900" lines-covered="191" lines-valid="962" branches-covered="39" branches-valid="264">
   <sources>
     <source>C:\Users\kimri\</source>
   </sources>
@@ -24,7 +24,7 @@
             <line number="34" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.App" filename="OneDrive\Desktop\DKSKMaui\App.xaml.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="DKSKMaui.App" filename="OneDrive\Desktop\DKSK\App.xaml.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="CreateWindow" signature="(Microsoft.Maui.IActivationState)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -62,7 +62,7 @@
             <line number="8" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.MainPage" filename="OneDrive\Desktop\DKSKMaui\MainPage.xaml.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.MainPage" filename="OneDrive\Desktop\DKSK\MainPage.xaml.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -80,7 +80,7 @@
             <line number="8" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.TestApp" filename="OneDrive\Desktop\DKSKMaui\Components\TestApp.razor" line-rate="0" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Components.TestApp" filename="OneDrive\Desktop\DKSK\Components\TestApp.razor" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -92,7 +92,7 @@
             <line number="3" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Counter" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Counter.razor" line-rate="1" branch-rate="1" complexity="3">
+        <class name="DKSKMaui.Components.Pages.Counter" filename="OneDrive\Desktop\DKSK\Components\Pages\Counter.razor" line-rate="1" branch-rate="1" complexity="3">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -120,7 +120,7 @@
             <line number="10" hits="18" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Error" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Error.razor" line-rate="1" branch-rate="0.875" complexity="8">
+        <class name="DKSKMaui.Components.Pages.Error" filename="OneDrive\Desktop\DKSK\Components\Pages\Error.razor" line-rate="1" branch-rate="0.875" complexity="8">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -182,7 +182,7 @@
             <line number="60" hits="9" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Home" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Home.razor" line-rate="1" branch-rate="1" complexity="2">
+        <class name="DKSKMaui.Components.Pages.Home" filename="OneDrive\Desktop\DKSK\Components\Pages\Home.razor" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -206,7 +206,7 @@
             <line number="41" hits="6" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Weather" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Weather.razor" line-rate="1" branch-rate="1" complexity="4">
+        <class name="DKSKMaui.Components.Pages.Weather" filename="OneDrive\Desktop\DKSK\Components\Pages\Weather.razor" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -256,7 +256,7 @@
             <line number="34" hits="23" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Weather/WeatherForecast" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Weather.razor" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Components.Pages.Weather/WeatherForecast" filename="OneDrive\Desktop\DKSK\Components\Pages\Weather.razor" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="get_TemperatureF" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -268,7 +268,7 @@
             <line number="59" hits="115" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AccountsReceivable.AccountsReceivable" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AccountsReceivable\AccountsReceivable.razor" line-rate="0.1354" branch-rate="0" complexity="29">
+        <class name="DKSKMaui.Components.Pages.AccountsReceivable.AccountsReceivable" filename="OneDrive\Desktop\DKSK\Components\Pages\AccountsReceivable\AccountsReceivable.razor" line-rate="0.1354" branch-rate="0" complexity="29">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -594,7 +594,7 @@
             <line number="157" hits="3" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Test.TestPage" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Test\TestPage.razor" line-rate="0" branch-rate="0" complexity="10">
+        <class name="DKSKMaui.Components.Pages.Test.TestPage" filename="OneDrive\Desktop\DKSK\Components\Pages\Test\TestPage.razor" line-rate="0" branch-rate="0" complexity="10">
           <methods>
             <method name="AddLog" signature="(System.String,System.String)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -690,7 +690,7 @@
             <line number="79" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Startjob.Startjob" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Startjob\Startjob.razor" line-rate="0" branch-rate="0" complexity="26">
+        <class name="DKSKMaui.Components.Pages.Startjob.Startjob" filename="OneDrive\Desktop\DKSK\Components\Pages\Startjob\Startjob.razor" line-rate="0" branch-rate="0" complexity="26">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -966,7 +966,7 @@
             <line number="171" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Startjob.StartJobConfirmDialogComponent" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor" line-rate="0" branch-rate="0" complexity="3">
+        <class name="DKSKMaui.Components.Pages.Startjob.StartJobConfirmDialogComponent" filename="OneDrive\Desktop\DKSK\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor" line-rate="0" branch-rate="0" complexity="3">
           <methods>
             <method name="OnInitialized" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -1006,7 +1006,7 @@
             <line number="137" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Sales.Sales" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Sales\Sales.razor" line-rate="0.1067" branch-rate="0" complexity="39">
+        <class name="DKSKMaui.Components.Pages.Sales.Sales" filename="OneDrive\Desktop\DKSK\Components\Pages\Sales\Sales.razor" line-rate="0.1067" branch-rate="0" complexity="39">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -1382,7 +1382,7 @@
             <line number="296" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Sales.SalesDetail" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Sales\SalesDetail.razor" line-rate="0" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Components.Pages.Sales.SalesDetail" filename="OneDrive\Desktop\DKSK\Components\Pages\Sales\SalesDetail.razor" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="CloseDialog" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -1398,7 +1398,7 @@
             <line number="118" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.Payroll.Payroll" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\Payroll\Payroll.razor" line-rate="0.3333" branch-rate="0.5" complexity="9">
+        <class name="DKSKMaui.Components.Pages.Payroll.Payroll" filename="OneDrive\Desktop\DKSK\Components\Pages\Payroll\Payroll.razor" line-rate="0.3333" branch-rate="0.5" complexity="9">
           <methods>
             <method name="OnStartDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -1486,7 +1486,7 @@
             <line number="91" hits="4" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.NewJobs.Newjobs" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\NewJobs\Newjobs.razor" line-rate="0.0526" branch-rate="0.15" complexity="23">
+        <class name="DKSKMaui.Components.Pages.NewJobs.Newjobs" filename="OneDrive\Desktop\DKSK\Components\Pages\NewJobs\Newjobs.razor" line-rate="0.0526" branch-rate="0.15" complexity="23">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0.2727" branch-rate="0.5" complexity="6">
               <lines>
@@ -1802,7 +1802,7 @@
             <line number="116" hits="5" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.MajorFunctions.FunctionsList" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\MajorFunctions\FunctionsList.razor" line-rate="0.625" branch-rate="1" complexity="4">
+        <class name="DKSKMaui.Components.Pages.MajorFunctions.FunctionsList" filename="OneDrive\Desktop\DKSK\Components\Pages\MajorFunctions\FunctionsList.razor" line-rate="0.625" branch-rate="1" complexity="4">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -1844,7 +1844,7 @@
             <line number="16" hits="4" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.JobDescription.Jobdescription" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\JobDescription\Jobdescription.razor" line-rate="1" branch-rate="1" complexity="3">
+        <class name="DKSKMaui.Components.Pages.JobDescription.Jobdescription" filename="OneDrive\Desktop\DKSK\Components\Pages\JobDescription\Jobdescription.razor" line-rate="1" branch-rate="1" complexity="3">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -1878,7 +1878,7 @@
             <line number="22" hits="5" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.EditContacts.Editcontacts" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\Editcontacts.razor" line-rate="0.7142000000000001" branch-rate="0.75" complexity="5">
+        <class name="DKSKMaui.Components.Pages.EditContacts.Editcontacts" filename="OneDrive\Desktop\DKSK\Components\Pages\EditContacts\Editcontacts.razor" line-rate="0.7142000000000001" branch-rate="0.75" complexity="5">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0.6666" branch-rate="0.75" complexity="4">
               <lines>
@@ -1922,7 +1922,7 @@
             <line number="31" hits="5" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.EditContacts.EditContractor.Editcontractor" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\EditContractor\Editcontractor.razor" line-rate="0" branch-rate="1" complexity="4">
+        <class name="DKSKMaui.Components.Pages.EditContacts.EditContractor.Editcontractor" filename="OneDrive\Desktop\DKSK\Components\Pages\EditContacts\EditContractor\Editcontractor.razor" line-rate="0" branch-rate="1" complexity="4">
           <methods>
             <method name="OnChange" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -1974,7 +1974,7 @@
             <line number="189" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.EditContacts.EditCompanny.Editcompany" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\EditCompanny\Editcompany.razor" line-rate="0.12279999999999999" branch-rate="0" complexity="15">
+        <class name="DKSKMaui.Components.Pages.EditContacts.EditCompanny.Editcompany" filename="OneDrive\Desktop\DKSK\Components\Pages\EditContacts\EditCompanny\Editcompany.razor" line-rate="0.12279999999999999" branch-rate="0" complexity="15">
           <methods>
             <method name="ToggleSupervisorDetails" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -2174,7 +2174,7 @@
             <line number="393" hits="5" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.CreteInvoice.CreateInvoice" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\CreteInvoice\CreateInvoice.razor" line-rate="1" branch-rate="1" complexity="5">
+        <class name="DKSKMaui.Components.Pages.CreteInvoice.CreateInvoice" filename="OneDrive\Desktop\DKSK\Components\Pages\CreteInvoice\CreateInvoice.razor" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -2208,7 +2208,7 @@
             <line number="73" hits="9" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.CreteInvoice.CreateInvoiceConfirmDialogComponent" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor" line-rate="0" branch-rate="0" complexity="10">
+        <class name="DKSKMaui.Components.Pages.CreteInvoice.CreateInvoiceConfirmDialogComponent" filename="OneDrive\Desktop\DKSK\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor" line-rate="0" branch-rate="0" complexity="10">
           <methods>
             <method name="CloseDialog" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2310,7 +2310,7 @@
             <line number="155" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.ContractorJobs.ContractorJobs" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\ContractorJobs\ContractorJobs.razor" line-rate="0.625" branch-rate="1" complexity="3">
+        <class name="DKSKMaui.Components.Pages.ContractorJobs.ContractorJobs" filename="OneDrive\Desktop\DKSK\Components\Pages\ContractorJobs\ContractorJobs.razor" line-rate="0.625" branch-rate="1" complexity="3">
           <methods>
             <method name="OnDateChanged" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2344,7 +2344,7 @@
             <line number="80" hits="4" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AgingReports.Agingreports" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AgingReports\Agingreports.razor" line-rate="0.22219999999999998" branch-rate="0.1666" complexity="24">
+        <class name="DKSKMaui.Components.Pages.AgingReports.Agingreports" filename="OneDrive\Desktop\DKSK\Components\Pages\AgingReports\Agingreports.razor" line-rate="0.22219999999999998" branch-rate="0.1666" complexity="24">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="0.75" complexity="4">
               <lines>
@@ -2550,7 +2550,7 @@
             <line number="144" hits="10" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AgingReports.Agingreports/exInvoice" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AgingReports\Agingreports.razor" line-rate="1" branch-rate="0.5" complexity="2">
+        <class name="DKSKMaui.Components.Pages.AgingReports.Agingreports/exInvoice" filename="OneDrive\Desktop\DKSK\Components\Pages\AgingReports\Agingreports.razor" line-rate="1" branch-rate="0.5" complexity="2">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Models.Invoice)" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
@@ -2624,13 +2624,13 @@
             <line number="129" hits="4" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcompany" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcompany.razor" line-rate="0.25" branch-rate="1" complexity="2">
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcompany" filename="OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcompany.razor" line-rate="0.25" branch-rate="1" complexity="2">
           <methods>
             <method name="Cancel" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="98" hits="0" branch="False" />
-                <line number="99" hits="0" branch="False" />
-                <line number="100" hits="0" branch="False" />
+                <line number="110" hits="0" branch="False" />
+                <line number="111" hits="0" branch="False" />
+                <line number="112" hits="0" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -2640,13 +2640,13 @@
             </method>
           </methods>
           <lines>
-            <line number="98" hits="0" branch="False" />
-            <line number="99" hits="0" branch="False" />
-            <line number="100" hits="0" branch="False" />
+            <line number="110" hits="0" branch="False" />
+            <line number="111" hits="0" branch="False" />
+            <line number="112" hits="0" branch="False" />
             <line number="66" hits="14" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcontacts" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcontacts.razor" line-rate="0" branch-rate="0" complexity="11">
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcontacts" filename="OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcontacts.razor" line-rate="0" branch-rate="0" complexity="11">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="10">
               <lines>
@@ -2730,7 +2730,7 @@
             <line number="37" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcontractor" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcontractor.razor" line-rate="1" branch-rate="1" complexity="5">
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcontractor" filename="OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcontractor.razor" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -2776,7 +2776,7 @@
             <line number="42" hits="6" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addmanager" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addmanager.razor" line-rate="0" branch-rate="0" complexity="6">
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addmanager" filename="OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addmanager.razor" line-rate="0" branch-rate="0" complexity="6">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -2830,7 +2830,7 @@
             <line number="49" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addproperty" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addproperty.razor" line-rate="0" branch-rate="0" complexity="6">
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addproperty" filename="OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addproperty.razor" line-rate="0" branch-rate="0" complexity="6">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -2884,7 +2884,7 @@
             <line number="37" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addsupervisor" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addsupervisor.razor" line-rate="0" branch-rate="0" complexity="6">
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addsupervisor" filename="OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addsupervisor.razor" line-rate="0" branch-rate="0" complexity="6">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -2940,7 +2940,7 @@
             <line number="55" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Pages.ActiveJobs.ActiveJobs" filename="OneDrive\Desktop\DKSKMaui\Components\Pages\ActiveJobs\ActiveJobs.razor" line-rate="0" branch-rate="0" complexity="34">
+        <class name="DKSKMaui.Components.Pages.ActiveJobs.ActiveJobs" filename="OneDrive\Desktop\DKSK\Components\Pages\ActiveJobs\ActiveJobs.razor" line-rate="0" branch-rate="0" complexity="34">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -3288,7 +3288,7 @@
             <line number="297" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Common.CustomErrorBoundary" filename="OneDrive\Desktop\DKSKMaui\Components\Common\CustomErrorBoundary.razor" line-rate="0" branch-rate="1" complexity="3">
+        <class name="DKSKMaui.Components.Common.CustomErrorBoundary" filename="OneDrive\Desktop\DKSK\Components\Common\CustomErrorBoundary.razor" line-rate="0" branch-rate="1" complexity="3">
           <methods>
             <method name="Recover" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3324,7 +3324,7 @@
             <line number="51" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Common.EditableDropdown" filename="OneDrive\Desktop\DKSKMaui\Components\Common\EditableDropdown.razor" line-rate="0" branch-rate="0" complexity="4">
+        <class name="DKSKMaui.Components.Common.EditableDropdown" filename="OneDrive\Desktop\DKSK\Components\Common\EditableDropdown.razor" line-rate="0" branch-rate="0" complexity="4">
           <methods>
             <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -3350,7 +3350,7 @@
             <line number="20" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Components.Common.SelectItemDialog" filename="OneDrive\Desktop\DKSKMaui\Components\Common\SelectItemDialog.razor" line-rate="0" branch-rate="0" complexity="3">
+        <class name="DKSKMaui.Components.Common.SelectItemDialog" filename="OneDrive\Desktop\DKSK\Components\Common\SelectItemDialog.razor" line-rate="0" branch-rate="0" complexity="3">
           <methods>
             <method name="OnItemChange" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -3394,7 +3394,7 @@
             <line number="45" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.WinUI.App" filename="OneDrive\Desktop\DKSKMaui\Platforms\Windows\App.xaml.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="DKSKMaui.WinUI.App" filename="OneDrive\Desktop\DKSK\Platforms\Windows\App.xaml.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="CreateMauiApp" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3418,105 +3418,105 @@
             <line number="20" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.CompanyService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\CompanyService.cs" line-rate="0.11359999999999999" branch-rate="0" complexity="25">
+        <class name="DKSKMaui.Backend.Services.CompanyService" filename="OneDrive\Desktop\DKSK\Backend\Services\CompanyService.cs" line-rate="0.11359999999999999" branch-rate="0" complexity="25">
           <methods>
             <method name="GetCompanyInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="4">
               <lines>
-                <line number="79" hits="0" branch="False" />
-                <line number="80" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="95" hits="0" branch="False" />
+                <line number="96" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="53" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="81" hits="0" branch="False" />
-                <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="97" hits="0" branch="False" />
+                <line number="98" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="39" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="83" hits="0" branch="False" />
-                <line number="84" hits="0" branch="False" />
-                <line number="85" hits="0" branch="False" />
+                <line number="99" hits="0" branch="False" />
+                <line number="100" hits="0" branch="False" />
+                <line number="101" hits="0" branch="False" />
               </lines>
             </method>
             <method name="GetSupervisorInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="10">
               <lines>
-                <line number="87" hits="0" branch="False" />
-                <line number="88" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="103" hits="0" branch="False" />
+                <line number="104" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="193" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="89" hits="0" branch="False" />
-                <line number="90" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="105" hits="0" branch="False" />
+                <line number="106" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="42" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="91" hits="0" branch="False" />
-                <line number="92" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="107" hits="0" branch="False" />
+                <line number="108" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="165" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="93" hits="0" branch="False" />
-                <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="109" hits="0" branch="False" />
+                <line number="110" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="138" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="95" hits="0" branch="False" />
-                <line number="96" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="111" hits="0" branch="False" />
+                <line number="112" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="122" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="97" hits="0" branch="False" />
-                <line number="98" hits="0" branch="False" />
-                <line number="99" hits="0" branch="False" />
-                <line number="100" hits="0" branch="False" />
-                <line number="101" hits="0" branch="False" />
-                <line number="102" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name="GetPropertyInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="10">
-              <lines>
-                <line number="104" hits="0" branch="False" />
-                <line number="105" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="193" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="106" hits="0" branch="False" />
-                <line number="107" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="42" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="108" hits="0" branch="False" />
-                <line number="109" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="165" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="110" hits="0" branch="False" />
-                <line number="111" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="138" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="112" hits="0" branch="False" />
-                <line number="113" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="122" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
+                <line number="113" hits="0" branch="False" />
                 <line number="114" hits="0" branch="False" />
                 <line number="115" hits="0" branch="False" />
                 <line number="116" hits="0" branch="False" />
                 <line number="117" hits="0" branch="False" />
                 <line number="118" hits="0" branch="False" />
-                <line number="119" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="GetPropertyInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="120" hits="0" branch="False" />
+                <line number="121" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="193" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="122" hits="0" branch="False" />
+                <line number="123" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="42" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="124" hits="0" branch="False" />
+                <line number="125" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="165" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="126" hits="0" branch="False" />
+                <line number="127" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="138" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="128" hits="0" branch="False" />
+                <line number="129" hits="0" branch="True" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="122" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="130" hits="0" branch="False" />
+                <line number="131" hits="0" branch="False" />
+                <line number="132" hits="0" branch="False" />
+                <line number="133" hits="0" branch="False" />
+                <line number="134" hits="0" branch="False" />
+                <line number="135" hits="0" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.CompanyService&gt;)" line-rate="1" branch-rate="1" complexity="1">
@@ -3530,93 +3530,93 @@
             </method>
           </methods>
           <lines>
-            <line number="79" hits="0" branch="False" />
-            <line number="80" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="95" hits="0" branch="False" />
+            <line number="96" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="53" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="81" hits="0" branch="False" />
-            <line number="82" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="97" hits="0" branch="False" />
+            <line number="98" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="39" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="83" hits="0" branch="False" />
-            <line number="84" hits="0" branch="False" />
-            <line number="85" hits="0" branch="False" />
-            <line number="87" hits="0" branch="False" />
-            <line number="88" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="193" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="89" hits="0" branch="False" />
-            <line number="90" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="42" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="91" hits="0" branch="False" />
-            <line number="92" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="165" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="93" hits="0" branch="False" />
-            <line number="94" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="138" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="95" hits="0" branch="False" />
-            <line number="96" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="122" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="97" hits="0" branch="False" />
-            <line number="98" hits="0" branch="False" />
             <line number="99" hits="0" branch="False" />
             <line number="100" hits="0" branch="False" />
             <line number="101" hits="0" branch="False" />
-            <line number="102" hits="0" branch="False" />
-            <line number="104" hits="0" branch="False" />
-            <line number="105" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="103" hits="0" branch="False" />
+            <line number="104" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="193" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="106" hits="0" branch="False" />
-            <line number="107" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="105" hits="0" branch="False" />
+            <line number="106" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="42" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="108" hits="0" branch="False" />
-            <line number="109" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="107" hits="0" branch="False" />
+            <line number="108" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="165" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="110" hits="0" branch="False" />
-            <line number="111" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="109" hits="0" branch="False" />
+            <line number="110" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="138" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="112" hits="0" branch="False" />
-            <line number="113" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="111" hits="0" branch="False" />
+            <line number="112" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="122" type="jump" coverage="0%" />
               </conditions>
             </line>
+            <line number="113" hits="0" branch="False" />
             <line number="114" hits="0" branch="False" />
             <line number="115" hits="0" branch="False" />
             <line number="116" hits="0" branch="False" />
             <line number="117" hits="0" branch="False" />
             <line number="118" hits="0" branch="False" />
-            <line number="119" hits="0" branch="False" />
+            <line number="120" hits="0" branch="False" />
+            <line number="121" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="193" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="122" hits="0" branch="False" />
+            <line number="123" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="42" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="124" hits="0" branch="False" />
+            <line number="125" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="165" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="126" hits="0" branch="False" />
+            <line number="127" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="138" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="128" hits="0" branch="False" />
+            <line number="129" hits="0" branch="True" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="122" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="130" hits="0" branch="False" />
+            <line number="131" hits="0" branch="False" />
+            <line number="132" hits="0" branch="False" />
+            <line number="133" hits="0" branch="False" />
+            <line number="134" hits="0" branch="False" />
+            <line number="135" hits="0" branch="False" />
             <line number="13" hits="40" branch="False" />
             <line number="14" hits="40" branch="False" />
             <line number="15" hits="40" branch="False" />
@@ -3624,7 +3624,7 @@
             <line number="17" hits="40" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.ContractorService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\ContractorService.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Backend.Services.ContractorService" filename="OneDrive\Desktop\DKSK\Backend\Services\ContractorService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.ContractorService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3644,7 +3644,7 @@
             <line number="17" hits="34" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.GlobalStateService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\GlobalStateService.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="DKSKMaui.Backend.Services.GlobalStateService" filename="OneDrive\Desktop\DKSK\Backend\Services\GlobalStateService.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="NotifyStateChanged" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -3664,7 +3664,7 @@
             </line>
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.InvoiceService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\InvoiceService.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Backend.Services.InvoiceService" filename="OneDrive\Desktop\DKSK\Backend\Services\InvoiceService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.InvoiceService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3684,7 +3684,7 @@
             <line number="17" hits="54" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.MyCompanyInfoService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\MyCompanyInfoService.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Backend.Services.MyCompanyInfoService" filename="OneDrive\Desktop\DKSK\Backend\Services\MyCompanyInfoService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.MyCompanyInfoService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3704,7 +3704,7 @@
             <line number="17" hits="12" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.JobDescriptionService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\NewJobsService.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Backend.Services.JobDescriptionService" filename="OneDrive\Desktop\DKSK\Backend\Services\NewJobsService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.JobDescriptionService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3724,7 +3724,7 @@
             <line number="17" hits="25" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.PropertiesService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\PropertiesService.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Backend.Services.PropertiesService" filename="OneDrive\Desktop\DKSK\Backend\Services\PropertiesService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.PropertiesService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3744,7 +3744,7 @@
             <line number="17" hits="25" branch="False" />
           </lines>
         </class>
-        <class name="DKSKMaui.Backend.Services.SupervisorService" filename="OneDrive\Desktop\DKSKMaui\Backend\Services\SupervisorService.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="DKSKMaui.Backend.Services.SupervisorService" filename="OneDrive\Desktop\DKSK\Backend\Services\SupervisorService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.SupervisorService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>

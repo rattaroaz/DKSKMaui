@@ -147,11 +147,11 @@ DKSKMaui/
 ## ⚙️ Configuration
 
 ### Database Configuration
-The application uses SQLite database stored in the application data directory. The database is automatically created on first run.
+The application uses SQLite database stored in the Database folder within the application's installation directory. The database is automatically created on first run.
 
 Database location:
 ```
-%LOCALAPPDATA%\DKSKMaui\app.db
+{AppDirectory}\Database\app.db
 ```
 
 ### Application Settings
@@ -208,7 +208,7 @@ dotnet test --filter "FullyQualifiedName~InvoiceService"
 **Solution**: 
 ```bash
 # Clear the database
-del %LOCALAPPDATA%\DKSKMaui\app.db
+del Database\app.db
 # Restart the application
 ```
 

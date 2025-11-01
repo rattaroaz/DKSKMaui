@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "igxPxpc5ysI=",
+  "dgSpecHash": "cDO+cmMhWNU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSKMaui\\DKSKMaui.Tests\\DKSKMaui.Tests.csproj",
+  "projectFilePath": "C:\\Users\\kimri\\OneDrive\\Desktop\\DKSK\\DKSKMaui.Tests\\DKSKMaui.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kimri\\.nuget\\packages\\anglesharp\\0.17.1\\anglesharp.0.17.1.nupkg.sha512",
     "C:\\Users\\kimri\\.nuget\\packages\\anglesharp.css\\0.17.0\\anglesharp.css.0.17.0.nupkg.sha512",

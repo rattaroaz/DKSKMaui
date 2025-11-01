@@ -297,7 +297,7 @@
                     {
                         Severity = NotificationSeverity.Error,
                         Summary = "Error",
-                        Detail = "Failed to save.",
+                        Detail = $"Failed to save: A company with the name '{selectedCompany.Name}' already exists",
                         Duration = 3000
                     });
             }

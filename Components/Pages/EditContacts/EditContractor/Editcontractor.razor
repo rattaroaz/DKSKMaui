@@ -1,4 +1,4 @@
-﻿@page "/editcontacts/editcontractor"
+@page "/editcontacts/editcontractor"
 @inject ContractorService ContractorService
 @inject PropertiesService PropertiesService
 @inject SupervisorService SupervisorService
@@ -131,7 +131,7 @@
                     {
                         Severity = NotificationSeverity.Error,
                         Summary = "Error",
-                        Detail = "Failed to save. Please check if you entered all the information.",
+                        Detail = $"Failed to save: A contractor with the name '{selectedContractor.Name}' already exists",
                         Duration = 3000
                     });
             }

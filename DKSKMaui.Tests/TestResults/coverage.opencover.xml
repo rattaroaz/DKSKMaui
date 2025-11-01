@@ -2,55 +2,55 @@
 <CoverageSession>
   <Summary numSequencePoints="962" visitedSequencePoints="191" numBranchPoints="264" visitedBranchPoints="39" sequenceCoverage="19.85" branchCoverage="14.77" maxCyclomaticComplexity="353" minCyclomaticComplexity="353" visitedClasses="28" numClasses="46" visitedMethods="40" numMethods="148" />
   <Modules>
-    <Module hash="01AFF754-03DD-43F6-B7BF-30A0D2F656C3">
+    <Module hash="8B0D5528-3F00-47CB-AF7D-79EBFCD56477">
       <ModulePath>DKSKMaui.dll</ModulePath>
-      <ModuleTime>2025-11-01T04:30:48</ModuleTime>
+      <ModuleTime>2025-11-01T06:48:20</ModuleTime>
       <ModuleName>DKSKMaui</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\Users\kimri\.nuget\packages\microsoft.windowsappsdk\1.5.240802000\include\UndockedRegFreeWinRT-AutoInitializer.cs" />
-        <File uid="2" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\App.xaml.cs" />
-        <File uid="3" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\MainPage.xaml.cs" />
-        <File uid="4" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\TestApp.razor" />
-        <File uid="5" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Counter.razor" />
-        <File uid="6" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Error.razor" />
-        <File uid="7" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Home.razor" />
-        <File uid="8" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Weather.razor" />
-        <File uid="9" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AccountsReceivable\AccountsReceivable.razor" />
-        <File uid="10" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Test\TestPage.razor" />
-        <File uid="11" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Startjob\Startjob.razor" />
-        <File uid="12" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor" />
-        <File uid="13" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Sales\Sales.razor" />
-        <File uid="14" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Sales\SalesDetail.razor" />
-        <File uid="15" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Payroll\Payroll.razor" />
-        <File uid="16" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\NewJobs\Newjobs.razor" />
-        <File uid="17" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\MajorFunctions\FunctionsList.razor" />
-        <File uid="18" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\JobDescription\Jobdescription.razor" />
-        <File uid="19" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\Editcontacts.razor" />
-        <File uid="20" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\EditContractor\Editcontractor.razor" />
-        <File uid="21" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\EditCompanny\Editcompany.razor" />
-        <File uid="22" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\CreteInvoice\CreateInvoice.razor" />
-        <File uid="23" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor" />
-        <File uid="24" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\ContractorJobs\ContractorJobs.razor" />
-        <File uid="25" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AgingReports\Agingreports.razor" />
-        <File uid="26" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcompany.razor" />
-        <File uid="27" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcontacts.razor" />
-        <File uid="28" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcontractor.razor" />
-        <File uid="29" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addmanager.razor" />
-        <File uid="30" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addproperty.razor" />
-        <File uid="31" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addsupervisor.razor" />
-        <File uid="32" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\ActiveJobs\ActiveJobs.razor" />
-        <File uid="33" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Common\CustomErrorBoundary.razor" />
-        <File uid="34" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Common\EditableDropdown.razor" />
-        <File uid="35" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Common\SelectItemDialog.razor" />
-        <File uid="36" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Platforms\Windows\App.xaml.cs" />
-        <File uid="37" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\CompanyService.cs" />
-        <File uid="38" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\ContractorService.cs" />
-        <File uid="39" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\GlobalStateService.cs" />
-        <File uid="40" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\InvoiceService.cs" />
-        <File uid="41" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\MyCompanyInfoService.cs" />
-        <File uid="42" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\NewJobsService.cs" />
-        <File uid="43" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\PropertiesService.cs" />
-        <File uid="44" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\SupervisorService.cs" />
+        <File uid="2" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\App.xaml.cs" />
+        <File uid="3" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\MainPage.xaml.cs" />
+        <File uid="4" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\TestApp.razor" />
+        <File uid="5" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Counter.razor" />
+        <File uid="6" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Error.razor" />
+        <File uid="7" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Home.razor" />
+        <File uid="8" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Weather.razor" />
+        <File uid="9" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AccountsReceivable\AccountsReceivable.razor" />
+        <File uid="10" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Test\TestPage.razor" />
+        <File uid="11" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Startjob\Startjob.razor" />
+        <File uid="12" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor" />
+        <File uid="13" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Sales\Sales.razor" />
+        <File uid="14" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Sales\SalesDetail.razor" />
+        <File uid="15" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Payroll\Payroll.razor" />
+        <File uid="16" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\NewJobs\Newjobs.razor" />
+        <File uid="17" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\MajorFunctions\FunctionsList.razor" />
+        <File uid="18" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\JobDescription\Jobdescription.razor" />
+        <File uid="19" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\EditContacts\Editcontacts.razor" />
+        <File uid="20" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\EditContacts\EditContractor\Editcontractor.razor" />
+        <File uid="21" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\EditContacts\EditCompanny\Editcompany.razor" />
+        <File uid="22" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\CreteInvoice\CreateInvoice.razor" />
+        <File uid="23" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor" />
+        <File uid="24" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\ContractorJobs\ContractorJobs.razor" />
+        <File uid="25" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AgingReports\Agingreports.razor" />
+        <File uid="26" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcompany.razor" />
+        <File uid="27" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcontacts.razor" />
+        <File uid="28" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcontractor.razor" />
+        <File uid="29" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addmanager.razor" />
+        <File uid="30" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addproperty.razor" />
+        <File uid="31" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addsupervisor.razor" />
+        <File uid="32" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\ActiveJobs\ActiveJobs.razor" />
+        <File uid="33" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Common\CustomErrorBoundary.razor" />
+        <File uid="34" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Common\EditableDropdown.razor" />
+        <File uid="35" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Common\SelectItemDialog.razor" />
+        <File uid="36" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Platforms\Windows\App.xaml.cs" />
+        <File uid="37" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\CompanyService.cs" />
+        <File uid="38" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\ContractorService.cs" />
+        <File uid="39" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\GlobalStateService.cs" />
+        <File uid="40" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\InvoiceService.cs" />
+        <File uid="41" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\MyCompanyInfoService.cs" />
+        <File uid="42" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\NewJobsService.cs" />
+        <File uid="43" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\PropertiesService.cs" />
+        <File uid="44" fullPath="C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\SupervisorService.cs" />
       </Files>
       <Classes>
         <Class>
@@ -2178,12 +2178,12 @@
               <Name>System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcompany::Cancel()</Name>
               <FileRef uid="26" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="98" ordinal="0" sl="98" sc="1" el="98" ec="2" bec="0" bev="0" fileid="26" />
-                <SequencePoint vc="0" uspid="99" ordinal="1" sl="99" sc="1" el="99" ec="2" bec="0" bev="0" fileid="26" />
-                <SequencePoint vc="0" uspid="100" ordinal="2" sl="100" sc="1" el="100" ec="2" bec="0" bev="0" fileid="26" />
+                <SequencePoint vc="0" uspid="110" ordinal="0" sl="110" sc="1" el="110" ec="2" bec="0" bev="0" fileid="26" />
+                <SequencePoint vc="0" uspid="111" ordinal="1" sl="111" sc="1" el="111" ec="2" bec="0" bev="0" fileid="26" />
+                <SequencePoint vc="0" uspid="112" ordinal="2" sl="112" sc="1" el="112" ec="2" bec="0" bev="0" fileid="26" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="98" ec="1" el="100" bec="0" bev="0" fileid="26" xmlns:p8="xsi" />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="110" ec="1" el="112" bec="0" bev="0" fileid="26" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
@@ -2841,21 +2841,21 @@
               <Name>DKSKMaui.Backend.Models.Companny DKSKMaui.Backend.Services.CompanyService::GetCompanyInfo(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)</Name>
               <FileRef uid="37" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="79" ordinal="0" sl="79" sc="1" el="79" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="80" ordinal="1" sl="80" sc="1" el="80" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="81" ordinal="2" sl="81" sc="1" el="81" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="82" ordinal="3" sl="82" sc="1" el="82" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="83" ordinal="4" sl="83" sc="1" el="83" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="84" ordinal="5" sl="84" sc="1" el="84" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="85" ordinal="6" sl="85" sc="1" el="85" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="95" ordinal="0" sl="95" sc="1" el="95" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="96" ordinal="1" sl="96" sc="1" el="96" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="97" ordinal="2" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="98" ordinal="3" sl="98" sc="1" el="98" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="99" ordinal="4" sl="99" sc="1" el="99" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="100" ordinal="5" sl="100" sc="1" el="100" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="101" ordinal="6" sl="101" sc="1" el="101" ec="2" bec="0" bev="0" fileid="37" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="0" uspid="80" ordinal="3" path="1" offset="53" offsetend="11" sl="80" fileid="37" />
-                <BranchPoint vc="0" uspid="82" ordinal="0" path="0" offset="39" offsetend="41" sl="82" fileid="37" />
-                <BranchPoint vc="0" uspid="82" ordinal="1" path="1" offset="39" offsetend="45" sl="82" fileid="37" />
-                <BranchPoint vc="0" uspid="80" ordinal="2" path="0" offset="53" offsetend="55" sl="80" fileid="37" />
+                <BranchPoint vc="0" uspid="96" ordinal="3" path="1" offset="53" offsetend="11" sl="96" fileid="37" />
+                <BranchPoint vc="0" uspid="98" ordinal="0" path="0" offset="39" offsetend="41" sl="98" fileid="37" />
+                <BranchPoint vc="0" uspid="98" ordinal="1" path="1" offset="39" offsetend="45" sl="98" fileid="37" />
+                <BranchPoint vc="0" uspid="96" ordinal="2" path="0" offset="53" offsetend="55" sl="96" fileid="37" />
               </BranchPoints>
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="79" ec="1" el="85" bec="0" bev="0" fileid="37" xmlns:p8="xsi" />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="95" ec="1" el="101" bec="0" bev="0" fileid="37" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="10" nPathComplexity="10" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="16" visitedSequencePoints="0" numBranchPoints="10" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="10" minCyclomaticComplexity="10" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
@@ -2863,36 +2863,36 @@
               <Name>DKSKMaui.Backend.Models.Supervisor DKSKMaui.Backend.Services.CompanyService::GetSupervisorInfo(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)</Name>
               <FileRef uid="37" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="87" ordinal="0" sl="87" sc="1" el="87" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="88" ordinal="1" sl="88" sc="1" el="88" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="89" ordinal="2" sl="89" sc="1" el="89" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="90" ordinal="3" sl="90" sc="1" el="90" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="91" ordinal="4" sl="91" sc="1" el="91" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="92" ordinal="5" sl="92" sc="1" el="92" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="93" ordinal="6" sl="93" sc="1" el="93" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="94" ordinal="7" sl="94" sc="1" el="94" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="95" ordinal="8" sl="95" sc="1" el="95" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="96" ordinal="9" sl="96" sc="1" el="96" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="97" ordinal="10" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="98" ordinal="11" sl="98" sc="1" el="98" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="99" ordinal="12" sl="99" sc="1" el="99" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="100" ordinal="13" sl="100" sc="1" el="100" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="101" ordinal="14" sl="101" sc="1" el="101" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="102" ordinal="15" sl="102" sc="1" el="102" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="103" ordinal="0" sl="103" sc="1" el="103" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="104" ordinal="1" sl="104" sc="1" el="104" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="105" ordinal="2" sl="105" sc="1" el="105" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="106" ordinal="3" sl="106" sc="1" el="106" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="107" ordinal="4" sl="107" sc="1" el="107" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="108" ordinal="5" sl="108" sc="1" el="108" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="109" ordinal="6" sl="109" sc="1" el="109" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="110" ordinal="7" sl="110" sc="1" el="110" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="111" ordinal="8" sl="111" sc="1" el="111" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="112" ordinal="9" sl="112" sc="1" el="112" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="113" ordinal="10" sl="113" sc="1" el="113" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="114" ordinal="11" sl="114" sc="1" el="114" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="115" ordinal="12" sl="115" sc="1" el="115" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="116" ordinal="13" sl="116" sc="1" el="116" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="117" ordinal="14" sl="117" sc="1" el="117" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="118" ordinal="15" sl="118" sc="1" el="118" ec="2" bec="0" bev="0" fileid="37" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="0" uspid="88" ordinal="9" path="1" offset="193" offsetend="14" sl="88" fileid="37" />
-                <BranchPoint vc="0" uspid="90" ordinal="0" path="0" offset="42" offsetend="47" sl="90" fileid="37" />
-                <BranchPoint vc="0" uspid="92" ordinal="7" path="1" offset="165" offsetend="63" sl="92" fileid="37" />
-                <BranchPoint vc="0" uspid="94" ordinal="5" path="1" offset="138" offsetend="90" sl="94" fileid="37" />
-                <BranchPoint vc="0" uspid="96" ordinal="2" path="0" offset="122" offsetend="124" sl="96" fileid="37" />
-                <BranchPoint vc="0" uspid="96" ordinal="3" path="1" offset="122" offsetend="130" sl="96" fileid="37" />
-                <BranchPoint vc="0" uspid="94" ordinal="4" path="0" offset="138" offsetend="140" sl="94" fileid="37" />
-                <BranchPoint vc="0" uspid="92" ordinal="6" path="0" offset="165" offsetend="167" sl="92" fileid="37" />
-                <BranchPoint vc="0" uspid="90" ordinal="1" path="1" offset="42" offsetend="185" sl="90" fileid="37" />
-                <BranchPoint vc="0" uspid="88" ordinal="8" path="0" offset="193" offsetend="198" sl="88" fileid="37" />
+                <BranchPoint vc="0" uspid="104" ordinal="9" path="1" offset="193" offsetend="14" sl="104" fileid="37" />
+                <BranchPoint vc="0" uspid="106" ordinal="0" path="0" offset="42" offsetend="47" sl="106" fileid="37" />
+                <BranchPoint vc="0" uspid="108" ordinal="7" path="1" offset="165" offsetend="63" sl="108" fileid="37" />
+                <BranchPoint vc="0" uspid="110" ordinal="5" path="1" offset="138" offsetend="90" sl="110" fileid="37" />
+                <BranchPoint vc="0" uspid="112" ordinal="2" path="0" offset="122" offsetend="124" sl="112" fileid="37" />
+                <BranchPoint vc="0" uspid="112" ordinal="3" path="1" offset="122" offsetend="130" sl="112" fileid="37" />
+                <BranchPoint vc="0" uspid="110" ordinal="4" path="0" offset="138" offsetend="140" sl="110" fileid="37" />
+                <BranchPoint vc="0" uspid="108" ordinal="6" path="0" offset="165" offsetend="167" sl="108" fileid="37" />
+                <BranchPoint vc="0" uspid="106" ordinal="1" path="1" offset="42" offsetend="185" sl="106" fileid="37" />
+                <BranchPoint vc="0" uspid="104" ordinal="8" path="0" offset="193" offsetend="198" sl="104" fileid="37" />
               </BranchPoints>
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="87" ec="1" el="102" bec="0" bev="0" fileid="37" xmlns:p8="xsi" />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="103" ec="1" el="118" bec="0" bev="0" fileid="37" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="10" nPathComplexity="10" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="16" visitedSequencePoints="0" numBranchPoints="10" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="10" minCyclomaticComplexity="10" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
@@ -2900,36 +2900,36 @@
               <Name>DKSKMaui.Backend.Models.Properties DKSKMaui.Backend.Services.CompanyService::GetPropertyInfo(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)</Name>
               <FileRef uid="37" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="104" ordinal="0" sl="104" sc="1" el="104" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="105" ordinal="1" sl="105" sc="1" el="105" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="106" ordinal="2" sl="106" sc="1" el="106" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="107" ordinal="3" sl="107" sc="1" el="107" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="108" ordinal="4" sl="108" sc="1" el="108" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="109" ordinal="5" sl="109" sc="1" el="109" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="110" ordinal="6" sl="110" sc="1" el="110" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="111" ordinal="7" sl="111" sc="1" el="111" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="112" ordinal="8" sl="112" sc="1" el="112" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="113" ordinal="9" sl="113" sc="1" el="113" ec="2" bec="2" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="114" ordinal="10" sl="114" sc="1" el="114" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="115" ordinal="11" sl="115" sc="1" el="115" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="116" ordinal="12" sl="116" sc="1" el="116" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="117" ordinal="13" sl="117" sc="1" el="117" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="118" ordinal="14" sl="118" sc="1" el="118" ec="2" bec="0" bev="0" fileid="37" />
-                <SequencePoint vc="0" uspid="119" ordinal="15" sl="119" sc="1" el="119" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="120" ordinal="0" sl="120" sc="1" el="120" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="121" ordinal="1" sl="121" sc="1" el="121" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="122" ordinal="2" sl="122" sc="1" el="122" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="123" ordinal="3" sl="123" sc="1" el="123" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="124" ordinal="4" sl="124" sc="1" el="124" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="125" ordinal="5" sl="125" sc="1" el="125" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="126" ordinal="6" sl="126" sc="1" el="126" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="127" ordinal="7" sl="127" sc="1" el="127" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="128" ordinal="8" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="129" ordinal="9" sl="129" sc="1" el="129" ec="2" bec="2" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="130" ordinal="10" sl="130" sc="1" el="130" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="131" ordinal="11" sl="131" sc="1" el="131" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="132" ordinal="12" sl="132" sc="1" el="132" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="133" ordinal="13" sl="133" sc="1" el="133" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="134" ordinal="14" sl="134" sc="1" el="134" ec="2" bec="0" bev="0" fileid="37" />
+                <SequencePoint vc="0" uspid="135" ordinal="15" sl="135" sc="1" el="135" ec="2" bec="0" bev="0" fileid="37" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="0" uspid="105" ordinal="9" path="1" offset="193" offsetend="14" sl="105" fileid="37" />
-                <BranchPoint vc="0" uspid="107" ordinal="0" path="0" offset="42" offsetend="47" sl="107" fileid="37" />
-                <BranchPoint vc="0" uspid="109" ordinal="7" path="1" offset="165" offsetend="63" sl="109" fileid="37" />
-                <BranchPoint vc="0" uspid="111" ordinal="5" path="1" offset="138" offsetend="90" sl="111" fileid="37" />
-                <BranchPoint vc="0" uspid="113" ordinal="2" path="0" offset="122" offsetend="124" sl="113" fileid="37" />
-                <BranchPoint vc="0" uspid="113" ordinal="3" path="1" offset="122" offsetend="130" sl="113" fileid="37" />
-                <BranchPoint vc="0" uspid="111" ordinal="4" path="0" offset="138" offsetend="140" sl="111" fileid="37" />
-                <BranchPoint vc="0" uspid="109" ordinal="6" path="0" offset="165" offsetend="167" sl="109" fileid="37" />
-                <BranchPoint vc="0" uspid="107" ordinal="1" path="1" offset="42" offsetend="185" sl="107" fileid="37" />
-                <BranchPoint vc="0" uspid="105" ordinal="8" path="0" offset="193" offsetend="198" sl="105" fileid="37" />
+                <BranchPoint vc="0" uspid="121" ordinal="9" path="1" offset="193" offsetend="14" sl="121" fileid="37" />
+                <BranchPoint vc="0" uspid="123" ordinal="0" path="0" offset="42" offsetend="47" sl="123" fileid="37" />
+                <BranchPoint vc="0" uspid="125" ordinal="7" path="1" offset="165" offsetend="63" sl="125" fileid="37" />
+                <BranchPoint vc="0" uspid="127" ordinal="5" path="1" offset="138" offsetend="90" sl="127" fileid="37" />
+                <BranchPoint vc="0" uspid="129" ordinal="2" path="0" offset="122" offsetend="124" sl="129" fileid="37" />
+                <BranchPoint vc="0" uspid="129" ordinal="3" path="1" offset="122" offsetend="130" sl="129" fileid="37" />
+                <BranchPoint vc="0" uspid="127" ordinal="4" path="0" offset="138" offsetend="140" sl="127" fileid="37" />
+                <BranchPoint vc="0" uspid="125" ordinal="6" path="0" offset="165" offsetend="167" sl="125" fileid="37" />
+                <BranchPoint vc="0" uspid="123" ordinal="1" path="1" offset="42" offsetend="185" sl="123" fileid="37" />
+                <BranchPoint vc="0" uspid="121" ordinal="8" path="0" offset="193" offsetend="198" sl="121" fileid="37" />
               </BranchPoints>
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="104" ec="1" el="119" bec="0" bev="0" fileid="37" xmlns:p8="xsi" />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="120" ec="1" el="135" bec="0" bev="0" fileid="37" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
