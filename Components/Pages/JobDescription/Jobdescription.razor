@@ -1,0 +1,23 @@
+<h3>JobDescription</h3>
+
+@page "/jobdescription"
+@namespace DKSKMaui.Components.Pages.JobDescription
+
+
+<select @bind="selectedValue">
+    @foreach (var option in options)
+    {
+        <option value="@option">@option</option> 
+    }
+</select><input type="number" title="Price"/>
+
+<InputText @bind-Value="addAnotherOptionText" />
+<div></div>
+Material costs:  <input type="text" />
+  
+
+@code {
+    private string? selectedValue;
+    private string? addAnotherOptionText = "Add Another Option";
+    private List<string> options = new List<string> { "interior walls, closet inside, ceiling", "walls, closet inside", "base boards", "kitchen cabinet - inside and outside", "all enamel surfaces including doors, door frames, kitchen, bathrooms", "2 tone colors:  navaho white, swiss coffee", "2 tone colors:  BM1520(Hushed Hue), swiss coffee", "Balcony floor", "Cover flooring and plastic", "Ceiling" };
+}

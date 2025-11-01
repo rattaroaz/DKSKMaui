@@ -1,0 +1,23 @@
+<h3>FunctionsList</h3>
+@namespace DKSKMaui.Components.Pages.MajorFunctions
+
+<select @bind="selectedValue">
+    @foreach (var option in options)
+    {
+        <option value="@option">@option</option>
+    }
+</select>
+<input type="button" value="Submit" @onclick="Done" />
+
+
+
+@code {
+    private string? selectedValue;
+    private List<string> options = new List<string> { "Great Properties, Inc", "Slave Driver Properties", "Usuck Management", "WTF Corp" };
+    public void Done()
+    {
+        selectedValue = "done";
+    }
+}
+   
+

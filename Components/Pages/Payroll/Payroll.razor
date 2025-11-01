@@ -1,0 +1,174 @@
+@page "/payroll"
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+@inject InvoiceService InvoiceService
+@inject ContractorService ContractorService
+@inject IJSRuntime JS
+@namespace DKSKMaui.Components.Pages.Payroll
+
+<h3 class="text-center my-4"><RadzenIcon Icon="money" />Payroll</h3>
+<RadzenCard>
+    <!-- Date Inputs -->
+    <RadzenRow>
+        <RadzenColumn>
+            Start Date:
+            <RadzenDatePicker @bind-Value="startDate" DateFormat="MM/dd/yyyy" Change="OnStartDateChanged" style="width: 100%;" />
+        </RadzenColumn>
+        <RadzenColumn>
+            End Date:
+            <RadzenDatePicker @bind-Value="endDate" DateFormat="MM/dd/yyyy" Change="OnEndDateChanged" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <!-- Contractor Dropdown -->
+    <RadzenRow class="mt-3">
+        <RadzenColumn>
+            <RadzenDropDown TValue="string" Data="contractorsList" @bind-Value="selectedContractor" Placeholder="Select Contractor" style="width: 100%;" Change="OnContractorNameChanged" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <!-- Table and Buttons -->
+    @if (selectedContractor != null)
+    {
+        <RadzenRow class="mt-3">
+            <RadzenColumn>
+                <RadzenDataGrid Data="@filteredInvoices" TItem="Invoice" ColumnWidth="200px" AllowPaging="true" PageSize="10" AllowColumnResize="true">
+                    <Columns>
+                        <RadzenDataGridColumn TItem="Invoice" Property="WorkDate" Title="Work Date" FormatString="{0:MM/dd/yyyy}" />
+                        <RadzenDataGridColumn TItem="Invoice" Title="Invoice Number">
+                            <Template Context="invoice">
+                                @((invoice.Id + 10000).ToString())
+                            </Template>
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="Invoice" Property="AmountCost" Title="Invoice Total" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="AmountPaid1" Title="Paid to Contractor" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="AmountPaid2" Title="Paid to Contractor2" />
+
+                    </Columns>
+                </RadzenDataGrid>
+            </RadzenColumn>
+        </RadzenRow>
+
+        <!-- Download Buttons -->
+        <RadzenRow class="mt-3">
+            <RadzenColumn class="mb-3">
+                <RadzenButton Text="Download to PDF" Click="DownloadPDF" Icon="description" Style="width: 100%;" ButtonStyle="ButtonStyle.Info" />
+            </RadzenColumn>
+            <RadzenColumn class="mb-3">
+                <RadzenButton Text="Download to Excel" Click="DownloadExcel" Icon="table_view" Style="width: 100%;" ButtonStyle="ButtonStyle.Success" />
+            </RadzenColumn>
+        </RadzenRow>
+    }
+</RadzenCard>
+<div id="pdf-content-0" style="display: none;">
+
+    <RadzenDataGrid TItem="Invoice" Data="@filteredInvoices" ColumnWidth="100px">
+        <Columns>
+            <RadzenDataGridColumn TItem="Invoice" Property="CompanyName" Title="Company Name" />
+            <RadzenDataGridColumn TItem="Invoice" Property="WorkDate" Title="Work Date" FormatString="{0:MM/dd/yyyy}" />
+            <RadzenDataGridColumn TItem="Invoice" Title="Invoice Number">
+                <Template Context="invoice">
+                    @((invoice.Id + 10000).ToString())
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Invoice" Property="WorkOrder" Title="Work Order" />
+            <RadzenDataGridColumn TItem="Invoice" Property="AmountCost" Title="Amount Cost" />
+            <RadzenDataGridColumn TItem="Invoice" Property="DaysOverdue" Title="Days Overdue" />
+            <RadzenDataGridColumn TItem="Invoice" Property="AmountPaid1" Title="Amount Paid1" />
+            <RadzenDataGridColumn TItem="Invoice" Property="DatePaid1" Title="Date Paid1" FormatString="{0:MM/dd/yyyy}" />
+        </Columns>
+    </RadzenDataGrid>
+
+</div>
+@code {
+    private DateTime? startDate;
+    private DateTime? endDate;
+
+    private string selectedContractor;
+
+    private List<Invoice> invoices = new List<Invoice>();
+    private List<Invoice> filteredInvoices = new List<Invoice>();
+    private List<string> contractorsList = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            invoices = await InvoiceService.GetInvoicesSales();
+            contractorsList = invoices.Select(i => i.ContractorName).Distinct().ToList();
+
+            ApplyFilters();
+
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            // Handle the exception as needed
+        }
+    }
+    private void OnStartDateChanged(DateTime? value)
+    {
+        OnDateChanged();
+    }
+
+    private void OnEndDateChanged(DateTime? value)
+    {
+        OnDateChanged();
+    }
+    private void OnDateChanged()
+    {
+        ApplyFilters();
+    }
+    private void OnContractorNameChanged(object value)
+    {
+        selectedContractor = value.ToString();
+        ApplyFilters();
+    }
+    private void ApplyFilters()
+    {
+        // Start by showing all invoices
+        filteredInvoices = invoices;
+
+        // Apply company name filter
+        filteredInvoices = filteredInvoices.Where(i => i.ContractorName == selectedContractor).ToList();
+
+        // Apply date range filter if both start and end dates are set
+        if (startDate.HasValue && endDate.HasValue)
+        {
+            filteredInvoices = filteredInvoices.Where(i => i.WorkDate >= startDate && i.WorkDate <= endDate).ToList();
+        }
+    }
+    private async Task DownloadExcel()
+    {
+        // Filter only necessary data from the invoices
+        var invoiceData = filteredInvoices.Select(i => new
+        {
+            i.Id,
+            i.TodaysDate,
+            i.WorkDate,
+            i.CompanyName,
+            i.AmountCost,
+            i.AmountPaid1,
+            i.CheckNumber1,
+            i.AmountPaid2,
+            i.CheckNumber2,
+            i.SpecialNote,
+            i.PropertyAddress,
+            i.Unit,
+            i.GateCode,
+            i.LockBox,
+            i.SizeBedroom,
+            i.SizeBathroom,
+            i.WorkOrder,
+            i.JobDescriptionChoice
+        }).ToList();
+
+        // Call JS function to download Excel
+        await JS.InvokeVoidAsync("saveAsExcel", invoiceData);
+    }
+
+    private async Task DownloadPDF()
+    {
+        await JS.InvokeVoidAsync("saveAsPDFByTemplate", "pdf-content-0", "payroll", true);
+    }
+}

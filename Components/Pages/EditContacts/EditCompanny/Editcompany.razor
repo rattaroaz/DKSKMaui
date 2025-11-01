@@ -1,0 +1,408 @@
+@page "/editcontacts/editcompany"
+@inject CompanyService CompanyService
+@inject PropertiesService PropertiesService
+@inject SupervisorService SupervisorService
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+
+<RadzenCard>
+    <RadzenRow>
+        <RadzenColumn Size="6" MediumSize="8" LargeSize="6">
+            @if (!isNew)
+            {
+                <RadzenDropDown @bind-Value="selectedValue" Data="companyList" Change="OnChange" Style="width: 100%;" />
+            }
+            else
+            {
+                <RadzenLabel Text="Add New Company" />
+            }
+        </RadzenColumn>
+        <RadzenColumn Size="6" MediumSize="4" LargeSize="3">
+            <RadzenButton Icon="business" Text="Add Company" Click="AddComp" ButtonStyle="ButtonStyle.Primary" Style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    @if (selectedCompany != null)
+    {
+        <RadzenRow>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Company Name" />
+                <RadzenTextBox Placeholder="Company Name" @bind-Value="selectedCompany.Name" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Phone" />
+                <RadzenTextBox Placeholder="Phone" @bind-Value="selectedCompany.Phone" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="E-mail" />
+                <RadzenTextBox Placeholder="E-mail" @bind-Value="selectedCompany.Email" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Address" />
+                <RadzenTextBox Placeholder="Address" @bind-Value="selectedCompany.Address" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="City" />
+                <RadzenTextBox Placeholder="City" @bind-Value="selectedCompany.City" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Zip" />
+                <RadzenTextBox Placeholder="Zip" @bind-Value="selectedCompany.Zip" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Special Note" />
+                <RadzenTextBox Placeholder="Special Note" @bind-Value="selectedCompany.SpecialNote" Style="width: 100%;" />
+            </RadzenColumn>
+            @if(!isNew){
+                <RadzenColumn Size="2" class="text-right">
+                    <RadzenButton Icon="delete"  ButtonStyle="ButtonStyle.Danger" Click="() => DeleteCompany(selectedCompany)" Style="margin-top: 25px;" />
+                </RadzenColumn>
+            }
+        </RadzenRow>
+
+        <!-- Supervisors List -->
+        <RadzenRow>
+            <RadzenColumn Size="12">
+                <RadzenRow>
+                    <RadzenColumn Size="12">
+                        <div style="border-top: 1px solid #000; margin: 20px 0;"></div>
+                    </RadzenColumn>
+                </RadzenRow>
+                <h4>Supervisors</h4>
+                <div>
+                    @foreach (var supervisor in selectedCompany.Supervisors)
+                    {
+                        <div class="mb-4">
+                            <RadzenRow>
+                                <RadzenColumn Size="12">
+                                    <div style="border-top: 1px solid #000; margin: 20px 0;"></div>
+                                </RadzenColumn>
+                            </RadzenRow>
+                            <RadzenRow>
+                                <RadzenColumn Size="1">
+                                    <!-- Button to show/hide supervisor details with icons -->
+                                    <RadzenButton Icon=@(IsVisible(supervisor.Id) ? "remove" : "add")
+                                                  Click="() => ToggleSupervisorDetails(supervisor.Id)"
+                                                  ButtonStyle="ButtonStyle.Secondary"
+                                                  Style="" />
+                                </RadzenColumn>
+                                <RadzenColumn Size="11">
+                                    <!-- Supervisor Name -->
+                                    <RadzenLabel Text=@supervisor.Name Style="font-weight: bold;" />
+                                </RadzenColumn>
+                            </RadzenRow>
+                                <!-- More content here -->
+                            @if (IsVisible(supervisor.Id))
+                            {
+                            <RadzenRow>
+                                <RadzenColumn Size="4">
+                                    <RadzenLabel Text="Name" />
+                                    <RadzenTextBox @bind-Value="supervisor.Name" Placeholder="Supervisor Name" Style="width: 100%;" />
+                                </RadzenColumn>
+                                <RadzenColumn Size="4">
+                                    <RadzenLabel Text="Phone" />
+                                    <RadzenTextBox @bind-Value="supervisor.Phone" Placeholder="Supervisor Phone" Style="width: 100%;" />
+                                </RadzenColumn>
+                                <RadzenColumn Size="4">
+                                    <RadzenLabel Text="Email" />
+                                    <RadzenTextBox @bind-Value="supervisor.Email" Placeholder="Supervisor Email" Style="width: 100%;" />
+                                </RadzenColumn>
+
+                                <RadzenColumn Size="2" class="text-right">
+                                    <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="() => DeleteSupervisor(supervisor)" Style="margin-top: 25px;" />
+                                </RadzenColumn>
+                            </RadzenRow>
+
+                            <!-- Properties under Supervisor -->
+                            <h5 Style="margin-top: 25px;">Properties:</h5>
+                            <RadzenRow Style="margin-left: 20px;">
+                                <RadzenColumn Size="12">
+                                    @foreach (var property in supervisor.Properties)
+                                    {
+                                        <RadzenRow>
+                                            <RadzenColumn Size="1">
+                                                <!-- Button to show/hide property details with icons -->
+                                                <RadzenButton Icon=@(IsPropertyVisible(supervisor.Id, property.Id) ? "remove" : "add")
+                                                              Click="() => TogglePropertyDetails(supervisor.Id, property.Id)"
+                                                              ButtonStyle="ButtonStyle.Secondary"
+                                                              />
+                                            </RadzenColumn>
+                                            <RadzenColumn Size="11">
+                                                <!-- Property Name -->
+                                                <RadzenLabel Text=@property.Name Style="font-weight: bold;" />
+                                                <RadzenCheckBox @bind-Value="property.IsActive"></RadzenCheckBox>
+                                            </RadzenColumn>
+                                        </RadzenRow>
+
+                                            <!-- Property Details -->
+                                            @if (IsPropertyVisible(supervisor.Id, property.Id))
+                                            {
+                                                <RadzenRow>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="Name" />
+                                                        <RadzenTextBox @bind-Value="property.Name" Placeholder="Property Name" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="Address" />
+                                                        <RadzenTextBox @bind-Value="property.Address" Placeholder="Property Address" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="City" />
+                                                        <RadzenTextBox @bind-Value="property.City" Placeholder="Property City" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="Zip" />
+                                                        <RadzenTextBox @bind-Value="property.Zip" Placeholder="Property Zip" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="ManagerName" />
+                                                        <RadzenTextBox @bind-Value="property.ManagerName" Placeholder="ManagerName" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="ManagerPhone" />
+                                                        <RadzenTextBox @bind-Value="property.ManagerPhone" Placeholder="ManagerPhone" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="ManagerEmail" />
+                                                        <RadzenTextBox @bind-Value="property.ManagerEmail" Placeholder="ManagerEmail" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <br/>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="GateCode" />
+                                                        <RadzenTextBox @bind-Value="property.GateCode" Placeholder="Property GateCode" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="GarageRemoteCode" />
+                                                        <RadzenTextBox @bind-Value="property.GarageRemoteCode" Placeholder="GarageRemoteCode" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="LockBox" />
+                                                        <RadzenTextBox @bind-Value="property.LockBox" Placeholder="LockBox" Style="width: 100%;" />
+                                                    </RadzenColumn>
+                                                    <RadzenColumn Size="3">
+                                                        <RadzenLabel Text="Note" />
+                                                        <RadzenTextBox @bind-Value="property.SpecialNote" Placeholder="Note" Style="width: 100%;" />
+                                                    </RadzenColumn>
+
+                                                    <RadzenColumn Size="2" class="text-right">
+                                                        <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" Click="() => DeleteProperty(supervisor, property)" Style="margin-top: 25px;" />
+                                                    </RadzenColumn>
+                                                </RadzenRow>
+                                                <RadzenRow>
+                                                    <RadzenColumn Size="12">
+                                                        <div style="border-top: 1px solid #2222; margin: 20px 0;"></div>
+                                                    </RadzenColumn>
+                                                </RadzenRow>
+                                            }
+                                        }
+                                    <RadzenButton Icon="add" Text="Add Property" Click="() => AddPropertyToSupervisor(supervisor)" ButtonStyle="ButtonStyle.Primary" Style="margin-top: 10px;" />
+                                </RadzenColumn>
+                            </RadzenRow>
+                            }
+                        </div>
+                    }
+                </div>
+                <RadzenButton Icon="person_add" Text="Add Supervisor" Click="AddSupervisorToCompany" ButtonStyle="ButtonStyle.Primary" Style="margin-top: 10px;" />
+            </RadzenColumn>
+        </RadzenRow>
+
+        <RadzenRow>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenButton Icon="cancel" Text="Cancel" Click="OnCancel" ButtonStyle="ButtonStyle.Danger" Style="width: 100%;margin-top: 25px;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenButton Icon="save" Text="Submit" Click="OnSubmit" ButtonStyle="ButtonStyle.Success" Style="width: 100%;margin-top: 25px;" />
+            </RadzenColumn>
+        </RadzenRow>
+    }
+</RadzenCard>
+
+@code {
+    // Dictionary to keep track of which supervisor's details are visible
+    private Dictionary<int, bool> supervisorVisibility = new Dictionary<int, bool>();
+    private HashSet<(int SupervisorId, int PropertyId)> visibleProperties = new HashSet<(int, int)>();
+
+    // Method to toggle the visibility of supervisor details
+    private void ToggleSupervisorDetails(int supervisorId)
+    {
+        if (supervisorVisibility.ContainsKey(supervisorId))
+        {
+            supervisorVisibility[supervisorId] = !supervisorVisibility[supervisorId];
+        }
+        else
+        {
+            supervisorVisibility[supervisorId] = true;
+        }
+    }
+
+
+
+    // Method to check if supervisor details are visible
+    private bool IsVisible(int supervisorId)
+    {
+        return supervisorVisibility.ContainsKey(supervisorId) && supervisorVisibility[supervisorId];
+    }
+    private bool IsPropertyVisible(int supervisorId, int propertyId)
+    {
+        return visibleProperties.Contains((supervisorId, propertyId));
+    }
+
+    private void TogglePropertyDetails(int supervisorId, int propertyId)
+    {
+        var key = (supervisorId, propertyId);
+        if (visibleProperties.Contains(key))
+        {
+            visibleProperties.Remove(key);
+        }
+        else
+        {
+            visibleProperties.Add(key);
+        }
+    }
+
+    private void OnChange(object value)
+    {
+        selectedCompany = compannies.FirstOrDefault(c => c.Name == (string)value); // Find the selected company object
+        isNew = false;
+    }
+
+    private void OnCancel()
+    {
+        selectedCompany = null;
+        isNew = false;
+    }
+
+    private async Task OnSubmit()
+    {
+        if (selectedCompany != null)
+        {
+            bool res = await CompanyService.SaveCompanyAsync(selectedCompany);
+            if(res)
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Success",
+                        Detail = "Saved Successfully!",
+                        Duration = 3000
+                    });
+                selectedCompany = null;
+                isNew = false;
+                await LoadCompanyDataAsync();
+
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "Error",
+                        Detail = "Failed to save.",
+                        Duration = 3000
+                    });
+            }
+
+        }
+    }
+
+    private void AddComp()
+    {
+        isNew = true;
+        selectedCompany = new Companny() { Id = 0};
+        selectedCompany.Supervisors = new List<Supervisor>();
+    }
+
+    private void AddSupervisorToCompany()
+    {
+        if (selectedCompany != null)
+        {
+            selectedCompany.Supervisors.Add(new Supervisor { Name = "", Properties = new List<Properties>() });
+        }
+    }
+    private async Task DeleteCompany(Companny companny)
+    {
+        if (isNew) return;
+        var result = await DialogService.Confirm("Are you sure you want to delete this Company?", "Confirm Delete", new ConfirmOptions { OkButtonText = "Yes", CancelButtonText = "No" });
+        if (result.HasValue && result.Value)
+        {
+            bool res = await CompanyService.DeleteCompanyAsync(companny.Id);
+            if (res)
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Success",
+                        Detail = "Deleted Successfully!",
+                        Duration = 3000
+                    });
+                await LoadCompanyDataAsync();
+                selectedCompany = null;
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "Error",
+                        Detail = "Failed to Delete.",
+                        Duration = 3000
+                    });
+            }
+        }
+    }
+    private async Task DeleteSupervisor(Supervisor supervisor)
+    {
+        var result = await DialogService.Confirm("Are you sure you want to delete this supervisor?", "Confirm Delete", new ConfirmOptions { OkButtonText = "Yes", CancelButtonText = "No" });
+        if (result.HasValue && result.Value)
+        {
+            if (selectedCompany != null)
+            {
+                selectedCompany.Supervisors.Remove(supervisor);
+            }
+        }
+    }
+
+    private void AddPropertyToSupervisor(Supervisor supervisor)
+    {
+        if (supervisor != null)
+        {
+            supervisor.Properties.Add(new Properties { Name = "", IsActive = true });
+        }
+    }
+
+    private async Task DeleteProperty(Supervisor supervisor, Properties property)
+    {
+        var result = await DialogService.Confirm("Are you sure you want to delete this Property?", "Confirm Delete", new ConfirmOptions { OkButtonText = "Yes", CancelButtonText = "No" });
+        if (result.HasValue && result.Value)
+        {
+            if (supervisor != null)
+            {
+                supervisor.Properties.Remove(property);
+            }
+        }
+    }
+
+    private string? selectedValue;
+    private List<Companny> compannies = new List<Companny>();
+    private List<string> companyList = new List<string>();
+    private List<Properties> properties = new List<Properties>();
+    private List<Supervisor> supervisors = new List<Supervisor>();
+
+    private Companny? selectedCompany;
+
+    private bool isNew = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCompanyDataAsync();
+
+
+    }
+
+    private async Task LoadCompanyDataAsync()
+    {
+        compannies = await CompanyService.GetAllCompaniesAsync();
+        companyList = compannies.Select(c => c.Name).ToList();
+    }
+}
+

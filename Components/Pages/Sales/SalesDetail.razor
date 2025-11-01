@@ -1,0 +1,119 @@
+﻿@page "/sales-detail-dialog"
+@inject DialogService DialogService
+@inject InvoiceService InvoiceService
+@inject NotificationService NotificationService
+
+<RadzenCard>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Today's Date:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenDatePicker @bind-Value="invoice.TodaysDate" DateFormat="MM/dd/yyyy" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Work Date:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenDatePicker @bind-Value="invoice.WorkDate" DateFormat="MM/dd/yyyy" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Company Name:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.CompanyName" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Property Address:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.PropertyAddress" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Unit:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.Unit" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>SizeBedRoom:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenNumeric @bind-Value="invoice.SizeBedroom" Min="0" Max="10" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>SizeBathRoom:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenNumeric @bind-Value="invoice.SizeBathroom" Min="0" Max="10" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Work Order:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.WorkOrder" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Job Description:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.JobDescriptionChoice" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Contractor:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.ContractorName" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>AmountCost:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenNumeric @bind-Value="invoice.AmountCost" Min="0" Max="100000" Step="1" style="width: 100%;" ReadOnly="true" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow class="mt-4">
+        <RadzenButton Text="Back" ButtonStyle="ButtonStyle.Secondary" Click="@CloseDialog" />
+    </RadzenRow>
+</RadzenCard>
+
+@code {
+    [Parameter] public Invoice invoice { get; set; }
+
+    void CloseDialog()
+    {
+        DialogService.Close(false); // Close without returning success
+    }
+}

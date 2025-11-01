@@ -1,0 +1,166 @@
+@page "/createinvoice"
+@inject InvoiceService invoiceService
+@inject NavigationManager Navigation
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+@inject ContractorService ContractorService
+@inject JobDescriptionService JobDescriptionService
+@inject ILogger<CreateInvoice> Logger
+@using Newtonsoft.Json;
+
+<h3 class="text-center my-4"><RadzenIcon Icon="receipt_long" />Create Invoice</h3>
+<div class="container mt-3">
+    <!-- Start and End Date Inputs -->
+    <div class="row mb-3">
+        <div class="col-12 col-md-6">
+            Start Date:
+            <input type="date" class="form-control" @bind="startDate" />
+        </div>
+        <div class="col-12 col-md-6">
+            End Date:
+            <input type="date" class="form-control" @bind="endDate" />
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row mb-3">
+        <div class="col-12">
+            <input type="button" value="Submit" @onclick="InvoiceList" class="btn btn-primary w-100" />
+        </div>
+    </div>
+
+    <!-- Radzen DataGrid for displaying the invoice list -->
+    @if (invoices != null && invoices.Any())
+    {
+        <div class="row">
+            <div class="col-12">
+                <RadzenDataGrid @ref="invoiceGrid" Data="@invoices" TItem="Invoice" RowSelect="OnRowSelect">
+                    <Columns>
+                        <RadzenDataGridColumn TItem="Invoice" Title="Invoice Number">
+                            <Template Context="invoice">
+                                @((invoice.Id + 10000).ToString())
+                            </Template>
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="Invoice" Property="WorkDate" Title="Work Date">
+                            <Template>
+                                @{
+                                    var date = context.WorkDate; // Get the date from the data item
+                                    @date.ToString("MM/dd/yyyy")  // Format the date
+                                }
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                        <RadzenDataGridColumn TItem="Invoice" Property="Unit" Title="Unit" />
+
+                        <RadzenDataGridColumn TItem="Invoice" Property="CompanyName" Title="Company Name" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="PropertyAddress" Title="Property Address" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="AmountCost" Title="AmountCost" />
+                    </Columns>
+                </RadzenDataGrid>
+            </div>
+        </div>
+
+    }
+</div>
+
+@code {
+    private DateTime? startDate;
+    private DateTime? endDate;
+    private RadzenDataGrid<Invoice> invoiceGrid;
+    private Invoice selectedInvoice;
+    private List<Invoice> invoices;
+    private List<string> contractorsList = new List<string>();
+    private List<JobDiscription> jobs = new List<JobDiscription>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        List<Contractor> contractors = await ContractorService.GetAllContractorsAsync();
+        for(int i = 0; i < contractors.Count; i++)
+        {
+            if(contractors[i].IsActive == true) contractorsList.Add(contractors[i].Name);
+        }
+        await LoadJobDataAsync();
+
+    }
+    private async Task LoadJobDataAsync()
+    {
+        jobs = await JobDescriptionService.GetAllJobsAsync();
+
+    }
+    private async Task InvoiceList()
+    {
+        if (startDate.HasValue)
+        {
+            DateTime? filterEndDate = endDate;
+            if (!filterEndDate.HasValue)
+            {
+                filterEndDate = new DateTime(9999, 12, 31);
+            }
+            try
+            {
+                invoices = await invoiceService.GetInvoicesByDateRangeAsync(startDate.Value, filterEndDate.Value);
+                foreach(Invoice invoice in invoices)
+                {
+                    List<string> jobDescriptions = JsonConvert.DeserializeObject<List<string>>(invoice.JobDescriptionChoice);
+                    invoice.AmountCost = 0;
+                    foreach (string jd in jobDescriptions)
+                    {
+                        foreach (JobDiscription job in jobs)
+                        {
+                            if (job.description == jd)
+                            {
+                                invoice.AmountCost += job.price;
+                            }
+                        }                    
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Error loading invoices for date range: {StartDate} to {EndDate}", startDate.Value, filterEndDate.Value);
+                NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = "An error occurred while loading invoices. Please try again.",
+                    Duration = 5000
+                });
+            }
+            StateHasChanged();
+        } else
+        {
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = "Please select Start Date.",
+                    Duration = 3000
+                });
+        }
+
+    }
+
+    private async Task OnRowSelect(Invoice invoice)
+    {
+        selectedInvoice = invoice;
+        if(contractorsList.Count > 0) selectedInvoice.ContractorName = contractorsList[0];
+        var parameters = new Dictionary<string, object>
+        {
+            { "invoice", selectedInvoice},
+            { "contractorsList", contractorsList},
+            { "jobs", jobs}
+        };
+        var result = await DialogService.OpenAsync<CreateInvoiceConfirmDialogComponent>("Invoice Confirmation", parameters);
+        // Process code after the dialog is closed
+        if (result != null && result)
+        {
+            // Logic if dialog is closed with a result (e.g., "Submit" button was clicked)
+            Navigation.NavigateTo("accountsreceivable");
+        }
+        else
+        {
+            // Logic if the dialog was closed without a result (e.g., "Cancel" or "Back" button)
+        }
+    }
+
+}

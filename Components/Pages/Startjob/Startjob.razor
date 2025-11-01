@@ -1,0 +1,361 @@
+@page "/startjob"
+@inject NavigationManager NavigationManager
+@inject JobDescriptionService JobDescriptionService
+@inject CompanyService CompanyService
+@inject PropertiesService PropertiesService
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+
+@using Radzen
+@using System.Collections.Generic
+@using System.Linq
+@using Newtonsoft.Json;
+
+<h3 class="text-center my-4">
+    <RadzenIcon Icon="description" />
+    Start Work Order
+</h3>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Today's Date*"></RadzenLabel>
+                <RadzenDatePicker @bind-Value="todaysDate" DateFormat="MM/dd/yyyy" />
+            </RadzenStack>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Work Date*"></RadzenLabel>
+                <RadzenDatePicker @bind-Value="jobWorkDate" DateFormat="MM/dd/yyyy" />
+            </RadzenStack>
+        </div>
+    </div>
+    <br />
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label for="companyName" class="form-label">Company Name: </label>
+            <!-- Use the EditableDropdown component -->
+            <EditableDropdown Data="@companyList"
+                              SelectedItem="@companyName"
+                              SelectedItemChanged="@HandleCompany" />
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Property Address*"/>
+                <EditableDropdown Data="@propertiesList"
+                                  SelectedItem="@propertyAddress"
+                                  SelectedItemChanged="@HandleProperty"
+                                  />
+            </RadzenStack>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Unit#*" />
+                <RadzenTextBox @bind-Value="unitNumber" />
+            </RadzenStack>
+        </div>
+    </div>
+    <div class="row mb-3">
+
+        <div class="col-md-3 col-xl-2">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="BedroomSize" />
+                <RadzenNumeric @bind-Value="bedroomSize" />
+            </RadzenStack>
+        </div>
+        <div class="col-md-3 col-xl-2">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="BathroomSize" />
+                <RadzenNumeric @bind-Value="bathroomSize" />
+            </RadzenStack>
+        </div>
+     </div>
+     <div class="row mb-3">
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Gate Code" />
+                <RadzenTextBox @bind-Value="gateCode" />
+            </RadzenStack>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Lock Box" />
+                <RadzenTextBox @bind-Value="lockBox" />
+            </RadzenStack>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Garage Remote Code" />
+                <RadzenTextBox @bind-Value="garageRemoteCode" />
+            </RadzenStack>
+        </div>
+     </div>
+     <div class="row mb-3">
+
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Work Order" />
+                <RadzenTextBox @bind-Value="workOrder" />
+            </RadzenStack>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <RadzenStack Gap="0.5rem">
+                <RadzenLabel Text="Special Note" />
+                <RadzenTextBox @bind-Value="specialNote" />
+            </RadzenStack>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <h3 class="my-4">Job Description</h3>
+
+            <div class="row mb-3">
+                @foreach (var selectedjobs in selectedjobs)
+                {
+                    <div class="row ">
+                        <div class="form-group col-md-8">
+                            <RadzenLabel Text="Job Type*" />
+                            <EditableDropdown Data="@jobsList"
+                                              SelectedItem="@selectedjobs.JobType"
+                                              SelectedItemChanged="@((string value) => selectedjobs.JobType = value)" />
+                        </div>
+                        <div class="col-md-2 my-4">
+                            <RadzenButton Text="Remove" Icon="close" ButtonStyle="ButtonStyle.Danger" Click="(() => RemoveJob(selectedjobs))" />
+                        </div>
+                    </div>
+                }
+
+                <div class="row mb-3">
+                    <div class="col-md-12 my-3">
+                        <RadzenButton Text="Add Another Option" Icon="add" Class="btn-primary my-3" Click="AddAnotherOption" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <RadzenButton Text="Submit" ButtonStyle="ButtonStyle.Primary" Style="width: 100%;" Click="Alldone" />
+        </div>
+    </div>
+</div>
+
+@code {
+    private DateTime todaysDate;
+    private DateTime jobWorkDate = DateTime.MinValue;
+    private DateTime completionDate = DateTime.MinValue;
+    private string companyName = "";
+    private string propertyAddress = "";
+    private string unitNumber = "";
+    private string gateCode = "";
+    private string lockBox = "";
+    private string garageRemoteCode = "";
+    private int bedroomSize = 0;
+    private int bathroomSize = 0;
+    private string workOrder = "";
+    private string specialNote = "";
+    private List<JobDiscription> jobs = new List<JobDiscription>();
+    private List<Companny> compannies = new List<Companny>();
+    private List<SelectedJob> selectedjobs = new List<SelectedJob>();
+    private List<Properties> properties = new List<Properties>();
+    private List<string> propertiesList = new List<string>();
+    private List<string> companyList = new List<string>();
+    private List<string> jobsList = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        // Initialize the date to today's date
+        todaysDate = DateTime.Now.Date;
+
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadJobDataAsync();
+        await LoadComapnyDataAsync();
+        selectedjobs.Add(new SelectedJob());
+
+    }
+    private async Task LoadJobDataAsync()
+    {
+        List<JobDiscription> rawJobs = await JobDescriptionService.GetAllJobsAsync();
+        jobs.Clear();
+        Dictionary<string, int> Ids = new Dictionary<string, int>();
+        int i = 0;
+
+        foreach (JobDiscription jd in rawJobs)
+        {
+            if (!Ids.ContainsKey(jd.description))
+            {
+                Ids[jd.description] = i;
+                jobs.Add(jd);
+                i++;
+            }
+
+        }
+        foreach (JobDiscription job in jobs)
+        {
+            jobsList.Add(job.description);
+        }
+    }
+
+    private async Task LoadComapnyDataAsync()
+    {
+        compannies = await CompanyService.GetAllCompaniesAsync();
+        for (int i = 0; i < compannies.Count; i++)
+        {
+            companyList.Add(compannies[i].Name);
+        }
+
+    }
+    private void HandleCompany(string newValue)
+    {
+        companyName = newValue;
+        List<int> selectedIds = new List<int>();
+        Companny selectedCompany = null;
+        for (int i = 0; i < compannies.Count; i++)
+        {
+            if (companyName == compannies[i].Name)
+            {
+                selectedCompany =  compannies[i];
+                break;
+            }
+        }
+        if (selectedCompany != null)
+        {
+            properties.Clear();
+            foreach (var supervisor in selectedCompany.Supervisors)
+            {
+                foreach(var property in supervisor.Properties)
+                {
+                    if(property.IsActive == true)  properties.Add(property);
+                }
+            }
+            propertiesList.Clear();
+            for (int i = 0; i < properties.Count; i++)
+            {
+                propertiesList.Add(properties[i].Address);
+            }
+        }
+    }
+    private void HandleProperty(string newValue)
+    {
+        propertyAddress = newValue;
+        int selectedId = -1;
+        for (int i = 0; i < properties.Count; i++)
+        {
+            if (propertyAddress == properties[i].Address)
+            {
+                selectedId = i;
+                break;
+            }
+        }
+        if (selectedId >= 0)
+        {
+            gateCode = properties[selectedId].GateCode;
+            lockBox = properties[selectedId].LockBox;
+            specialNote = properties[selectedId].SpecialNote;
+            garageRemoteCode = properties[selectedId].GarageRemoteCode;
+        }
+    }
+
+    private async Task Alldone()
+    {
+        // Validate required fields before proceeding
+        if (string.IsNullOrEmpty(companyName) || string.IsNullOrEmpty(propertyAddress) || 
+        jobWorkDate == DateTime.MinValue ||  string.IsNullOrEmpty(unitNumber)
+        )
+        {
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = "Please fill in all required fields.",
+                    Duration = 3000
+                });
+            return;
+        }
+
+        int amountCost = 0;
+        for(int i =0;i< selectedjobs.Count; i++)
+        {
+            for(int j = 0; j < jobs.Count; j++)
+            {
+                if (selectedjobs[i].JobType == jobs[j].description)
+                {
+                    amountCost += jobs[j].price;
+                    break;
+                }
+            }
+        }
+
+        Invoice invoice = new Invoice
+            {
+                TodaysDate = todaysDate,
+                WorkDate = jobWorkDate,
+                CompanyName = companyName,
+                PropertyAddress = propertyAddress,
+                Unit = unitNumber,
+                GateCode = gateCode,
+                LockBox = lockBox,
+                SizeBedroom = bedroomSize,
+                SizeBathroom = bathroomSize,
+                WorkOrder = workOrder,
+                JobDescriptionChoice = JsonConvert.SerializeObject(selectedjobs.Select(j => j.JobType)),
+                ContractorName = "N/A",
+                AmountCost = amountCost,
+                AmountPaid1 = 0,
+                DatePaid1 = DateTime.Now.Date,
+                CheckNumber1 = "N/A",
+                AmountPaid2 = 0,
+                DatePaid2 = DateTime.Now.Date,
+                CheckNumber2 = "N/A",
+                SpecialNote = specialNote,
+                GarageRemoteCode = garageRemoteCode,
+                Status = 0
+            };
+        var parameters = new Dictionary<string, object>
+        {
+            {"invoice", invoice }
+        };
+
+        var result = await DialogService.OpenAsync<StartJobConfirmDialogComponent>("Job Confirmation", parameters);
+        // Process code after the dialog is closed
+        if (result != null && result)
+        {
+            // Logic if dialog is closed with a result (e.g., "Submit" button was clicked)
+            NavigationManager.NavigateTo("createinvoice");
+        }
+        else
+        {
+            // Logic if the dialog was closed without a result (e.g., "Cancel" or "Back" button)
+        }
+    }
+
+
+    // Model for job description and material costs
+    private class SelectedJob
+    {
+        public string JobType { get; set; } = string.Empty;
+        public string NumberOfJobs { get; set; } = string.Empty;
+    }
+
+    // Add new job form fields
+    private void AddAnotherOption()
+    {
+        selectedjobs.Add(new SelectedJob());
+    }
+
+    // Remove job form fields
+    private void RemoveJob(SelectedJob job)
+    {
+        selectedjobs.Remove(job);
+    }
+}

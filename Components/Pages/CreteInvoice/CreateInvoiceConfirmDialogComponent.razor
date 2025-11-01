@@ -1,0 +1,260 @@
+@page "/createinvoice-confirm-dialog"
+@inject DialogService DialogService
+@inject InvoiceService InvoiceService
+@inject JobDescriptionService JobDescriptionService
+
+@inject NotificationService NotificationService
+@using Newtonsoft.Json;
+
+<RadzenCard>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Today's Date:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenDatePicker @bind-Value="invoice.TodaysDate" DateFormat="MM/dd/yyyy" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Work Date:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenDatePicker @bind-Value="invoice.WorkDate" DateFormat="MM/dd/yyyy" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Company Name:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.CompanyName" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Property Address:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.PropertyAddress" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Unit:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.Unit" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>SizeBedRoom:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenNumeric @bind-Value="invoice.SizeBedroom" Min="0" Max="10" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>SizeBathRoom:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenNumeric @bind-Value="invoice.SizeBathroom" Min="0" Max="10" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Work Order:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenTextBox @bind-Value="invoice.WorkOrder" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Contractor:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <EditableDropdown Data="@contractorsList"
+                    SelectedItem="@invoice.ContractorName"
+                    SelectedItemChanged="@((string value) => invoice.ContractorName = value)" />
+        </RadzenColumn>
+    </RadzenRow>
+</RadzenCard>
+<RadzenCard Style="margin: 0 auto; text-align: center; width: 100%;">
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Job Description:</strong>
+        </RadzenColumn>
+    </RadzenRow>
+    @* Deserialize JSON string and display each job description in a separate line *@
+    @if (jobDescriptions != null)
+    {
+        @foreach (var description in jobDescriptions.Select((value, index) => new { value, index }))
+        {
+            <RadzenRow Class="my-3">
+                <RadzenColumn Width="50%">
+                    <RadzenTextBox @bind-Value="jobDescriptions[description.index]" style="width: 100%;" />
+                </RadzenColumn>
+                <RadzenColumn Width="30%">
+                    <RadzenNumeric Value="@jobPrices[description.index]"
+                                    Change="EventCallback.Factory.Create<int>(this, value => OnJobPriceChange(value, description.index))"
+                    Min="0" Max="100000" Step="1" style="width: 100%;" />
+                </RadzenColumn>
+                @* Add buttons to remove the current job description *@
+                <RadzenColumn Width="20%">
+                    <RadzenButton Icon="close" ButtonStyle="ButtonStyle.Danger" Click="() => RemoveJobDescription(description.index)" />
+                </RadzenColumn>
+            </RadzenRow>
+        }
+    }
+
+    @* Add button to add a new job description *@
+    <RadzenRow Class="my-1">
+        <RadzenColumn>
+            <RadzenButton Text="Add Job Description" ButtonStyle="ButtonStyle.Primary" Click="AddJobDescription" />
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow Class="my-3">
+        <RadzenColumn>
+            <strong>AmountCost:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenNumeric @bind-Value="invoice.AmountCost" Min="0" Max="100000" Step="1" style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+
+</RadzenCard>
+<RadzenCard>
+    <RadzenRow class="mt-4">
+        <RadzenButton Text="Back" ButtonStyle="ButtonStyle.Secondary" Click="@CloseDialog" />
+        <RadzenButton Text="Submit" ButtonStyle="ButtonStyle.Primary" Click="@OnSubmit" />
+    </RadzenRow>
+</RadzenCard>
+
+@code {
+
+    [Parameter] public Invoice invoice { get; set; } = new Invoice();
+    [Parameter] public List<string> contractorsList { get; set; } = new List<string>();
+    [Parameter] public List<JobDiscription> jobs { get; set; } = new List<JobDiscription>();
+
+    private List<string> jobDescriptions = new List<string>();
+    private List<int> jobPrices = new List<int>();
+
+    protected override async void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(invoice.JobDescriptionChoice))
+        {
+            try
+            {
+                jobDescriptions = JsonConvert.DeserializeObject<List<string>>(invoice.JobDescriptionChoice);
+                for (int i = 0; i < jobDescriptions.Count; i++)
+                {
+                    jobPrices.Add(0);
+                    foreach (JobDiscription job in jobs)
+                    {
+                        if (job.description == jobDescriptions[i] && job.sizeBathroom == invoice.SizeBathroom && job.sizeBedroom == invoice.SizeBedroom)
+                        {
+                            jobPrices[i] = job.price;
+                            break;
+                        }
+                    }
+                }
+                calcPrice();
+
+            }
+            catch
+            {
+                // Handle JSON deserialization errors
+                jobDescriptions = new List<string>();
+            }
+        }
+    }
+    void CloseDialog()
+    {
+        DialogService.Close(false); // Close without returning success
+    }
+    // Add a new empty job description
+    private void AddJobDescription()
+    {
+        jobDescriptions.Add(string.Empty);
+        jobPrices.Add(0);
+    }
+
+    // Remove the job description at the specified index
+    private void RemoveJobDescription(int index)
+    {
+        if (index >= 0 && index < jobDescriptions.Count)
+        {
+            jobDescriptions.RemoveAt(index);
+            jobPrices.RemoveAt(index);
+        }
+    }
+    private void OnJobPriceChange(int value, int index)
+    {
+        jobPrices[index]= value;
+        calcPrice();
+    }
+    private void calcPrice()
+    {
+        invoice.AmountCost = 0;
+        foreach(int prc in jobPrices)
+        {
+            invoice.AmountCost += prc;
+        }
+    }
+
+    private async Task OnSubmit()
+    {        
+        try
+        {
+            if (string.IsNullOrEmpty(invoice.CompanyName) || string.IsNullOrEmpty(invoice.PropertyAddress) || string.IsNullOrEmpty(invoice.ContractorName))
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "Error",
+                        Detail = "Please fill in all required fields.",
+                        Duration = 3000
+                    });
+                return;
+            }
+
+            invoice.Status = 1;
+            invoice.InvoiceCreatedDate = DateTime.Now.Date;
+            invoice.JobDescriptionChoice = JsonConvert.SerializeObject(jobDescriptions);
+            await InvoiceService.UpdateInvoiceAsync(invoice);
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Success",
+                    Detail = "Invoice successfully submitted!",
+                    Duration = 3000
+                });
+            DialogService.Close(true); // Return success
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = $"Failed to add invoice: {ex.Message}",
+                    Duration = 3000
+                });
+        }
+    }
+}

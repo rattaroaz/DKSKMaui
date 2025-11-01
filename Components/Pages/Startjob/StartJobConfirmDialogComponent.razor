@@ -1,0 +1,168 @@
+﻿@page "/start-job-dialog"
+@inject DialogService DialogService
+@inject InvoiceService InvoiceService
+@inject NotificationService NotificationService
+@using Newtonsoft.Json;
+
+<RadzenCard>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Today's Date:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.TodaysDate
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Work Date:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.WorkDate
+        </RadzenColumn>
+    </RadzenRow>
+
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Company Name:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.CompanyName
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Property Address:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.PropertyAddress
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Unit:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.Unit
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Size:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.SizeBedroom Bedrooms, @invoice.SizeBathroom Bathrooms
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Gate Code:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.GateCode
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Lock Box:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.LockBox
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Garage remote code:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.GarageRemoteCode
+        </RadzenColumn>
+    </RadzenRow>
+
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Work Order:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @invoice.WorkOrder
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn>
+            <strong>Job Description:</strong>
+        </RadzenColumn>
+        <RadzenColumn>
+            @if (jobDescriptionArray != null)
+            {
+                <ul>
+                    @foreach (var job in jobDescriptionArray)
+                    {
+                        <li>@job</li>
+                    }
+                </ul>
+            }
+        </RadzenColumn>
+    </RadzenRow>
+
+
+    <RadzenRow class="mt-4">
+        <RadzenButton Text="Back" ButtonStyle="ButtonStyle.Secondary" Click="@CloseDialog" />
+        <RadzenButton Text="Submit" ButtonStyle="ButtonStyle.Primary" Click="@OnSubmit" />
+    </RadzenRow>
+</RadzenCard>
+
+@code {
+    [Parameter] public Invoice invoice { get; set; }
+    private string[] jobDescriptionArray;
+
+    protected override void OnInitialized()
+    {
+        // Decode JobDescriptionChoice JSON string to array
+        if (!string.IsNullOrWhiteSpace(invoice.JobDescriptionChoice))
+        {
+            jobDescriptionArray = JsonConvert.DeserializeObject<string[]>(invoice.JobDescriptionChoice);
+        }
+    }
+
+    void CloseDialog()
+    {
+        DialogService.Close(false); // Close without returning success
+    }
+
+    private async Task OnSubmit()
+    {
+        try
+        {
+
+            Invoice addedInvoice = await InvoiceService.AddInvoiceAsync(invoice);
+
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Success",
+                    Detail = "Invoice successfully added!",
+                    Duration = 3000
+                });
+
+            DialogService.Close(true); // Return success
+        }
+        catch (Exception ex)
+        {
+            // Error handling
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = $"Failed to add invoice: {ex.Message}",
+                    Duration = 3000
+                });
+        }
+    }
+}

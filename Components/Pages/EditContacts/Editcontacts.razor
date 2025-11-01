@@ -1,0 +1,32 @@
+@page "/editviewcontacts"
+
+<h3 class="text-center my-3"><RadzenIcon Icon="contacts" />Contacts</h3>
+
+<!-- Use Bootstrap row and col classes for responsiveness -->
+<div class="row justify-content-center">
+    <div class="col-md-6 col-12">
+        <RadzenRadioButtonList @bind-Value=@selectedValue TValue="int" class="mb-5">
+            <Items>
+                <RadzenRadioButtonListItem Text="Company" Value="1" />
+                <RadzenRadioButtonListItem Text="Contractor" Value="2" />
+            </Items>
+        </RadzenRadioButtonList>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-12">
+        @if (selectedValue == 1)
+        {
+            <DKSKMaui.Components.Pages.EditContacts.EditCompanny.Editcompany />
+        }
+        @if (selectedValue == 2)
+        {
+            <DKSKMaui.Components.Pages.EditContacts.EditContractor.Editcontractor />
+        }
+    </div>
+</div>
+
+@code {
+    public int selectedValue = 1;
+}

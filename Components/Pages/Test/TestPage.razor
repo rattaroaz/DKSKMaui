@@ -1,0 +1,173 @@
+@page "/test"
+@inject CompanyService CompanyService
+@inject InvoiceService InvoiceService
+@inject ILogger<TestPage> Logger
+
+<PageTitle>System Test</PageTitle>
+
+<div class="container mt-4">
+    <h2><RadzenIcon Icon="bug_report" /> System Functionality Test</h2>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <RadzenCard class="mb-3">
+                <h4>Database Connection Test</h4>
+                <p>Status: <span class="badge @(dbConnected ? "bg-success" : "bg-danger")">
+                    @(dbConnected ? "Connected" : "Disconnected")
+                </span></p>
+                <RadzenButton Text="Test Connection" Click="TestDatabaseConnection" ButtonStyle="ButtonStyle.Primary" />
+            </RadzenCard>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <RadzenCard class="mb-3">
+                <h4>Company Service Test</h4>
+                <p>Companies loaded: <strong>@companies.Count</strong></p>
+                <RadzenButton Text="Load Companies" Click="LoadCompanies" ButtonStyle="ButtonStyle.Secondary" />
+                
+                @if (companies.Any())
+                {
+                    <div class="mt-2">
+                        <small>Sample: @companies.First().Name</small>
+                    </div>
+                }
+            </RadzenCard>
+        </div>
+        
+        <div class="col-md-6">
+            <RadzenCard class="mb-3">
+                <h4>Invoice Service Test</h4>
+                <p>Invoices loaded: <strong>@invoices.Count</strong></p>
+                <RadzenButton Text="Load Invoices" Click="LoadInvoices" ButtonStyle="ButtonStyle.Secondary" />
+                
+                @if (invoices.Any())
+                {
+                    <div class="mt-2">
+                        <small>Sample: @invoices.First().CompanyName</small>
+                    </div>
+                }
+            </RadzenCard>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <RadzenCard>
+                <h4>Test Log</h4>
+                <div style="max-height: 300px; overflow-y: auto; background: #f8f9fa; padding: 10px; border-radius: 4px;">
+                    @foreach (var log in testLogs)
+                    {
+                        <div class="mb-1">
+                            <small class="text-muted">@log.Timestamp.ToString("HH:mm:ss")</small>
+                            <span class="badge @GetLogBadgeClass(log.Level)">@log.Level</span>
+                            @log.Message
+                        </div>
+                    }
+                </div>
+                <RadzenButton Text="Clear Log" Click="ClearLog" ButtonStyle="ButtonStyle.Light" class="mt-2" />
+            </RadzenCard>
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool dbConnected = false;
+    private List<DKSKMaui.Backend.Models.Companny> companies = new();
+    private List<DKSKMaui.Backend.Models.Invoice> invoices = new();
+    private List<TestLog> testLogs = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        AddLog("Info", "Test page initialized");
+        await TestDatabaseConnection();
+    }
+
+    private async Task TestDatabaseConnection()
+    {
+        try
+        {
+            AddLog("Info", "Testing database connection...");
+            await CompanyService.GetAllCompaniesAsync();
+            dbConnected = true;
+            AddLog("Success", "Database connection successful");
+        }
+        catch (Exception ex)
+        {
+            dbConnected = false;
+            AddLog("Error", $"Database connection failed: {ex.Message}");
+            Logger.LogError(ex, "Database connection test failed");
+        }
+        StateHasChanged();
+    }
+
+    private async Task LoadCompanies()
+    {
+        try
+        {
+            AddLog("Info", "Loading companies...");
+            companies = await CompanyService.GetAllCompaniesAsync();
+            AddLog("Success", $"Loaded {companies.Count} companies");
+        }
+        catch (Exception ex)
+        {
+            AddLog("Error", $"Failed to load companies: {ex.Message}");
+            Logger.LogError(ex, "Failed to load companies");
+        }
+        StateHasChanged();
+    }
+
+    private async Task LoadInvoices()
+    {
+        try
+        {
+            AddLog("Info", "Loading invoices...");
+            invoices = await InvoiceService.GetAllInvoicesAsync();
+            AddLog("Success", $"Loaded {invoices.Count} invoices");
+        }
+        catch (Exception ex)
+        {
+            AddLog("Error", $"Failed to load invoices: {ex.Message}");
+            Logger.LogError(ex, "Failed to load invoices");
+        }
+        StateHasChanged();
+    }
+
+    private void AddLog(string level, string message)
+    {
+        testLogs.Insert(0, new TestLog
+        {
+            Timestamp = DateTime.Now,
+            Level = level,
+            Message = message
+        });
+        
+        // Keep only last 50 logs
+        if (testLogs.Count > 50)
+        {
+            testLogs = testLogs.Take(50).ToList();
+        }
+    }
+
+    private void ClearLog()
+    {
+        testLogs.Clear();
+        StateHasChanged();
+    }
+
+    private string GetLogBadgeClass(string level) => level switch
+    {
+        "Success" => "bg-success",
+        "Error" => "bg-danger",
+        "Warning" => "bg-warning",
+        _ => "bg-info"
+    };
+
+    private class TestLog
+    {
+        public DateTime Timestamp { get; set; }
+        public string Level { get; set; } = "";
+        public string Message { get; set; } = "";
+    }
+}

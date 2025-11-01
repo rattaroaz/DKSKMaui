@@ -1,0 +1,55 @@
+﻿<h3>Addmanager</h3>
+@page "/addcontacts/addmanager"
+
+@if (selectedValue == 1)
+{
+    <div>
+    <input type="text" value="Manager Name" />
+</div>
+<div>
+    <input type="text" value="Company" />
+</div>
+<div>
+    <input type="text" value="Cell Phone" />
+</div>
+<div>
+    <input type="text" value="e-mail" />
+</div>
+<div>
+    <input type="text" value="Supervisor" />
+</div>
+<div>
+    <input type="text" value="Properties" />
+</div>
+
+<div>
+    <input type="button" value="Add Property" />
+    </div>
+    <div>
+        <input type="text" value="Special note" />
+    </div>
+}
+
+@if (selectedValue == 2)
+{
+        <div>Manager name:  Jabba Hutt</div>
+    <div>Company:  Property Brokers</div>
+        <div>Cell Phone:  333 442 5555</div>
+            <div>E-mail:  wwe@yahoo.com</div>
+                <div>Supervisor:  Jolly Rogers</div>
+    <div>Property:  44332 Laurel Avenue, Burbank, 88221</div>
+    <div>Property:  9922 Druid land, Pasadena, 92211</div>
+    <div>Special Note: don't call during business hours.</div>
+}
+
+<input type="button" value="Cancel" />
+<input type="Submit" @onclick="Done" />
+
+@code {
+    int selectedValue = 1;
+    public void Done()
+    {
+        selectedValue = 2;
+    }
+
+}

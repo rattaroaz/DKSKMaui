@@ -1,0 +1,38 @@
+﻿<h3>AddContacts</h3>
+@page "/addcontacts"
+@inject NavigationManager NavigationManager
+
+<RadzenRadioButtonList @bind-Value=@selectedValue TValue="int" class="mb-5">
+    <Items>
+        <RadzenRadioButtonListItem Text="Company" Value="1"/>
+        <RadzenRadioButtonListItem Text="Property" Value="2"/>
+        <RadzenRadioButtonListItem Text="Supervisor" Value="3"/>
+        <RadzenRadioButtonListItem Text="Manager" Value="4"/>
+        <RadzenRadioButtonListItem Text="Contractor" Value="5" />
+    </Items>
+</RadzenRadioButtonList>
+ 
+@if (selectedValue == 1)
+{
+    <Addcompany />
+}
+else if (selectedValue == 2) {
+    <Addproperty />
+}
+else if (selectedValue == 3)
+{
+    <Addsupervisor />
+}
+else if (selectedValue == 4)
+{
+     <Addmanager />
+}
+else if (selectedValue == 5)
+{
+    <Addcontractor />
+}
+
+
+@code {
+    public int selectedValue = 1; 
+}

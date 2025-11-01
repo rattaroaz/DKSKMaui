@@ -1,0 +1,202 @@
+﻿@page "/editcontacts/editcontractor"
+@inject ContractorService ContractorService
+@inject PropertiesService PropertiesService
+@inject SupervisorService SupervisorService
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+
+<RadzenCard>
+    <RadzenRow>
+        <RadzenColumn Size="6" MediumSize="8" LargeSize="6">
+            @if (!isNew)
+            {
+                <RadzenDropDown @bind-Value="selectedValue" Data="contractorList" Change="OnChange" Style="width: 100%;" />
+            }
+            else
+            {
+                <RadzenLabel Text="Add New Contractor" />
+            }
+        </RadzenColumn>
+        <RadzenColumn Size="6" MediumSize="4" LargeSize="3">
+            <RadzenButton Icon="person_add" Text="Add Contractor" Click="AddContractor" ButtonStyle="ButtonStyle.Primary" Style="width: 100%;" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    @if (selectedContractor != null)
+    {
+        <RadzenRow>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Name" />
+                <RadzenTextBox Placeholder="Name" @bind-Value="selectedContractor.Name" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="LicenseNumber" />
+                <RadzenTextBox Placeholder="LicenseNumber" @bind-Value="selectedContractor.LicenseNumber" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="SocailSecurityNumber" />
+                <RadzenTextBox Placeholder="SocailSecurityNumber" @bind-Value="selectedContractor.SocailSecurityNumber" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="ContractorID" />
+                <RadzenTextBox Placeholder="ContractorID" @bind-Value="selectedContractor.ContractorID" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="PayrollPercent" />
+                <RadzenTextBox Placeholder="PayrollPercent" @bind-Value="selectedContractor.PayrollPercent" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="CellPhone" />
+                <RadzenTextBox Placeholder="CellPhone" @bind-Value="selectedContractor.CellPhone" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Email" />
+                <RadzenTextBox Placeholder="Email" @bind-Value="selectedContractor.Email" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Address" />
+                <RadzenTextBox Placeholder="Address" @bind-Value="selectedContractor.Address" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="City" />
+                <RadzenTextBox Placeholder="City" @bind-Value="selectedContractor.City" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="Zip" />
+                <RadzenTextBox Placeholder="Zip" @bind-Value="selectedContractor.Zip" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="SpecialNote" />
+                <RadzenTextBox Placeholder="SpecialNote" @bind-Value="selectedContractor.SpecialNote" Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenLabel Text="IsActive" />
+                <tr></tr>
+                <RadzenCheckBox @bind-Value="selectedContractor.IsActive"></RadzenCheckBox>
+            </RadzenColumn>
+            @if (!isNew)
+            {
+                <RadzenColumn Size="2" class="text-right">
+                    <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Danger" Click="() => DeleteContractor(selectedContractor)" Style="margin-top: 25px;" />
+                </RadzenColumn>
+            }
+        </RadzenRow>
+
+        <RadzenRow>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenButton Text="Cancel" Click="OnCancel" ButtonStyle="ButtonStyle.Danger" Style="width: 100%;margin-top: 25px;" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" MediumSize="6">
+                <RadzenButton Text="Submit" Click="OnSubmit" ButtonStyle="ButtonStyle.Success" Style="width: 100%;margin-top: 25px;" />
+            </RadzenColumn>
+        </RadzenRow>
+    }
+</RadzenCard>
+
+@code {
+    private void OnChange(object value)
+    {
+        selectedContractor = contractors.FirstOrDefault(c => c.Name == value); // Find the selected company object
+        isNew = false;
+    }
+
+    private void OnCancel()
+    {
+        selectedContractor = null;
+        isNew = false;
+    }
+
+    private async Task OnSubmit()
+    {
+        if (selectedContractor != null)
+        {
+            bool res = await ContractorService.SaveContractorAsync(selectedContractor);
+            if (res)
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Success",
+                        Detail = "Saved Successfully!",
+                        Duration = 3000
+                    });
+                selectedContractor = null;
+                isNew = false;
+                await LoadContractorDataAsync();
+
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Error,
+                        Summary = "Error",
+                        Detail = "Failed to save. Please check if you entered all the information.",
+                        Duration = 3000
+                    });
+            }
+
+        }
+    }
+
+    private void AddContractor()
+    {
+        isNew = true;
+        selectedContractor = new Contractor() { Id = 0 };        
+    }
+
+
+    private async Task DeleteContractor(Contractor contractor)
+    {
+        if (isNew) return;
+        var result = await DialogService.Confirm("Are you sure you want to delete this Company?", "Confirm Delete", new ConfirmOptions { OkButtonText = "Yes", CancelButtonText = "No" });
+        if (result.HasValue && result.Value)
+        {
+           bool res = await ContractorService.DeleteAsync(contractor.Id);
+                        if (res)
+                        {
+                            NotificationService.Notify(new NotificationMessage
+                                {
+                                    Severity = NotificationSeverity.Success,
+                                    Summary = "Success",
+                                    Detail = "Deleted Successfully!",
+                                    Duration = 3000
+                                });
+                            await LoadContractorDataAsync();
+                            selectedContractor = null;
+                        }
+                        else
+                        {
+                            NotificationService.Notify(new NotificationMessage
+                                {
+                                    Severity = NotificationSeverity.Error,
+                                    Summary = "Error",
+                                    Detail = "Failed to Delete.",
+                                    Duration = 3000
+                                });
+                        }
+        }
+    }
+
+
+
+    private string? selectedValue;
+    private List<Contractor> contractors = new List<Contractor>();
+    private List<string> contractorList = new List<string>();
+
+    private Contractor? selectedContractor;
+
+    private bool isNew = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadContractorDataAsync();
+
+    }
+
+    private async Task LoadContractorDataAsync()
+    {
+        contractors = await ContractorService.GetAllContractorsAsync();
+        contractorList = contractors.Select(c => c.Name).ToList();
+    }
+}

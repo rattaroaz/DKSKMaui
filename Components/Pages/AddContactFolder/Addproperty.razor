@@ -1,0 +1,43 @@
+﻿<h3>Addproperty</h3>
+@page "/addcontacts/addproperty"
+
+@if (selectedValue == 1)
+{
+<input type="text" value="Property name" />
+    <input type="text" value="Company" />
+<input type="text" value="Address" />
+<input type="text" value="City" />
+<input type="text" value="Zip" />
+<input type="text" value="Gate Code" />
+<input type="text" value="lock box code" />
+<input type="text" value="Supervisor" />
+<input type="text" value="Manager" />
+<input type="text" value="Special note" />
+}
+
+@if (selectedValue == 2)
+{
+       <div>Property Name:  8889 Descanso Gardens</div>
+       <div>Company Name:  U Suck Properties</div>
+    <div>Address:  8889 Descanso Gardens Drive</div>
+    <div>City:  La Canada</div>
+    <div>Zip:  33994</div>
+    <div>Gate Code:  8812</div>
+    <div>Lock box code:  12-33-53</div>
+    <div>Supervisor:  Sumdum Guy</div>
+    <div>Manager:  Other Brother</div>
+    <div>Special Note:  call Other Brother first, but if not respond in 1 hour, call Sumdum Guy.</div>
+}
+
+<input type="button" value="Cancel" />
+<input type="Submit" @onclick="Done"/>
+
+
+@code {
+    int selectedValue = 1;
+    public void Done()
+    {
+        selectedValue = 2;
+
+    }
+}

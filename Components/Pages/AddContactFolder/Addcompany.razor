@@ -1,0 +1,101 @@
+@inject CompanyService CompanyService
+@inject NotificationService NotificationService
+@inject NavigationManager NavigationManager
+
+<h3>Add Company</h3>
+@page "/addcontacts/addcompany"
+
+<EditForm Model="@company" OnValidSubmit="@SubmitCompany">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Company name *</label>
+        <input type="text" id="name" class="form-control" @bind="company.Name" placeholder="Enter company name" />
+        <ValidationMessage For="@(() => company.Name)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="owner" class="form-label">Owner</label>
+        <input type="text" id="owner" class="form-control" @bind="company.Owner" placeholder="Enter owner name" />
+    </div>
+
+    <div class="mb-3">
+        <label for="phone" class="form-label">Cell Phone</label>
+        <input type="tel" id="phone" class="form-control" @bind="company.Phone" placeholder="Enter phone number" />
+        <ValidationMessage For="@(() => company.Phone)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" id="email" class="form-control" @bind="company.Email" placeholder="Enter email address" />
+        <ValidationMessage For="@(() => company.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" id="address" class="form-control" @bind="company.Address" placeholder="Enter address" />
+        <ValidationMessage For="@(() => company.Address)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input type="text" id="city" class="form-control" @bind="company.City" placeholder="Enter city" />
+        <ValidationMessage For="@(() => company.City)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="zip" class="form-label">Zip</label>
+        <input type="text" id="zip" class="form-control" @bind="company.Zip" placeholder="Enter zip code" />
+        <ValidationMessage For="@(() => company.Zip)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="specialnote" class="form-label">Special note</label>
+        <textarea id="specialnote" class="form-control" rows="3" @bind="company.SpecialNote" placeholder="Enter any special notes"></textarea>
+        <ValidationMessage For="@(() => company.SpecialNote)" />
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</EditForm>
+
+@code {
+    private Companny company = new Companny();
+
+    private async Task SubmitCompany()
+    {
+        try
+        {
+            await CompanyService.SaveCompanyAsync(company);
+
+            NotificationService.Notify(new Radzen.NotificationMessage
+            {
+                Severity = Radzen.NotificationSeverity.Success,
+                Summary = "Success",
+                Detail = $"Company '{company.Name}' added successfully",
+                Duration = 3000
+            });
+
+            // Reset form for new entry
+            company = new Companny();
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new Radzen.NotificationMessage
+            {
+                Severity = Radzen.NotificationSeverity.Error,
+                Summary = "Error",
+                Detail = $"Failed to add company: {ex.Message}",
+                Duration = 5000
+            });
+        }
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/"); // Go back to home
+    }
+}

@@ -1,0 +1,17 @@
+@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <article class="content px-4">
+            <Microsoft.AspNetCore.Components.Web.ErrorBoundary>
+                @Body
+            </Microsoft.AspNetCore.Components.Web.ErrorBoundary>
+        </article>
+    </main>
+    <RadzenDialog />
+    <RadzenNotification />
+</div>

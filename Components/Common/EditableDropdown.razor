@@ -1,0 +1,62 @@
+@using Radzen
+@using Radzen.Blazor
+
+<div style="position: relative; display: inline-block; width: 100%;">
+    <!-- Editable Input -->
+    <RadzenTextBox @bind-Value="SelectedItem"
+                   Placeholder="Type or select an item"
+                   Style="width: calc(100% - 40px);" 
+                   Change="OnInputChange"
+                   />
+
+    <!-- Conditionally show the button if there are items in the dropdown -->
+    @if (Data != null && Data.Count > 0)
+    {
+        <!-- Arrow Button to Open Dialog -->
+        <button @onclick="ShowDialog"
+                style="position: absolute; top: 0; right: 0; height: 100%; width: 40px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <RadzenIcon Icon="expand_more" Style="font-size: 24px;" /> <!-- Using RadzenIcon for down arrow -->
+        </button>
+    }
+
+
+    <!-- Dialog for selection -->
+    <!-- The dialog content is handled in the code-behind -->
+</div>
+
+@code {
+    [Inject] private DialogService DialogService { get; set; }
+
+    // Data for the dropdown (List<string> provided by parent)
+    [Parameter] public List<string> Data { get; set; }
+
+    // Single property for selected item
+    [Parameter] public string SelectedItem { get; set; }
+    [Parameter] public EventCallback<string> SelectedItemChanged { get; set; }
+
+    // Show the dialog when the arrow button is clicked
+    private async Task ShowDialog()
+    {
+        var result = await DialogService.OpenAsync<SelectItemDialog>(
+            "",
+            new Dictionary<string, object> { { "Data", Data } },
+            new DialogOptions
+                {
+                    Width = "300px",
+                    Height = "300px",
+                    CloseDialogOnOverlayClick = true
+                });
+        if (result != null)
+        {
+            SelectedItem = result.ToString();
+            await SelectedItemChanged.InvokeAsync(SelectedItem);
+        }
+    }
+
+    // Handle changes in the input box
+    private async Task OnInputChange(object value)
+    {
+        SelectedItem = value?.ToString();
+        await SelectedItemChanged.InvokeAsync(SelectedItem);
+    }
+}

@@ -1,0 +1,90 @@
+@page "/"
+@inject MyCompanyInfoService MyCompanyInfoService
+@inject Radzen.NotificationService NotificationService
+@inject GlobalStateService GlobalStateService
+
+@if (myCompanyInfo != null)
+{
+    <EditForm Model="@myCompanyInfo" OnValidSubmit="@UpdateCompanyInfo">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div style="margin-bottom: 20px;">
+            <RadzenLabel Text="My Company Name" />
+            <RadzenTextBox @bind-Value="myCompanyInfo.Name" Style="width: 100%;" />
+            <ValidationMessage For="@(() => myCompanyInfo.Name)" />
+
+            <RadzenLabel Text="My Company Phone" />
+            <RadzenTextBox @bind-Value="myCompanyInfo.Phone" Style="width: 100%;" />
+            <ValidationMessage For="@(() => myCompanyInfo.Phone)" />
+
+            <RadzenLabel Text="My Company Email" />
+            <RadzenTextBox @bind-Value="myCompanyInfo.Email" Style="width: 100%;" />
+            <ValidationMessage For="@(() => myCompanyInfo.Email)" />
+
+            <RadzenLabel Text="My Company Address" />
+            <RadzenTextBox @bind-Value="myCompanyInfo.Address" Style="width: 100%;" />
+            <ValidationMessage For="@(() => myCompanyInfo.Address)" />
+
+            <RadzenLabel Text="My Company License Number" />
+            <RadzenTextBox @bind-Value="myCompanyInfo.LicenseNumber" Style="width: 100%;" />
+            <ValidationMessage For="@(() => myCompanyInfo.LicenseNumber)" />
+
+            <RadzenLabel Text="My Company Zip Code" />
+            <RadzenTextBox @bind-Value="myCompanyInfo.Zip" Style="width: 100%;" />
+            <ValidationMessage For="@(() => myCompanyInfo.Zip)" />
+
+            <RadzenButton Text="Save Changes" ButtonType="ButtonType.Submit" Style="margin-top: 20px;" />
+            <hr />
+        </div>
+    </EditForm>
+}
+
+@code {
+    MyCompanyInfo? myCompanyInfo;
+
+    protected override async Task OnInitializedAsync()
+    {
+        myCompanyInfo = await MyCompanyInfoService.GetInfoAsync();
+    }
+
+    private async Task UpdateCompanyInfo()
+    {
+        if (myCompanyInfo == null)
+        {
+            NotificationService.Notify(new Radzen.NotificationMessage
+                {
+                    Severity = Radzen.NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = "No company info to update",
+                    Duration = 3000
+                });
+            return;
+        }
+
+        try
+        {
+            await MyCompanyInfoService.UpdateInfoAsync(myCompanyInfo);
+
+            // Show success notification
+            NotificationService.Notify(new Radzen.NotificationMessage
+                {
+                    Severity = Radzen.NotificationSeverity.Success,
+                    Summary = "Success",
+                    Detail = "Company info updated successfully",
+                    Duration = 3000 // Display for 3 seconds
+                });
+        }
+        catch (Exception ex)
+        {
+            // Show error notification
+            NotificationService.Notify(new Radzen.NotificationMessage
+                {
+                    Severity = Radzen.NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = $"Failed to update company info: {ex.Message}",
+                    Duration = 5000
+                });
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@inject GlobalStateService GlobalStateService
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">
+            <RadzenIcon Icon="apps" />
+            DKSK
+        </a>
+    </div>
+</div>
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="test" Match="NavLinkMatch.All">
+                <RadzenIcon Icon="bug_report"/>System Test
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="startjob" Match="NavLinkMatch.All">
+            <RadzenIcon Icon="description"/>Start Job
+        </NavLink>
+    </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="activejobs" Match="NavLinkMatch.All">
+                <RadzenIcon Icon="work" />Active_Jobs
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="createinvoice">
+                <RadzenIcon Icon="receipt_long" />Create Invoice
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="accountsreceivable">
+                <RadzenIcon Icon="account_balance" />Accounts_Receivable
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink href="agingreports" class="nav-link">
+                <RadzenIcon Icon="calendar_today" /> Aging Reports
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+
+            <NavLink href="sales" class="nav-link">
+                <RadzenIcon Icon="trending_up" />Sales
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="payroll">
+                <RadzenIcon Icon="money" /> Payroll
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="contractorjobs">
+                <RadzenIcon Icon="construction" />Contractor_Jobs
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="editviewcontacts">
+                <RadzenIcon Icon="contacts" />Contacts
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="newjobs">
+                <RadzenIcon Icon="add_circle_outline" />New Jobs
+            </NavLink>
+        </div>
+    </nav>
+</div>
+

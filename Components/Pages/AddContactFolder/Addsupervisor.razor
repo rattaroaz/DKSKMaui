@@ -1,0 +1,62 @@
+﻿<h3>Addsupervisor</h3>
+@page "/addcontacts/addsupervisor"
+
+@if (selectedValue == 1)
+{
+    <div>
+    <input type="text" value="Supervisor Name" />
+</div>
+
+<div>
+    <input type="text" value="Company" />
+</div>
+<div>
+    <input type="text" value="Cell Phone" />
+</div>
+
+<div>
+    <input type="text" value="e-mail" />
+</div>
+
+<div>
+    <input type="text" value="Managers" />
+</div>
+<div>
+    <input type="button" value="Add Manager" />
+</div>
+<div>
+    <input type="text" value="Properties" />
+</div>
+<div>
+    <input type="button" value="Add Property" />
+</div>
+<div>
+    <input type="text" value="Special note" />
+</div>
+}
+ 
+@if (selectedValue == 2)
+{
+        <div>Supervisor name:  Frank N. Stein</div>
+    <div>Company:  Monsters, Ince</div>
+    <div>Cell Phone:  883 221 2453</div>
+    <div>E-mail:  iiffds@yahoo.com</div>
+    <div>Managers:  Drack U. Laugh</div>
+    <div>Managers:  Wolfe Mann</div>
+    <div>Managers:  Manti Corr</div>
+    <div>Properties:  9883 Substation St, Los Angeles 88223</div>
+    <div>Special Note:  None</div>
+}
+ 
+<input type="button" value="Cancel" />
+<input type="Submit" @onclick="Done"/>
+
+@code {
+    int selectedValue = 1;
+    public void Done()
+    {
+        selectedValue = 2;
+        StateHasChanged();
+
+    }
+}

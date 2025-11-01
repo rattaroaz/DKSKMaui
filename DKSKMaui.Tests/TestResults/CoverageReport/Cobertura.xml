@@ -1,0 +1,2198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.12277867528271405" branch-rate="0.07462686567164178" lines-covered="76" lines-valid="619" branches-covered="20" branches-valid="268" complexity="355" version="0" timestamp="1761877469">
+  <sources>
+    <source>C:\Users\kimri\</source>
+  </sources>
+  <packages>
+    <package name="DKSKMaui" line-rate="0.12277867528271405" branch-rate="0.07462686567164178" complexity="355">
+      <classes>
+        <class name="DKSKMaui.App" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\App.xaml.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="CreateWindow" signature="(Microsoft.Maui.IActivationState)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
+                <line number="16" hits="0" branch="false" />
+                <line number="17" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="false" />
+                <line number="7" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="false" />
+            <line number="7" hits="0" branch="false" />
+            <line number="8" hits="0" branch="false" />
+            <line number="12" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="16" hits="0" branch="false" />
+            <line number="17" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.CompanyService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\CompanyService.cs" line-rate="0.18181818181818182" branch-rate="0" complexity="25">
+          <methods>
+            <method name="GetCompanyInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="80" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="84" hits="0" branch="false" />
+                <line number="85" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetSupervisorInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="88" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="90" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="92" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="94" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="96" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="101" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetPropertyInfo" signature="(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1&lt;DKSKMaui.Backend.Models.Companny&gt;)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="105" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="107" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="109" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="111" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="113" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="118" hits="0" branch="false" />
+                <line number="119" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.CompanyService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="15" branch="false" />
+                <line number="15" hits="15" branch="false" />
+                <line number="16" hits="15" branch="false" />
+                <line number="17" hits="15" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="15" branch="false" />
+            <line number="15" hits="15" branch="false" />
+            <line number="16" hits="15" branch="false" />
+            <line number="17" hits="15" branch="false" />
+            <line number="80" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="84" hits="0" branch="false" />
+            <line number="85" hits="0" branch="false" />
+            <line number="88" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="90" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="92" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="94" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="96" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="101" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="105" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="107" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="109" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="111" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="113" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="118" hits="0" branch="false" />
+            <line number="119" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.ContractorService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\ContractorService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.ContractorService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="21" branch="false" />
+                <line number="15" hits="21" branch="false" />
+                <line number="16" hits="21" branch="false" />
+                <line number="17" hits="21" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="21" branch="false" />
+            <line number="15" hits="21" branch="false" />
+            <line number="16" hits="21" branch="false" />
+            <line number="17" hits="21" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.GlobalStateService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\GlobalStateService.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="NotifyStateChanged" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="9" hits="6" branch="true" condition-coverage="100% (2/2)" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="6" branch="true" condition-coverage="100% (2/2)" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.InvoiceService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\InvoiceService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.InvoiceService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="26" branch="false" />
+                <line number="15" hits="26" branch="false" />
+                <line number="16" hits="26" branch="false" />
+                <line number="17" hits="26" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="26" branch="false" />
+            <line number="15" hits="26" branch="false" />
+            <line number="16" hits="26" branch="false" />
+            <line number="17" hits="26" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.JobDescriptionService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\NewJobsService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.JobDescriptionService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="20" branch="false" />
+                <line number="15" hits="20" branch="false" />
+                <line number="16" hits="20" branch="false" />
+                <line number="17" hits="20" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="20" branch="false" />
+            <line number="15" hits="20" branch="false" />
+            <line number="16" hits="20" branch="false" />
+            <line number="17" hits="20" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.MyCompanyInfoService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\MyCompanyInfoService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.MyCompanyInfoService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="12" branch="false" />
+                <line number="15" hits="12" branch="false" />
+                <line number="16" hits="12" branch="false" />
+                <line number="17" hits="12" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="12" branch="false" />
+            <line number="15" hits="12" branch="false" />
+            <line number="16" hits="12" branch="false" />
+            <line number="17" hits="12" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.PropertiesService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\PropertiesService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.PropertiesService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="15" branch="false" />
+                <line number="15" hits="15" branch="false" />
+                <line number="16" hits="15" branch="false" />
+                <line number="17" hits="15" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="15" branch="false" />
+            <line number="15" hits="15" branch="false" />
+            <line number="16" hits="15" branch="false" />
+            <line number="17" hits="15" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Backend.Services.SupervisorService" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Backend\Services\SupervisorService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1&lt;DKSKMaui.Backend.Services.SupervisorService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="6" branch="false" />
+                <line number="15" hits="6" branch="false" />
+                <line number="16" hits="6" branch="false" />
+                <line number="17" hits="6" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="6" branch="false" />
+            <line number="15" hits="6" branch="false" />
+            <line number="16" hits="6" branch="false" />
+            <line number="17" hits="6" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Common.CustomErrorBoundary" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Common\CustomErrorBoundary.razor" line-rate="0" branch-rate="1" complexity="3">
+          <methods>
+            <method name="Recover" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="38" hits="0" branch="false" />
+                <line number="39" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ToggleDetails" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="43" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnParametersSet" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="51" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="38" hits="0" branch="false" />
+            <line number="39" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="51" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Common.EditableDropdown" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Common\EditableDropdown.razor" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="13" hits="0" branch="true" condition-coverage="0% (0/4)" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="true" condition-coverage="0% (0/4)" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Common.SelectItemDialog" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Common\SelectItemDialog.razor" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="OnItemChange" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="32" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="33" hits="0" branch="false" />
+                <line number="34" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnInitialized" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="32" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="33" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AccountsReceivable.AccountsReceivable" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AccountsReceivable\AccountsReceivable.razor" line-rate="0.18032786885245902" branch-rate="0" complexity="29">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="26" hits="0" branch="true" condition-coverage="0% (0/4)" />
+              </lines>
+            </method>
+            <method name="OnColumnReordered" signature="(Radzen.DataGridColumnReorderedEventArgs`1&lt;DKSKMaui.Backend.Models.Invoice&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="125" hits="0" branch="false" />
+                <line number="126" hits="0" branch="false" />
+                <line number="127" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="CheckGridInitialization" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="161" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="164" hits="0" branch="false" />
+                <line number="165" hits="0" branch="false" />
+                <line number="166" hits="0" branch="false" />
+                <line number="167" hits="0" branch="false" />
+                <line number="168" hits="0" branch="false" />
+                <line number="169" hits="0" branch="false" />
+                <line number="170" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+                <line number="172" hits="0" branch="false" />
+                <line number="173" hits="0" branch="false" />
+                <line number="174" hits="0" branch="false" />
+                <line number="175" hits="0" branch="false" />
+                <line number="177" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="Dispose" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="196" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="197" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetJDList" signature="(DKSKMaui.Backend.Models.Invoice)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="237" hits="0" branch="false" />
+                <line number="238" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="242" hits="0" branch="false" />
+                <line number="243" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="245" hits="0" branch="false" />
+                <line number="246" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="248" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="250" hits="0" branch="false" />
+                <line number="251" hits="0" branch="false" />
+                <line number="252" hits="0" branch="false" />
+                <line number="255" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="257" hits="0" branch="false" />
+                <line number="260" hits="0" branch="false" />
+                <line number="261" hits="0" branch="false" />
+                <line number="264" hits="0" branch="false" />
+                <line number="266" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnCompanyNameChanged" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="270" hits="0" branch="false" />
+                <line number="272" hits="0" branch="false" />
+                <line number="273" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnFilter" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="277" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="279" hits="0" branch="false" />
+                <line number="283" hits="0" branch="false" />
+                <line number="287" hits="0" branch="false" />
+                <line number="288" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnCheckboxChanged" signature="(DKSKMaui.Backend.Models.Invoice,System.Object)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="292" hits="0" branch="false" />
+                <line number="293" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="295" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="297" hits="0" branch="false" />
+                <line number="302" hits="0" branch="false" />
+                <line number="304" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="106" hits="3" branch="false" />
+                <line number="107" hits="3" branch="false" />
+                <line number="108" hits="3" branch="false" />
+                <line number="109" hits="3" branch="false" />
+                <line number="110" hits="3" branch="false" />
+                <line number="111" hits="3" branch="false" />
+                <line number="113" hits="3" branch="false" />
+                <line number="116" hits="3" branch="false" />
+                <line number="118" hits="3" branch="false" />
+                <line number="119" hits="3" branch="false" />
+                <line number="120" hits="3" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="106" hits="3" branch="false" />
+            <line number="107" hits="3" branch="false" />
+            <line number="108" hits="3" branch="false" />
+            <line number="109" hits="3" branch="false" />
+            <line number="110" hits="3" branch="false" />
+            <line number="111" hits="3" branch="false" />
+            <line number="113" hits="3" branch="false" />
+            <line number="116" hits="3" branch="false" />
+            <line number="118" hits="3" branch="false" />
+            <line number="119" hits="3" branch="false" />
+            <line number="120" hits="3" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="126" hits="0" branch="false" />
+            <line number="127" hits="0" branch="false" />
+            <line number="161" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="164" hits="0" branch="false" />
+            <line number="165" hits="0" branch="false" />
+            <line number="166" hits="0" branch="false" />
+            <line number="167" hits="0" branch="false" />
+            <line number="168" hits="0" branch="false" />
+            <line number="169" hits="0" branch="false" />
+            <line number="170" hits="0" branch="false" />
+            <line number="171" hits="0" branch="false" />
+            <line number="172" hits="0" branch="false" />
+            <line number="173" hits="0" branch="false" />
+            <line number="174" hits="0" branch="false" />
+            <line number="175" hits="0" branch="false" />
+            <line number="177" hits="0" branch="false" />
+            <line number="196" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="197" hits="0" branch="false" />
+            <line number="237" hits="0" branch="false" />
+            <line number="238" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="242" hits="0" branch="false" />
+            <line number="243" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="245" hits="0" branch="false" />
+            <line number="246" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="248" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="250" hits="0" branch="false" />
+            <line number="251" hits="0" branch="false" />
+            <line number="252" hits="0" branch="false" />
+            <line number="255" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="257" hits="0" branch="false" />
+            <line number="260" hits="0" branch="false" />
+            <line number="261" hits="0" branch="false" />
+            <line number="264" hits="0" branch="false" />
+            <line number="266" hits="0" branch="false" />
+            <line number="270" hits="0" branch="false" />
+            <line number="272" hits="0" branch="false" />
+            <line number="273" hits="0" branch="false" />
+            <line number="277" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="279" hits="0" branch="false" />
+            <line number="283" hits="0" branch="false" />
+            <line number="287" hits="0" branch="false" />
+            <line number="288" hits="0" branch="false" />
+            <line number="292" hits="0" branch="false" />
+            <line number="293" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="295" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="297" hits="0" branch="false" />
+            <line number="302" hits="0" branch="false" />
+            <line number="304" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.ActiveJobs.ActiveJobs" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\ActiveJobs\ActiveJobs.razor" line-rate="0" branch-rate="0" complexity="34">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="37" hits="0" branch="true" condition-coverage="0% (0/4)" />
+              </lines>
+            </method>
+            <method name="OnCheckboxChanged" signature="(DKSKMaui.Backend.Models.Invoice,System.Object)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="92" hits="0" branch="false" />
+                <line number="93" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="95" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="97" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnCompanyNameChanged" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="130" hits="0" branch="false" />
+                <line number="131" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnStartDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="135" hits="0" branch="false" />
+                <line number="136" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnEndDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="140" hits="0" branch="false" />
+                <line number="141" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnDateChanged" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="145" hits="0" branch="false" />
+                <line number="146" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ApplyFilters" signature="()" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="150" hits="0" branch="false" />
+                <line number="153" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="155" hits="0" branch="false" />
+                <line number="159" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="161" hits="0" branch="false" />
+                <line number="163" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnColumnReordered" signature="(Radzen.DataGridColumnReorderedEventArgs`1&lt;DKSKMaui.Backend.Models.Invoice&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="170" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+                <line number="172" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ReorderColumns" signature="(System.Collections.Generic.List`1&lt;System.String&gt;)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="183" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="185" hits="0" branch="false" />
+                <line number="186" hits="0" branch="false" />
+                <line number="190" hits="0" branch="false" />
+                <line number="191" hits="0" branch="false" />
+                <line number="192" hits="0" branch="false" />
+                <line number="194" hits="0" branch="false" />
+                <line number="195" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="197" hits="0" branch="false" />
+                <line number="199" hits="0" branch="false" />
+                <line number="201" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetJDList" signature="(DKSKMaui.Backend.Models.Invoice)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="310" hits="0" branch="false" />
+                <line number="311" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="315" hits="0" branch="false" />
+                <line number="316" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="318" hits="0" branch="false" />
+                <line number="319" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="321" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="323" hits="0" branch="false" />
+                <line number="324" hits="0" branch="false" />
+                <line number="325" hits="0" branch="false" />
+                <line number="328" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="330" hits="0" branch="false" />
+                <line number="333" hits="0" branch="false" />
+                <line number="334" hits="0" branch="false" />
+                <line number="337" hits="0" branch="false" />
+                <line number="339" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="82" hits="0" branch="false" />
+                <line number="83" hits="0" branch="false" />
+                <line number="84" hits="0" branch="false" />
+                <line number="86" hits="0" branch="false" />
+                <line number="87" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+                <line number="92" hits="0" branch="false" />
+                <line number="93" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="95" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="97" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
+                <line number="130" hits="0" branch="false" />
+                <line number="131" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+                <line number="135" hits="0" branch="false" />
+                <line number="136" hits="0" branch="false" />
+                <line number="140" hits="0" branch="false" />
+                <line number="141" hits="0" branch="false" />
+                <line number="145" hits="0" branch="false" />
+                <line number="146" hits="0" branch="false" />
+                <line number="150" hits="0" branch="false" />
+                <line number="153" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="155" hits="0" branch="false" />
+                <line number="159" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="161" hits="0" branch="false" />
+                <line number="163" hits="0" branch="false" />
+                <line number="165" hits="0" branch="false" />
+                <line number="170" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+                <line number="172" hits="0" branch="false" />
+                <line number="183" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="185" hits="0" branch="false" />
+                <line number="186" hits="0" branch="false" />
+                <line number="190" hits="0" branch="false" />
+                <line number="191" hits="0" branch="false" />
+                <line number="192" hits="0" branch="false" />
+                <line number="194" hits="0" branch="false" />
+                <line number="195" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="197" hits="0" branch="false" />
+                <line number="199" hits="0" branch="false" />
+                <line number="201" hits="0" branch="false" />
+                <line number="294" hits="0" branch="false" />
+                <line number="296" hits="0" branch="false" />
+                <line number="297" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="37" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="82" hits="0" branch="false" />
+            <line number="83" hits="0" branch="false" />
+            <line number="84" hits="0" branch="false" />
+            <line number="86" hits="0" branch="false" />
+            <line number="87" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="92" hits="0" branch="false" />
+            <line number="93" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="95" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="97" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="104" hits="0" branch="false" />
+            <line number="130" hits="0" branch="false" />
+            <line number="131" hits="0" branch="false" />
+            <line number="132" hits="0" branch="false" />
+            <line number="135" hits="0" branch="false" />
+            <line number="136" hits="0" branch="false" />
+            <line number="140" hits="0" branch="false" />
+            <line number="141" hits="0" branch="false" />
+            <line number="145" hits="0" branch="false" />
+            <line number="146" hits="0" branch="false" />
+            <line number="150" hits="0" branch="false" />
+            <line number="153" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="155" hits="0" branch="false" />
+            <line number="159" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="161" hits="0" branch="false" />
+            <line number="163" hits="0" branch="false" />
+            <line number="165" hits="0" branch="false" />
+            <line number="170" hits="0" branch="false" />
+            <line number="171" hits="0" branch="false" />
+            <line number="172" hits="0" branch="false" />
+            <line number="183" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="185" hits="0" branch="false" />
+            <line number="186" hits="0" branch="false" />
+            <line number="190" hits="0" branch="false" />
+            <line number="191" hits="0" branch="false" />
+            <line number="192" hits="0" branch="false" />
+            <line number="194" hits="0" branch="false" />
+            <line number="195" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="197" hits="0" branch="false" />
+            <line number="199" hits="0" branch="false" />
+            <line number="201" hits="0" branch="false" />
+            <line number="294" hits="0" branch="false" />
+            <line number="296" hits="0" branch="false" />
+            <line number="297" hits="0" branch="false" />
+            <line number="310" hits="0" branch="false" />
+            <line number="311" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="315" hits="0" branch="false" />
+            <line number="316" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="318" hits="0" branch="false" />
+            <line number="319" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="321" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="323" hits="0" branch="false" />
+            <line number="324" hits="0" branch="false" />
+            <line number="325" hits="0" branch="false" />
+            <line number="328" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="330" hits="0" branch="false" />
+            <line number="333" hits="0" branch="false" />
+            <line number="334" hits="0" branch="false" />
+            <line number="337" hits="0" branch="false" />
+            <line number="339" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcompany" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcompany.razor" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="4" hits="19" branch="true" condition-coverage="100% (2/2)" />
+                <line number="19" hits="19" branch="true" condition-coverage="100% (2/2)" />
+              </lines>
+            </method>
+            <method name="Done" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="36" hits="4" branch="false" />
+                <line number="37" hits="4" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="19" branch="true" condition-coverage="100% (2/2)" />
+            <line number="19" hits="19" branch="true" condition-coverage="100% (2/2)" />
+            <line number="36" hits="4" branch="false" />
+            <line number="37" hits="4" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcontacts" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcontacts.razor" line-rate="0" branch-rate="0" complexity="11">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="15" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="22" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="26" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="30" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="37" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="22" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="26" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="30" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="37" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addcontractor" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addcontractor.razor" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="4" hits="24" branch="true" condition-coverage="100% (2/2)" />
+                <line number="20" hits="24" branch="true" condition-coverage="100% (2/2)" />
+              </lines>
+            </method>
+            <method name="Done" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="6" branch="false" />
+                <line number="42" hits="6" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="24" branch="true" condition-coverage="100% (2/2)" />
+            <line number="20" hits="24" branch="true" condition-coverage="100% (2/2)" />
+            <line number="41" hits="6" branch="false" />
+            <line number="42" hits="6" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addmanager" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addmanager.razor" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="33" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="Done" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="49" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="33" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="49" hits="0" branch="false" />
+            <line number="52" hits="0" branch="false" />
+            <line number="53" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addproperty" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addproperty.razor" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="Done" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="40" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="37" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="37" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AddContactFolder.Addsupervisor" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AddContactFolder\Addsupervisor.razor" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="38" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="Done" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
+                <line number="61" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="55" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="38" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="55" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="61" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.AgingReports.Agingreports" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\AgingReports\Agingreports.razor" line-rate="0" branch-rate="0" complexity="26">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="46" hits="0" branch="true" condition-coverage="0% (0/4)" />
+              </lines>
+            </method>
+            <method name="OnCompanyNameChanged" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="171" hits="0" branch="false" />
+                <line number="173" hits="0" branch="false" />
+                <line number="174" hits="0" branch="false" />
+                <line number="175" hits="0" branch="false" />
+                <line number="176" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnSupervisorNameChanged" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="179" hits="0" branch="false" />
+                <line number="180" hits="0" branch="false" />
+                <line number="181" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnStartDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="184" hits="0" branch="false" />
+                <line number="185" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnEndDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="189" hits="0" branch="false" />
+                <line number="190" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnDateChanged" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="194" hits="0" branch="false" />
+                <line number="195" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ApplyFilters" signature="()" line-rate="0" branch-rate="0" complexity="14">
+              <lines>
+                <line number="199" hits="0" branch="false" />
+                <line number="202" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="204" hits="0" branch="false" />
+                <line number="206" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="208" hits="0" branch="false" />
+                <line number="209" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="211" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="213" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="215" hits="0" branch="false" />
+                <line number="219" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="221" hits="0" branch="false" />
+                <line number="223" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="135" hits="0" branch="false" />
+                <line number="136" hits="0" branch="false" />
+                <line number="137" hits="0" branch="false" />
+                <line number="139" hits="0" branch="false" />
+                <line number="140" hits="0" branch="false" />
+                <line number="141" hits="0" branch="false" />
+                <line number="142" hits="0" branch="false" />
+                <line number="143" hits="0" branch="false" />
+                <line number="144" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(DKSKMaui.Backend.Models.Invoice)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="99" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="103" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
+                <line number="105" hits="0" branch="false" />
+                <line number="106" hits="0" branch="false" />
+                <line number="107" hits="0" branch="false" />
+                <line number="108" hits="0" branch="false" />
+                <line number="109" hits="0" branch="false" />
+                <line number="110" hits="0" branch="false" />
+                <line number="111" hits="0" branch="false" />
+                <line number="112" hits="0" branch="false" />
+                <line number="113" hits="0" branch="false" />
+                <line number="114" hits="0" branch="false" />
+                <line number="115" hits="0" branch="false" />
+                <line number="116" hits="0" branch="false" />
+                <line number="117" hits="0" branch="false" />
+                <line number="118" hits="0" branch="false" />
+                <line number="119" hits="0" branch="false" />
+                <line number="120" hits="0" branch="false" />
+                <line number="121" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+                <line number="126" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="127" hits="0" branch="false" />
+                <line number="129" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="46" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="99" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="103" hits="0" branch="false" />
+            <line number="104" hits="0" branch="false" />
+            <line number="105" hits="0" branch="false" />
+            <line number="106" hits="0" branch="false" />
+            <line number="107" hits="0" branch="false" />
+            <line number="108" hits="0" branch="false" />
+            <line number="109" hits="0" branch="false" />
+            <line number="110" hits="0" branch="false" />
+            <line number="111" hits="0" branch="false" />
+            <line number="112" hits="0" branch="false" />
+            <line number="113" hits="0" branch="false" />
+            <line number="114" hits="0" branch="false" />
+            <line number="115" hits="0" branch="false" />
+            <line number="116" hits="0" branch="false" />
+            <line number="117" hits="0" branch="false" />
+            <line number="118" hits="0" branch="false" />
+            <line number="119" hits="0" branch="false" />
+            <line number="120" hits="0" branch="false" />
+            <line number="121" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="126" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="127" hits="0" branch="false" />
+            <line number="129" hits="0" branch="false" />
+            <line number="135" hits="0" branch="false" />
+            <line number="136" hits="0" branch="false" />
+            <line number="137" hits="0" branch="false" />
+            <line number="139" hits="0" branch="false" />
+            <line number="140" hits="0" branch="false" />
+            <line number="141" hits="0" branch="false" />
+            <line number="142" hits="0" branch="false" />
+            <line number="143" hits="0" branch="false" />
+            <line number="144" hits="0" branch="false" />
+            <line number="171" hits="0" branch="false" />
+            <line number="173" hits="0" branch="false" />
+            <line number="174" hits="0" branch="false" />
+            <line number="175" hits="0" branch="false" />
+            <line number="176" hits="0" branch="false" />
+            <line number="179" hits="0" branch="false" />
+            <line number="180" hits="0" branch="false" />
+            <line number="181" hits="0" branch="false" />
+            <line number="184" hits="0" branch="false" />
+            <line number="185" hits="0" branch="false" />
+            <line number="189" hits="0" branch="false" />
+            <line number="190" hits="0" branch="false" />
+            <line number="194" hits="0" branch="false" />
+            <line number="195" hits="0" branch="false" />
+            <line number="199" hits="0" branch="false" />
+            <line number="202" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="204" hits="0" branch="false" />
+            <line number="206" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="208" hits="0" branch="false" />
+            <line number="209" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="211" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="213" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="215" hits="0" branch="false" />
+            <line number="219" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="221" hits="0" branch="false" />
+            <line number="223" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.ContractorJobs.ContractorJobs" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\ContractorJobs\ContractorJobs.razor" line-rate="0" branch-rate="1" complexity="3">
+          <methods>
+            <method name="OnDateChanged" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ApplyFilters" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="101" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="78" hits="0" branch="false" />
+                <line number="79" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="78" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="97" hits="0" branch="false" />
+            <line number="101" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Counter" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Counter.razor" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="27" branch="false" />
+              </lines>
+            </method>
+            <method name="IncrementCount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="10" branch="false" />
+                <line number="15" hits="10" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="27" branch="false" />
+            <line number="14" hits="10" branch="false" />
+            <line number="15" hits="10" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.CreteInvoice.CreateInvoice" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\CreteInvoice\CreateInvoice.razor" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="33" hits="17" branch="true" condition-coverage="100% (4/4)" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="72" hits="9" branch="false" />
+                <line number="73" hits="9" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="33" hits="17" branch="true" condition-coverage="100% (4/4)" />
+            <line number="72" hits="9" branch="false" />
+            <line number="73" hits="9" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.CreteInvoice.CreateInvoiceConfirmDialogComponent" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor" line-rate="0" branch-rate="0" complexity="10">
+          <methods>
+            <method name="CloseDialog" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="188" hits="0" branch="false" />
+                <line number="189" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddJobDescription" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="193" hits="0" branch="false" />
+                <line number="194" hits="0" branch="false" />
+                <line number="195" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="RemoveJobDescription" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="200" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="202" hits="0" branch="false" />
+                <line number="203" hits="0" branch="false" />
+                <line number="205" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnJobPriceChange" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="208" hits="0" branch="false" />
+                <line number="209" hits="0" branch="false" />
+                <line number="210" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="calcPrice" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="213" hits="0" branch="false" />
+                <line number="214" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="216" hits="0" branch="false" />
+                <line number="218" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="154" hits="0" branch="false" />
+                <line number="155" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="154" hits="0" branch="false" />
+            <line number="155" hits="0" branch="false" />
+            <line number="188" hits="0" branch="false" />
+            <line number="189" hits="0" branch="false" />
+            <line number="193" hits="0" branch="false" />
+            <line number="194" hits="0" branch="false" />
+            <line number="195" hits="0" branch="false" />
+            <line number="200" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="202" hits="0" branch="false" />
+            <line number="203" hits="0" branch="false" />
+            <line number="205" hits="0" branch="false" />
+            <line number="208" hits="0" branch="false" />
+            <line number="209" hits="0" branch="false" />
+            <line number="210" hits="0" branch="false" />
+            <line number="213" hits="0" branch="false" />
+            <line number="214" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="216" hits="0" branch="false" />
+            <line number="218" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.EditContacts.EditCompanny.Editcompany" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\EditCompanny\Editcompany.razor" line-rate="0" branch-rate="0" complexity="15">
+          <methods>
+            <method name="ToggleSupervisorDetails" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="228" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="230" hits="0" branch="false" />
+                <line number="234" hits="0" branch="false" />
+                <line number="236" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="IsVisible" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="243" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="IsPropertyVisible" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="247" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="TogglePropertyDetails" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="252" hits="0" branch="false" />
+                <line number="253" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="255" hits="0" branch="false" />
+                <line number="259" hits="0" branch="false" />
+                <line number="261" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnChange" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="265" hits="0" branch="false" />
+                <line number="266" hits="0" branch="false" />
+                <line number="267" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnCancel" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="271" hits="0" branch="false" />
+                <line number="272" hits="0" branch="false" />
+                <line number="273" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddComp" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="310" hits="0" branch="false" />
+                <line number="311" hits="0" branch="false" />
+                <line number="312" hits="0" branch="false" />
+                <line number="313" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddSupervisorToCompany" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="317" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="319" hits="0" branch="false" />
+                <line number="321" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddPropertyToSupervisor" signature="(DKSKMaui.Backend.Models.Supervisor)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="367" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="369" hits="0" branch="false" />
+                <line number="371" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="222" hits="0" branch="false" />
+                <line number="223" hits="0" branch="false" />
+                <line number="228" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="230" hits="0" branch="false" />
+                <line number="234" hits="0" branch="false" />
+                <line number="236" hits="0" branch="false" />
+                <line number="243" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="247" hits="0" branch="false" />
+                <line number="252" hits="0" branch="false" />
+                <line number="253" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="255" hits="0" branch="false" />
+                <line number="259" hits="0" branch="false" />
+                <line number="261" hits="0" branch="false" />
+                <line number="265" hits="0" branch="false" />
+                <line number="266" hits="0" branch="false" />
+                <line number="267" hits="0" branch="false" />
+                <line number="271" hits="0" branch="false" />
+                <line number="272" hits="0" branch="false" />
+                <line number="273" hits="0" branch="false" />
+                <line number="310" hits="0" branch="false" />
+                <line number="311" hits="0" branch="false" />
+                <line number="312" hits="0" branch="false" />
+                <line number="313" hits="0" branch="false" />
+                <line number="317" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="319" hits="0" branch="false" />
+                <line number="321" hits="0" branch="false" />
+                <line number="367" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="369" hits="0" branch="false" />
+                <line number="371" hits="0" branch="false" />
+                <line number="386" hits="0" branch="false" />
+                <line number="387" hits="0" branch="false" />
+                <line number="388" hits="0" branch="false" />
+                <line number="389" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="222" hits="0" branch="false" />
+            <line number="223" hits="0" branch="false" />
+            <line number="228" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="230" hits="0" branch="false" />
+            <line number="234" hits="0" branch="false" />
+            <line number="236" hits="0" branch="false" />
+            <line number="243" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="247" hits="0" branch="false" />
+            <line number="252" hits="0" branch="false" />
+            <line number="253" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="255" hits="0" branch="false" />
+            <line number="259" hits="0" branch="false" />
+            <line number="261" hits="0" branch="false" />
+            <line number="265" hits="0" branch="false" />
+            <line number="266" hits="0" branch="false" />
+            <line number="267" hits="0" branch="false" />
+            <line number="271" hits="0" branch="false" />
+            <line number="272" hits="0" branch="false" />
+            <line number="273" hits="0" branch="false" />
+            <line number="310" hits="0" branch="false" />
+            <line number="311" hits="0" branch="false" />
+            <line number="312" hits="0" branch="false" />
+            <line number="313" hits="0" branch="false" />
+            <line number="317" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="319" hits="0" branch="false" />
+            <line number="321" hits="0" branch="false" />
+            <line number="367" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="369" hits="0" branch="false" />
+            <line number="371" hits="0" branch="false" />
+            <line number="386" hits="0" branch="false" />
+            <line number="387" hits="0" branch="false" />
+            <line number="388" hits="0" branch="false" />
+            <line number="389" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.EditContacts.Editcontacts" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\Editcontacts.razor" line-rate="0" branch-rate="0" complexity="5">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="31" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.EditContacts.EditContractor.Editcontractor" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\EditContacts\EditContractor\Editcontractor.razor" line-rate="0" branch-rate="1" complexity="4">
+          <methods>
+            <method name="OnChange" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="99" hits="0" branch="false" />
+                <line number="100" hits="0" branch="false" />
+                <line number="101" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnCancel" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="105" hits="0" branch="false" />
+                <line number="106" hits="0" branch="false" />
+                <line number="107" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddContractor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="144" hits="0" branch="false" />
+                <line number="145" hits="0" branch="false" />
+                <line number="146" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="184" hits="0" branch="false" />
+                <line number="185" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="99" hits="0" branch="false" />
+            <line number="100" hits="0" branch="false" />
+            <line number="101" hits="0" branch="false" />
+            <line number="105" hits="0" branch="false" />
+            <line number="106" hits="0" branch="false" />
+            <line number="107" hits="0" branch="false" />
+            <line number="144" hits="0" branch="false" />
+            <line number="145" hits="0" branch="false" />
+            <line number="146" hits="0" branch="false" />
+            <line number="184" hits="0" branch="false" />
+            <line number="185" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Error" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Error.razor" line-rate="0" branch-rate="0" complexity="8">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="22" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnInitialized" signature="()" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="54" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="56" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="58" hits="0" branch="false" />
+                <line number="60" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="22" hits="0" branch="false" />
+            <line number="54" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="56" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="58" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Home" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Home.razor" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="5" hits="6" branch="true" condition-coverage="100% (2/2)" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="6" branch="true" condition-coverage="100% (2/2)" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.JobDescription.Jobdescription" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\JobDescription\Jobdescription.razor" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="7" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="9" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="9" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.MajorFunctions.FunctionsList" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\MajorFunctions\FunctionsList.razor" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="6" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="Done" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="6" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.NewJobs.Newjobs" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\NewJobs\Newjobs.razor" line-rate="0" branch-rate="0" complexity="23">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="39" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="41" hits="0" branch="false" />
+                <line number="69" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="71" hits="0" branch="false" />
+                <line number="106" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="OnJobSizeBedroomChange" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="120" hits="0" branch="false" />
+                <line number="122" hits="0" branch="false" />
+                <line number="124" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="126" hits="0" branch="false" />
+                <line number="128" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnJobSizeBathroomChange" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="131" hits="0" branch="false" />
+                <line number="133" hits="0" branch="false" />
+                <line number="135" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="137" hits="0" branch="false" />
+                <line number="140" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnSizeBedroomChange" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="151" hits="0" branch="false" />
+                <line number="153" hits="0" branch="false" />
+                <line number="155" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="157" hits="0" branch="false" />
+                <line number="159" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnSizeBathroomChange" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="162" hits="0" branch="false" />
+                <line number="164" hits="0" branch="false" />
+                <line number="166" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="168" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnPriceChange" signature="(System.Int32,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="174" hits="0" branch="false" />
+                <line number="176" hits="0" branch="false" />
+                <line number="177" hits="0" branch="false" />
+                <line number="180" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="CheckForDuplicateDescriptions" signature="()" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="230" hits="0" branch="false" />
+                <line number="231" hits="0" branch="false" />
+                <line number="232" hits="0" branch="false" />
+                <line number="235" hits="0" branch="false" />
+                <line number="236" hits="0" branch="false" />
+                <line number="237" hits="0" branch="false" />
+                <line number="240" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="242" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="244" hits="0" branch="false" />
+                <line number="245" hits="0" branch="false" />
+                <line number="246" hits="0" branch="false" />
+                <line number="247" hits="0" branch="false" />
+                <line number="248" hits="0" branch="false" />
+                <line number="249" hits="0" branch="false" />
+                <line number="250" hits="0" branch="false" />
+                <line number="253" hits="0" branch="false" />
+                <line number="257" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddToPriceHistory" signature="(System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="344" hits="0" branch="false" />
+                <line number="347" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="350" hits="0" branch="false" />
+                <line number="355" hits="0" branch="false" />
+                <line number="357" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddJob" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="362" hits="0" branch="false" />
+                <line number="363" hits="0" branch="false" />
+                <line number="364" hits="0" branch="false" />
+                <line number="366" hits="0" branch="false" />
+                <line number="367" hits="0" branch="false" />
+                <line number="369" hits="0" branch="false" />
+                <line number="370" hits="0" branch="false" />
+                <line number="371" hits="0" branch="false" />
+                <line number="374" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="115" hits="0" branch="false" />
+                <line number="116" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="39" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="41" hits="0" branch="false" />
+            <line number="69" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="71" hits="0" branch="false" />
+            <line number="106" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="115" hits="0" branch="false" />
+            <line number="116" hits="0" branch="false" />
+            <line number="120" hits="0" branch="false" />
+            <line number="122" hits="0" branch="false" />
+            <line number="124" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="126" hits="0" branch="false" />
+            <line number="128" hits="0" branch="false" />
+            <line number="131" hits="0" branch="false" />
+            <line number="133" hits="0" branch="false" />
+            <line number="135" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="137" hits="0" branch="false" />
+            <line number="140" hits="0" branch="false" />
+            <line number="151" hits="0" branch="false" />
+            <line number="153" hits="0" branch="false" />
+            <line number="155" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="157" hits="0" branch="false" />
+            <line number="159" hits="0" branch="false" />
+            <line number="162" hits="0" branch="false" />
+            <line number="164" hits="0" branch="false" />
+            <line number="166" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="168" hits="0" branch="false" />
+            <line number="171" hits="0" branch="false" />
+            <line number="174" hits="0" branch="false" />
+            <line number="176" hits="0" branch="false" />
+            <line number="177" hits="0" branch="false" />
+            <line number="180" hits="0" branch="false" />
+            <line number="230" hits="0" branch="false" />
+            <line number="231" hits="0" branch="false" />
+            <line number="232" hits="0" branch="false" />
+            <line number="235" hits="0" branch="false" />
+            <line number="236" hits="0" branch="false" />
+            <line number="237" hits="0" branch="false" />
+            <line number="240" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="242" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="244" hits="0" branch="false" />
+            <line number="245" hits="0" branch="false" />
+            <line number="246" hits="0" branch="false" />
+            <line number="247" hits="0" branch="false" />
+            <line number="248" hits="0" branch="false" />
+            <line number="249" hits="0" branch="false" />
+            <line number="250" hits="0" branch="false" />
+            <line number="253" hits="0" branch="false" />
+            <line number="257" hits="0" branch="false" />
+            <line number="344" hits="0" branch="false" />
+            <line number="347" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="350" hits="0" branch="false" />
+            <line number="355" hits="0" branch="false" />
+            <line number="357" hits="0" branch="false" />
+            <line number="362" hits="0" branch="false" />
+            <line number="363" hits="0" branch="false" />
+            <line number="364" hits="0" branch="false" />
+            <line number="366" hits="0" branch="false" />
+            <line number="367" hits="0" branch="false" />
+            <line number="369" hits="0" branch="false" />
+            <line number="370" hits="0" branch="false" />
+            <line number="371" hits="0" branch="false" />
+            <line number="374" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Payroll.Payroll" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Payroll\Payroll.razor" line-rate="0" branch-rate="0" complexity="9">
+          <methods>
+            <method name="OnStartDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="110" hits="0" branch="false" />
+                <line number="111" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnEndDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="115" hits="0" branch="false" />
+                <line number="116" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnDateChanged" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="119" hits="0" branch="false" />
+                <line number="120" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnContractorNameChanged" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ApplyFilters" signature="()" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="129" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+                <line number="135" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="137" hits="0" branch="false" />
+                <line number="139" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+                <line number="90" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="90" hits="0" branch="false" />
+            <line number="110" hits="0" branch="false" />
+            <line number="111" hits="0" branch="false" />
+            <line number="115" hits="0" branch="false" />
+            <line number="116" hits="0" branch="false" />
+            <line number="119" hits="0" branch="false" />
+            <line number="120" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="129" hits="0" branch="false" />
+            <line number="132" hits="0" branch="false" />
+            <line number="135" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="137" hits="0" branch="false" />
+            <line number="139" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Sales.Sales" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Sales\Sales.razor" line-rate="0.18032786885245902" branch-rate="0" complexity="39">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="45" hits="0" branch="true" condition-coverage="0% (0/4)" />
+              </lines>
+            </method>
+            <method name="OnCheckboxChanged" signature="(DKSKMaui.Backend.Models.Invoice,System.Object)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="113" hits="0" branch="false" />
+                <line number="114" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="116" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="118" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnCompanyNameChanged" signature="(System.Object)" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="155" hits="0" branch="false" />
+                <line number="156" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="158" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="160" hits="0" branch="false" />
+                <line number="161" hits="0" branch="false" />
+                <line number="162" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="164" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="166" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+                <line number="172" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnAddressChanged" signature="(System.Object)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="175" hits="0" branch="false" />
+                <line number="176" hits="0" branch="false" />
+                <line number="177" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnStartDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="180" hits="0" branch="false" />
+                <line number="181" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnEndDateChanged" signature="(System.Nullable`1&lt;System.DateTime&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="185" hits="0" branch="false" />
+                <line number="186" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="OnDateChanged" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="190" hits="0" branch="false" />
+                <line number="191" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ApplyFilters" signature="()" line-rate="0" branch-rate="0" complexity="8">
+              <lines>
+                <line number="195" hits="0" branch="false" />
+                <line number="198" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="200" hits="0" branch="false" />
+                <line number="204" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="206" hits="0" branch="false" />
+                <line number="209" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="211" hits="0" branch="false" />
+                <line number="214" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetJDList" signature="(DKSKMaui.Backend.Models.Invoice)" line-rate="0" branch-rate="0" complexity="10">
+              <lines>
+                <line number="308" hits="0" branch="false" />
+                <line number="309" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="313" hits="0" branch="false" />
+                <line number="314" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="316" hits="0" branch="false" />
+                <line number="317" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="319" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="321" hits="0" branch="false" />
+                <line number="322" hits="0" branch="false" />
+                <line number="323" hits="0" branch="false" />
+                <line number="326" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="328" hits="0" branch="false" />
+                <line number="331" hits="0" branch="false" />
+                <line number="332" hits="0" branch="false" />
+                <line number="335" hits="0" branch="false" />
+                <line number="337" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0.25" branch-rate="0" complexity="1">
+              <lines>
+                <line number="101" hits="1" branch="false" />
+                <line number="102" hits="1" branch="false" />
+                <line number="103" hits="1" branch="false" />
+                <line number="105" hits="1" branch="false" />
+                <line number="106" hits="1" branch="false" />
+                <line number="108" hits="1" branch="false" />
+                <line number="109" hits="1" branch="false" />
+                <line number="110" hits="1" branch="false" />
+                <line number="113" hits="0" branch="false" />
+                <line number="114" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="116" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="118" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+                <line number="155" hits="0" branch="false" />
+                <line number="156" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="158" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="160" hits="0" branch="false" />
+                <line number="161" hits="0" branch="false" />
+                <line number="162" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="164" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="166" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+                <line number="172" hits="0" branch="false" />
+                <line number="175" hits="0" branch="false" />
+                <line number="176" hits="0" branch="false" />
+                <line number="177" hits="0" branch="false" />
+                <line number="180" hits="0" branch="false" />
+                <line number="181" hits="0" branch="false" />
+                <line number="185" hits="0" branch="false" />
+                <line number="186" hits="0" branch="false" />
+                <line number="190" hits="0" branch="false" />
+                <line number="191" hits="0" branch="false" />
+                <line number="195" hits="0" branch="false" />
+                <line number="198" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="200" hits="0" branch="false" />
+                <line number="204" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="206" hits="0" branch="false" />
+                <line number="209" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="211" hits="0" branch="false" />
+                <line number="214" hits="0" branch="false" />
+                <line number="293" hits="1" branch="false" />
+                <line number="295" hits="1" branch="false" />
+                <line number="296" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="45" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="101" hits="1" branch="false" />
+            <line number="102" hits="1" branch="false" />
+            <line number="103" hits="1" branch="false" />
+            <line number="105" hits="1" branch="false" />
+            <line number="106" hits="1" branch="false" />
+            <line number="108" hits="1" branch="false" />
+            <line number="109" hits="1" branch="false" />
+            <line number="110" hits="1" branch="false" />
+            <line number="113" hits="0" branch="false" />
+            <line number="114" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="116" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="118" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="155" hits="0" branch="false" />
+            <line number="156" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="158" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="160" hits="0" branch="false" />
+            <line number="161" hits="0" branch="false" />
+            <line number="162" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="164" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="166" hits="0" branch="false" />
+            <line number="171" hits="0" branch="false" />
+            <line number="172" hits="0" branch="false" />
+            <line number="175" hits="0" branch="false" />
+            <line number="176" hits="0" branch="false" />
+            <line number="177" hits="0" branch="false" />
+            <line number="180" hits="0" branch="false" />
+            <line number="181" hits="0" branch="false" />
+            <line number="185" hits="0" branch="false" />
+            <line number="186" hits="0" branch="false" />
+            <line number="190" hits="0" branch="false" />
+            <line number="191" hits="0" branch="false" />
+            <line number="195" hits="0" branch="false" />
+            <line number="198" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="200" hits="0" branch="false" />
+            <line number="204" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="206" hits="0" branch="false" />
+            <line number="209" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="211" hits="0" branch="false" />
+            <line number="214" hits="0" branch="false" />
+            <line number="293" hits="1" branch="false" />
+            <line number="295" hits="1" branch="false" />
+            <line number="296" hits="1" branch="false" />
+            <line number="308" hits="0" branch="false" />
+            <line number="309" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="313" hits="0" branch="false" />
+            <line number="314" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="316" hits="0" branch="false" />
+            <line number="317" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="319" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="321" hits="0" branch="false" />
+            <line number="322" hits="0" branch="false" />
+            <line number="323" hits="0" branch="false" />
+            <line number="326" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="328" hits="0" branch="false" />
+            <line number="331" hits="0" branch="false" />
+            <line number="332" hits="0" branch="false" />
+            <line number="335" hits="0" branch="false" />
+            <line number="337" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Sales.SalesDetail" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Sales\SalesDetail.razor" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="CloseDialog" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="117" hits="0" branch="false" />
+                <line number="118" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="117" hits="0" branch="false" />
+            <line number="118" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Startjob.Startjob" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Startjob\Startjob.razor" line-rate="0" branch-rate="0" complexity="26">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="119" hits="0" branch="true" condition-coverage="0% (0/2)" />
+              </lines>
+            </method>
+            <method name="OnInitialized" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="176" hits="0" branch="false" />
+                <line number="178" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="HandleCompany" signature="(System.String)" line-rate="0" branch-rate="0" complexity="14">
+              <lines>
+                <line number="220" hits="0" branch="false" />
+                <line number="221" hits="0" branch="false" />
+                <line number="222" hits="0" branch="false" />
+                <line number="223" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="225" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="227" hits="0" branch="false" />
+                <line number="228" hits="0" branch="false" />
+                <line number="231" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="233" hits="0" branch="false" />
+                <line number="234" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="236" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="238" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="241" hits="0" branch="false" />
+                <line number="242" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="244" hits="0" branch="false" />
+                <line number="247" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="HandleProperty" signature="(System.String)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="250" hits="0" branch="false" />
+                <line number="251" hits="0" branch="false" />
+                <line number="252" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="254" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="256" hits="0" branch="false" />
+                <line number="257" hits="0" branch="false" />
+                <line number="260" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="262" hits="0" branch="false" />
+                <line number="263" hits="0" branch="false" />
+                <line number="264" hits="0" branch="false" />
+                <line number="265" hits="0" branch="false" />
+                <line number="267" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddAnotherOption" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="353" hits="0" branch="false" />
+                <line number="354" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="RemoveJob" signature="(DKSKMaui.Components.Pages.Startjob.Startjob/SelectedJob)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="359" hits="0" branch="false" />
+                <line number="360" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="153" hits="0" branch="false" />
+                <line number="154" hits="0" branch="false" />
+                <line number="155" hits="0" branch="false" />
+                <line number="156" hits="0" branch="false" />
+                <line number="157" hits="0" branch="false" />
+                <line number="158" hits="0" branch="false" />
+                <line number="159" hits="0" branch="false" />
+                <line number="160" hits="0" branch="false" />
+                <line number="163" hits="0" branch="false" />
+                <line number="164" hits="0" branch="false" />
+                <line number="165" hits="0" branch="false" />
+                <line number="166" hits="0" branch="false" />
+                <line number="167" hits="0" branch="false" />
+                <line number="168" hits="0" branch="false" />
+                <line number="169" hits="0" branch="false" />
+                <line number="170" hits="0" branch="false" />
+                <line number="171" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="119" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="153" hits="0" branch="false" />
+            <line number="154" hits="0" branch="false" />
+            <line number="155" hits="0" branch="false" />
+            <line number="156" hits="0" branch="false" />
+            <line number="157" hits="0" branch="false" />
+            <line number="158" hits="0" branch="false" />
+            <line number="159" hits="0" branch="false" />
+            <line number="160" hits="0" branch="false" />
+            <line number="163" hits="0" branch="false" />
+            <line number="164" hits="0" branch="false" />
+            <line number="165" hits="0" branch="false" />
+            <line number="166" hits="0" branch="false" />
+            <line number="167" hits="0" branch="false" />
+            <line number="168" hits="0" branch="false" />
+            <line number="169" hits="0" branch="false" />
+            <line number="170" hits="0" branch="false" />
+            <line number="171" hits="0" branch="false" />
+            <line number="176" hits="0" branch="false" />
+            <line number="178" hits="0" branch="false" />
+            <line number="220" hits="0" branch="false" />
+            <line number="221" hits="0" branch="false" />
+            <line number="222" hits="0" branch="false" />
+            <line number="223" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="225" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="227" hits="0" branch="false" />
+            <line number="228" hits="0" branch="false" />
+            <line number="231" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="233" hits="0" branch="false" />
+            <line number="234" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="236" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="238" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="241" hits="0" branch="false" />
+            <line number="242" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="244" hits="0" branch="false" />
+            <line number="247" hits="0" branch="false" />
+            <line number="250" hits="0" branch="false" />
+            <line number="251" hits="0" branch="false" />
+            <line number="252" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="254" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="256" hits="0" branch="false" />
+            <line number="257" hits="0" branch="false" />
+            <line number="260" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="262" hits="0" branch="false" />
+            <line number="263" hits="0" branch="false" />
+            <line number="264" hits="0" branch="false" />
+            <line number="265" hits="0" branch="false" />
+            <line number="267" hits="0" branch="false" />
+            <line number="353" hits="0" branch="false" />
+            <line number="354" hits="0" branch="false" />
+            <line number="359" hits="0" branch="false" />
+            <line number="360" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Startjob.StartJobConfirmDialogComponent" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="OnInitialized" signature="()" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="128" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="130" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="CloseDialog" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="136" hits="0" branch="false" />
+                <line number="137" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="128" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="130" hits="0" branch="false" />
+            <line number="132" hits="0" branch="false" />
+            <line number="136" hits="0" branch="false" />
+            <line number="137" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Test.TestPage" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Test\TestPage.razor" line-rate="0" branch-rate="0" complexity="10">
+          <methods>
+            <method name="AddLog" signature="(System.String,System.String)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="139" hits="0" branch="false" />
+                <line number="140" hits="0" branch="false" />
+                <line number="141" hits="0" branch="false" />
+                <line number="142" hits="0" branch="false" />
+                <line number="143" hits="0" branch="false" />
+                <line number="144" hits="0" branch="false" />
+                <line number="147" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="149" hits="0" branch="false" />
+                <line number="151" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="ClearLog" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="155" hits="0" branch="false" />
+                <line number="156" hits="0" branch="false" />
+                <line number="157" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetLogBadgeClass" signature="(System.String)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
+                <line number="159" hits="0" branch="true" condition-coverage="0% (0/6)" />
+                <line number="160" hits="0" branch="false" />
+                <line number="161" hits="0" branch="false" />
+                <line number="162" hits="0" branch="false" />
+                <line number="163" hits="0" branch="false" />
+                <line number="164" hits="0" branch="false" />
+                <line number="165" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="77" hits="0" branch="false" />
+                <line number="78" hits="0" branch="false" />
+                <line number="79" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="77" hits="0" branch="false" />
+            <line number="78" hits="0" branch="false" />
+            <line number="79" hits="0" branch="false" />
+            <line number="139" hits="0" branch="false" />
+            <line number="140" hits="0" branch="false" />
+            <line number="141" hits="0" branch="false" />
+            <line number="142" hits="0" branch="false" />
+            <line number="143" hits="0" branch="false" />
+            <line number="144" hits="0" branch="false" />
+            <line number="147" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="149" hits="0" branch="false" />
+            <line number="151" hits="0" branch="false" />
+            <line number="155" hits="0" branch="false" />
+            <line number="156" hits="0" branch="false" />
+            <line number="157" hits="0" branch="false" />
+            <line number="159" hits="0" branch="true" condition-coverage="0% (0/6)" />
+            <line number="160" hits="0" branch="false" />
+            <line number="161" hits="0" branch="false" />
+            <line number="162" hits="0" branch="false" />
+            <line number="163" hits="0" branch="false" />
+            <line number="164" hits="0" branch="false" />
+            <line number="165" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.Pages.Weather" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\Pages\Weather.razor" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="7" hits="40" branch="true" condition-coverage="100% (2/2)" />
+                <line number="23" hits="276" branch="true" condition-coverage="100% (2/2)" />
+                <line number="26" hits="115" branch="false" />
+                <line number="27" hits="115" branch="false" />
+                <line number="28" hits="115" branch="false" />
+                <line number="29" hits="115" branch="false" />
+              </lines>
+            </method>
+            <method name="get_TemperatureF" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="59" hits="115" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="40" branch="true" condition-coverage="100% (2/2)" />
+            <line number="23" hits="276" branch="true" condition-coverage="100% (2/2)" />
+            <line number="26" hits="115" branch="false" />
+            <line number="27" hits="115" branch="false" />
+            <line number="28" hits="115" branch="false" />
+            <line number="29" hits="115" branch="false" />
+            <line number="59" hits="115" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.Components.TestApp" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Components\TestApp.razor" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="BuildRenderTree" signature="(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="3" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="3" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.MainPage" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\MainPage.xaml.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="false" />
+                <line number="7" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="false" />
+            <line number="7" hits="0" branch="false" />
+            <line number="8" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="DKSKMaui.WinUI.App" filename="C:\Users\kimri\OneDrive\Desktop\DKSKMaui\Platforms\Windows\App.xaml.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="CreateMauiApp" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="17" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Microsoft.Windows.Foundation.UndockedRegFreeWinRTCS.AutoInitialize" filename="C:\Users\kimri\.nuget\packages\microsoft.windowsappsdk\1.5.240802000\include\UndockedRegFreeWinRT-AutoInitializer.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="AccessWindowsAppSDK" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="27" hits="1" branch="false" />
+                <line number="33" hits="1" branch="false" />
+                <line number="34" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="27" hits="1" branch="false" />
+            <line number="33" hits="1" branch="false" />
+            <line number="34" hits="1" branch="false" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

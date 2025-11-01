@@ -1,0 +1,46 @@
+﻿@using Radzen.Blazor
+@using System.Collections.Generic
+@inject DialogService DialogService
+
+<RadzenListBox Data="@WrappedData"
+               TextProperty="Value"  
+               ValueProperty="Value" 
+               @bind-Value="SelectedItem"
+               Style="width: 100%; height: 200px;"
+               Change="OnItemChange" />
+
+@code {
+    // Wrapper class to hold the unique Id and original string value
+    public class ItemWrapper
+    {
+        public int Id { get; set; }
+        public string Value { get; set; }
+    }
+
+    // Parameter for the list of strings
+    [Parameter] public List<string> Data { get; set; }
+
+    // Parameter for the selected string
+    [Parameter] public string SelectedItem { get; set; }
+
+    // List to hold the wrapped data with unique Ids
+    private List<ItemWrapper> WrappedData { get; set; }
+
+    // OnItemChange method to handle item selection
+    private void OnItemChange(object value)
+    {
+        SelectedItem = value?.ToString();
+        DialogService.Close(SelectedItem);
+    }
+
+    // Override the OnInitialized lifecycle method to wrap the data
+    protected override void OnInitialized()
+    {
+        // Wrap each string in an ItemWrapper with a unique Id
+        WrappedData = Data.Select((value, index) => new ItemWrapper
+        {
+            Id = index,     // Unique Id for each item
+            Value = value   // Original string value
+        }).ToList();
+    }
+}

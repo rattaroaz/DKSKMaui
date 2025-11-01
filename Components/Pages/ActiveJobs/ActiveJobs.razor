@@ -1,0 +1,341 @@
+@page "/activejobs"
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using Radzen
+@using Newtonsoft.Json;
+
+@inject InvoiceService InvoiceService
+@inject NotificationService NotificationService
+@inject DialogService DialogService
+@inject NavigationManager Navigation
+@inject JobDescriptionService JobDescriptionService
+@inject CompanyService CompanyService
+@inject MyCompanyInfoService MyCompanyInfoService
+@inject IJSRuntime JS
+
+<h3 class="text-center my-4"><RadzenIcon Icon="work" />Active Jobs</h3>
+
+
+<div class="container">
+    <!-- Start and End Date Inputs -->
+    <div class="row mb-3">
+        <div class="col-12 col-md-4">
+            Start Date:
+            <RadzenDatePicker @bind-Value="startDate" DateFormat="MM/dd/yyyy" Change="OnStartDateChanged" />
+        </div>
+        <div class="col-12 col-md-4">
+            End Date:
+            <RadzenDatePicker @bind-Value="endDate" DateFormat="MM/dd/yyyy" Change="OnEndDateChanged" />
+        </div>
+        <div class="col-12 col-md-4">
+            Company:
+            <RadzenDropDown TValue="string" @bind-Value="selectedCompanyName" Data="companyNames" Placeholder="Select Company"
+                            Change="OnCompanyNameChanged" />
+        </div>
+    </div>
+
+
+    @if (filteredInvoices != null && filteredInvoices.Any())
+    {
+        <div class="row">
+            <div class="col-12">
+                <RadzenDataGrid TItem="Invoice" Data="@filteredInvoices" AllowPaging="true" PageSize="10" AllowSorting="true" AllowColumnReorder="true" ColumnWidth="140px" AllowColumnResize="true" ColumnReordered="@OnColumnReordered" @ref="InvoicesGrid">
+                    <Columns>
+
+                        <!-- Checkbox Column -->
+                        <RadzenDataGridColumn TItem="Invoice" Title="Select">
+                            <Template Context="invoice">
+                                <input type="checkbox" @onchange="e => OnCheckboxChanged(invoice, e.Value)" />
+                            </Template>
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="Invoice" Property="TodaysDate" Title="Today's Date" FormatString="{0:MM/dd/yyyy}" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="WorkDate" Title="Work Date" FormatString="{0:MM/dd/yyyy}" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="CompanyName" Title="Company Name" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="PropertyAddress" Title="Property Address" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Unit" Title="Unit" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="GateCode" Title="Gate Code" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="LockBox" Title="Lock Box" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="GarageRemoteCode" Title="Garage Remote Code" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="SizeBedroom" Title="Bedrooms" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="SizeBathroom" Title="Bathrooms" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="WorkOrder" Title="Work Order" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="SpecialNote" Title="Special Note" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="JobDescriptionChoice" Title="Job Description" />
+
+                    </Columns>
+                </RadzenDataGrid>
+            </div>
+        </div>
+    }
+    <RadzenRow class="mt-3">
+        <RadzenColumn class="mb-3">
+            <RadzenButton Text="Download to PDF" Click="DownloadPDF" Icon="description" Style="width: 100%;" ButtonStyle="ButtonStyle.Info" />
+        </RadzenColumn>
+        <RadzenColumn class="mb-3">
+            <RadzenButton Text="Download to Excel" Click="DownloadExcel" Icon="table_view" Style="width: 100%;" ButtonStyle="ButtonStyle.Success" />
+        </RadzenColumn>
+    </RadzenRow>
+</div>
+
+@code {
+    private DateTime? startDate;
+    private DateTime? endDate;
+    private List<Invoice> selectedInvoices = new List<Invoice>();
+    private List<Invoice> invoices = new List<Invoice>();
+    private List<Invoice> filteredInvoices = new List<Invoice>();
+
+    private string selectedCompanyName = "View All";
+    private List<string> companyNames = new List<string>();
+
+    private MyCompanyInfo myCompanyInfo = new MyCompanyInfo() { };
+    private void OnCheckboxChanged(Invoice invoice, object isChecked)
+    {
+        bool checkedStatus = (bool)isChecked;
+        if (checkedStatus)
+        {
+            if (!selectedInvoices.Contains(invoice))
+            {
+                selectedInvoices.Add(invoice);
+            }
+        }
+        else
+        {
+            selectedInvoices.Remove(invoice);
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            invoices = await InvoiceService.GetInvoicesActive();
+            myCompanyInfo = await MyCompanyInfoService.GetInfoAsync();
+            await LoadComapnyDataAsync();
+            await LoadJobDataAsync();
+            // Extract unique company names from invoices and add "View All"
+            companyNames = invoices.Select(i => i.CompanyName).Distinct().ToList();
+            companyNames.Insert(0, "View All");
+
+            // Initialize filtered invoices to show all by default
+            filteredInvoices = invoices;
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            // Handle the exception as needed
+        }
+    }
+
+    private void OnCompanyNameChanged(object value)
+    {
+        selectedCompanyName = value.ToString();
+        ApplyFilters();
+    }
+    private void OnStartDateChanged(DateTime? value)
+    {
+        OnDateChanged();
+    }
+
+    private void OnEndDateChanged(DateTime? value)
+    {
+        OnDateChanged();
+    }
+
+    private void OnDateChanged()
+    {
+        ApplyFilters();
+    }
+    private void ApplyFilters()
+    {
+        // Start by showing all invoices
+        filteredInvoices = invoices;
+
+        // Apply company name filter
+        if (selectedCompanyName != "View All")
+        {
+            filteredInvoices = filteredInvoices.Where(i => i.CompanyName == selectedCompanyName).ToList();
+        }
+
+        // Apply date range filter if both start and end dates are set
+        if (startDate.HasValue && endDate.HasValue)
+        {
+            filteredInvoices = filteredInvoices.Where(i => i.WorkDate >= startDate && i.WorkDate <= endDate).ToList();
+        }
+    }
+
+    List<string> columnOrder = new List<string>();
+    private RadzenDataGrid<Invoice> InvoicesGrid = null!;
+
+    private void OnColumnReordered(Radzen.DataGridColumnReorderedEventArgs<Invoice> args)
+    {
+        var currentColumnOrder = InvoicesGrid.ColumnsCollection.Select(c => c.Title).ToList();
+        SaveColumnOrderToLocalStorage(currentColumnOrder);
+    }
+
+
+    private async void SaveColumnOrderToLocalStorage(List<string> columnOrder)
+    {
+        var columnOrderString = string.Join(",", columnOrder);
+        await JS.InvokeVoidAsync("localStorage.setItem", "ActivJobscolumnOrder", columnOrderString);
+    }
+
+    private void ReorderColumns(List<string> columnOrder)
+    {
+        if (InvoicesGrid == null)
+        {
+            Console.WriteLine("filteredInvoicesGrid is not initialized.");
+            return;
+        }
+
+        // Reorder the columns based on saved columnOrder
+        var reorderedColumns = InvoicesGrid.ColumnsCollection
+            .OrderBy(c => columnOrder.IndexOf(c.Title))
+            .ToList();
+
+        InvoicesGrid.ColumnsCollection.Clear();
+        foreach (var column in reorderedColumns)
+        {
+            InvoicesGrid.ColumnsCollection.Add(column);
+        }
+        StateHasChanged();
+
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // After the first render, attempt to reorder columns if there is a saved order
+            var savedColumnOrder = await JS.InvokeAsync<string>("localStorage.getItem", "ActivJobscolumnOrder");
+            if (!string.IsNullOrEmpty(savedColumnOrder))
+            {
+                var columnOrderList = savedColumnOrder.Split(',').ToList();
+                if (InvoicesGrid != null)
+                {
+                    ReorderColumns(columnOrderList);
+                }
+            }
+        }
+    }
+    private async Task DownloadExcel()
+    {
+        var invoiceData = selectedInvoices;
+
+        await JS.InvokeVoidAsync("saveAsExcel", invoiceData);
+    }
+
+
+
+    private async Task DownloadPDF()
+    {
+        // Use filtered invoices if no specific selection is made
+        var invoicesToExport = selectedInvoices.Any() ? selectedInvoices : filteredInvoices;
+
+        // Check if any invoices are available
+        if (invoicesToExport == null || !invoicesToExport.Any())
+        {
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Warning,
+                Summary = "No Data",
+                Detail = "No invoices available to export. Please adjust your filters or select specific invoices."
+            });
+            return;
+        }
+
+        try
+        {
+            // Always use data-based PDF generation for Active Jobs (more reliable than HTML templates)
+            var pdfData = invoicesToExport.Select(i => new
+            {
+                TodaysDate = i.TodaysDate.ToString("MM/dd/yyyy"),
+                WorkDate = i.WorkDate.ToString("MM/dd/yyyy"),
+                CompanyName = i.CompanyName,
+                PropertyAddress = i.PropertyAddress,
+                Unit = i.Unit,
+                GateCode = i.GateCode,
+                LockBox = i.LockBox,
+                GarageRemoteCode = i.GarageRemoteCode,
+                SizeBedroom = i.SizeBedroom,
+                SizeBathroom = i.SizeBathroom,
+                WorkOrder = i.WorkOrder,
+                SpecialNote = i.SpecialNote,
+                JobDescription = i.JobDescriptionChoice
+            }).ToList();
+
+            // Set the PDF data
+            await JS.InvokeVoidAsync("setPdfData", pdfData);
+
+            // Small delay to ensure data is set
+            await Task.Delay(100);
+
+            // Generate PDF using data-based approach (more reliable)
+            string filename = selectedInvoices.Any()
+                ? $"Active_Jobs_{selectedInvoices.Count}_selected"
+                : $"Active_Jobs_Summary_{filteredInvoices.Count}_jobs";
+
+            await JS.InvokeVoidAsync("saveAsPDFFallback", "active_jobs_data", filename, true);
+
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "PDF Generated",
+                Detail = $"Active jobs report created with {invoicesToExport.Count} job(s)."
+            });
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "PDF Export Failed",
+                Detail = $"Error generating PDF: {ex.Message}"
+            });
+        }
+    }
+    private List<JobDiscription> jobs = new List<JobDiscription>();
+
+    private Companny company = new Companny { Name = "" };
+    public List<Companny> compannies = new List<Companny>();
+    private async Task LoadComapnyDataAsync()
+    {
+        compannies = await CompanyService.GetAllCompaniesAsync();
+    }
+    private async Task LoadJobDataAsync()
+    {
+        jobs = await JobDescriptionService.GetAllJobsAsync();
+
+    }
+    
+    protected List<JobDiscription> GetJDList(Invoice invoice)
+    {
+        List<JobDiscription> jobDescriptions = new List<JobDiscription>();
+        if (!string.IsNullOrEmpty(invoice.JobDescriptionChoice))
+        {
+            try
+            {
+                List<string> jobDescriptionsStrings = JsonConvert.DeserializeObject<List<string>>(invoice.JobDescriptionChoice);
+                foreach (string jds in jobDescriptionsStrings)
+                {
+                    bool flag = true;
+                    foreach (JobDiscription job in jobs)
+                    {
+                        if (job.description == jds)
+                        {
+                            jobDescriptions.Add(job);
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        jobDescriptions.Add(new JobDiscription { description = jds, price = 0 });
+                    }
+                }
+            }
+            catch
+            {
+                // Handle JSON deserialization errors
+            }
+        }
+        return jobDescriptions;
+    }
+}

@@ -1,0 +1,443 @@
+@page "/newjobs"
+@inject NavigationManager NavigationManager
+@inject JobDescriptionService JobDescriptionService
+@using System.Net.Http.Headers
+@using System.Text.Json
+@using System.Threading.Tasks
+@using Radzen
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+@inject IJSRuntime JS
+
+
+<h3 class="text-center my-4"><RadzenIcon Icon="add_circle_outline" />New Jobs</h3>
+<div class="container mt-3">
+
+
+        <div class="row">
+            <!-- Fixed Header Row -->
+            <div class="col-md-12 mb-3">
+                <div class="form-group row fixed-header">
+                    <div class="col-md-6">
+                        <strong>Job Description</strong>
+                    </div>
+                    <div class="col-md-1">
+                        <strong>Bedrooms</strong>
+                    </div>
+                    <div class="col-md-1">
+                        <strong>Bathrooms</strong>
+                    </div>
+                    <div class="col-md-2">
+                        <strong>Price</strong>
+                    </div>
+                    <div class="col-md-2">
+                        <strong>Actions</strong>
+                    </div>
+                </div>
+            </div>
+
+            @for (int i = 0; i < Jobs.Count; i++)
+            {
+                var ii = i;
+                <div class="col-md-12 mb-3">
+                    <div class="form-group row" style="background-color:lightgreen;">
+                        <div class="col-md-6">
+                            <RadzenTextBox Placeholder="Job description" @bind-Value="Jobs[ii].description"  Style="width:100%;" />
+                        </div>
+                        <div class="col-md-1">
+                            <RadzenNumeric Value="@Jobs[ii].sizeBedroom"
+                                           Change="EventCallback.Factory.Create<int>(this, value => OnJobSizeBedroomChange(value, ii))"
+                                           Style="width:100%;" />
+                        </div>
+                        <div class="col-md-1">
+                            <RadzenNumeric Value="@Jobs[ii].sizeBathroom"
+                                           Change="EventCallback.Factory.Create<int>(this, value => OnJobSizeBathroomChange(value, ii))"
+                                           Style="width:100%;" />
+                        </div>
+                        <div class="col-md-2">
+                            <RadzenNumeric Value="@Jobs[ii].price"
+                                           Change="EventCallback.Factory.Create<int>(this, value => OnJobPriceChange(value, ii))"
+                                           Style="width:100%;" />
+                        </div>
+                        <div class="col-md-2">
+                            <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Danger" Icon="close" Click="@(args => DeleteJob(ii))" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @for (int j = 0; j < newJobs.Count; j++)
+            {
+                var jj = j;
+                <div class="col-md-12 mb-3">
+                    <div class="form-group row" style="background-color:lightpink;">
+                        <div class="col-md-6">
+                            <RadzenTextBox Placeholder="Job description" @bind-Value="newJobs[jj].description"  Style="width:100%;" />
+                        </div>
+                        <div class="col-md-1">
+                            <RadzenNumeric Value="@newJobs[jj].sizeBedroom"
+                                           Change="EventCallback.Factory.Create<int>(this, value => OnSizeBedroomChange(value, jj))"
+                                           Style="width:100%;" />
+                        </div>
+                        <div class="col-md-1">
+                            <RadzenNumeric Value="@newJobs[jj].sizeBathroom"
+                                           Change="EventCallback.Factory.Create<int>(this, value => OnSizeBathroomChange(value, jj))"
+                                           Style="width:100%;" />
+                        </div>
+                        <div class="col-md-2">
+                            <RadzenNumeric Value="@newJobs[jj].price"
+                                           Change="EventCallback.Factory.Create<int>(this, value => OnPriceChange(value, jj))"
+                                           Style="width:100%;" />
+                        </div>
+                        <div class="col-md-2">
+                                <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Danger" Icon="close"  Click="@(args => DeleteNewJob(jj))"/>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-12 d-flex justify-content-between flex-wrap">
+            <RadzenButton Text="Done" ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Primary" Click="HandleSubmit" Style="margin-bottom: 10px;" />
+                <RadzenButton Text="Add Job" ButtonStyle="ButtonStyle.Success" Click="AddJob" Style="margin-bottom: 10px;" />
+            </div>
+        </div>
+
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <RadzenNotification Severity="Error" Summary="Error" Detail="@errorMessage" />
+        }
+</div>
+
+@code {
+    public List<JobDiscription> Jobs { get; set; } = new List<JobDiscription>();
+    public List<JobDiscription> newJobs { get; set; } = new List<JobDiscription>();
+    private string errorMessage = string.Empty;
+    private Dictionary<(bool isnewjob, int inedex, int sizeBedroom, int sizeBathroom), int> priceHistory = new Dictionary<(bool, int, int, int), int>();
+
+    private void OnJobSizeBedroomChange(int value, int index)
+    {
+        Jobs[index].sizeBedroom = value;
+        // Perform other actions on change here
+        var key = (false, index, Jobs[index].sizeBedroom, Jobs[index].sizeBathroom);
+        // Check if the price is already in history
+        if (priceHistory.ContainsKey(key))
+        {
+            Jobs[index].price = priceHistory[key];
+        }
+    }
+    private void OnJobSizeBathroomChange(int value, int index)
+    {
+        Jobs[index].sizeBathroom = value;
+        // Perform other actions on change here
+        var key = (false, index, Jobs[index].sizeBedroom, Jobs[index].sizeBathroom);
+        // Check if the price is already in history
+        if (priceHistory.ContainsKey(key))
+        {
+            Jobs[index].price = priceHistory[key];
+        }
+
+    }
+    private async Task OnJobPriceChange(int value, int index)
+    {
+        Jobs[index].price = value;
+        // Perform other actions on change here
+        var key = (false, index, Jobs[index].sizeBedroom, Jobs[index].sizeBathroom);
+        priceHistory[key] = value;
+        //await SaveToLocalStorage(priceHistory);
+    }
+    private void OnSizeBedroomChange(int value, int index)
+    {
+        newJobs[index].sizeBedroom = value;
+        // Perform other actions on change here
+        var key = (true, index, newJobs[index].sizeBedroom, newJobs[index].sizeBathroom);
+        // Check if the price is already in history
+        if (priceHistory.ContainsKey(key))
+        {
+            newJobs[index].price = priceHistory[key];
+        }
+    }
+    private void OnSizeBathroomChange(int value, int index)
+    {
+        newJobs[index].sizeBathroom = value;
+        // Perform other actions on change here
+        var key = (true, index, newJobs[index].sizeBedroom, newJobs[index].sizeBathroom);
+        // Check if the price is already in history
+        if (priceHistory.ContainsKey(key))
+        {
+            newJobs[index].price = priceHistory[key];
+        }
+
+    }
+    private void OnPriceChange(int value, int index)
+    {
+        newJobs[index].price = value;
+        // Perform other actions on change here
+        var key = (true, index, newJobs[index].sizeBedroom, newJobs[index].sizeBathroom);
+        priceHistory[key] = value;
+        //SaveToLocalStorage(priceHistory);
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await LoadJobDataAsync();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Failed to load job data: {ex.Message}";
+            Console.WriteLine($"Error in OnInitializedAsync: {ex}");
+        }
+    }
+
+    private async Task LoadJobDataAsync()
+    {
+        try
+        {
+            List<JobDiscription> rawJobs = await JobDescriptionService.GetAllJobsAsync();
+            Jobs.Clear();
+            priceHistory.Clear();
+            Dictionary<string, int> Ids = new Dictionary<string, int>();
+            int i = 0;
+
+            foreach (JobDiscription jd in rawJobs)
+            {
+                if (jd != null && !string.IsNullOrEmpty(jd.description))
+                {
+                    if (!Ids.ContainsKey(jd.description))
+                    {
+                        Ids[jd.description] = i;
+                        Jobs.Add(jd);
+                        i++;
+                    }
+                    var key = (false, Ids[jd.description], jd.sizeBedroom, jd.sizeBathroom);
+                    priceHistory[key] = jd.price;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error loading job data: {ex.Message}";
+            Console.WriteLine($"LoadJobDataAsync error: {ex}");
+        }
+    }
+    // Method to check for duplicate descriptions across combined Jobs and newJobs
+    private bool CheckForDuplicateDescriptions()
+    {
+        // Combine jobDescriptions and newJobDescriptions into one collection
+        var allDescriptions = Jobs.Select(j => j.description)
+                                  .Concat(newJobs.Select(nj => nj.description))
+                                  .ToList();
+
+        // Find duplicate descriptions
+        var duplicates = allDescriptions.GroupBy(desc => desc)
+                                        .Where(group => group.Count() > 1)
+                                        .Select(group => group.Key);
+
+        // Show notification if duplicates are found
+        if (duplicates.Any())
+        {
+            foreach (var desc in duplicates)
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Warning,
+                        Summary = "Duplicate Found",
+                        Detail = $"Duplicate description: {desc}",
+                        Duration = 3000
+                    });
+            }
+
+            return true; // Duplicates found
+        }
+        else
+        {
+            return false; // No duplicates found
+        }
+    }
+
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            if (CheckForDuplicateDescriptions()) return;
+            
+            List<JobDiscription> newArray = new List<JobDiscription>();
+            foreach(var entry in priceHistory)
+            {
+                var key = entry.Key;
+                var value = entry.Value;
+                
+                try
+                {
+                    if (!key.isnewjob && key.inedex < Jobs.Count)
+                    {
+                        newArray.Add(new JobDiscription
+                            {
+                                description = Jobs[key.inedex].description,
+                                sizeBathroom = key.sizeBathroom,
+                                sizeBedroom = key.sizeBedroom,
+                                price = value
+                            });
+                    }
+                    else if (key.isnewjob && key.inedex < newJobs.Count)
+                    {
+                        newArray.Add(new JobDiscription
+                            {
+                                description = newJobs[key.inedex].description,
+                                sizeBathroom = key.sizeBathroom,
+                                sizeBedroom = key.sizeBedroom,
+                                price = value
+                            });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error processing entry: {ex.Message}");
+                    continue; // Skip this entry and continue with others
+                }
+            }
+
+            var response = await JobDescriptionService.ReplaceAll(newArray);
+            if (response)
+            {
+                await LoadJobDataAsync();
+                newJobs.Clear();
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Success,
+                        Summary = "Success",
+                        Detail = "Your action was successful!",
+                        Duration = 3000
+                    });
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage
+                    {
+                        Severity = NotificationSeverity.Warning,
+                        Summary = "Warning",
+                        Detail = "Your action failed!",
+                        Duration = 3000
+                    });
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error submitting jobs: {ex.Message}";
+            NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Error",
+                    Detail = $"An error occurred: {ex.Message}",
+                    Duration = 5000
+                });
+        }
+    }
+    // Method to add an entry to priceHistory, avoiding duplicates
+    private void AddToPriceHistory(bool isNewJob, int index, int sizeBedroom, int sizeBathroom, int price)
+    {
+        // Create the key as a tuple
+        var key = (isNewJob, index, sizeBedroom, sizeBathroom);
+
+        // Check if the key already exists in the dictionary
+        if (!priceHistory.ContainsKey(key))
+        {
+            // If it doesn't exist, add the key-value pair
+            priceHistory[key] = price;
+        }
+        else
+        {
+            // Optionally, you could handle the duplicate case (e.g., log or update the price)
+            Console.WriteLine("Duplicate entry detected. Not adding.");
+        }
+    }
+    private void AddJob()
+    {
+        try
+        {
+            newJobs.Add(new JobDiscription { description = "New job description", sizeBathroom = 1, sizeBedroom = 1, price = 100 });
+            var key = (true, newJobs.Count - 1, 1, 1);
+            priceHistory[key] = 100;
+
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred while adding a new job: {ex.Message}";
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+
+
+    }
+
+    private async Task DeleteJob(int index)
+    {
+        try
+        {
+            if (index < 0 || index >= Jobs.Count)
+            {
+                errorMessage = "Invalid job index for deletion.";
+                return;
+            }
+
+            var result = await DialogService.Confirm("Are you sure you want to delete?", "Confirmation");
+
+            if (result.HasValue && result.Value)
+            {
+                Jobs.RemoveAt(index);
+                // Find all keys where isnewjob matches the specified value
+                var keysToRemove = priceHistory.Keys.Where(key => !key.isnewjob && key.inedex == index).ToList();
+
+                // Remove each of these keys from the dictionary
+                foreach (var key in keysToRemove)
+                {
+                    priceHistory.Remove(key);
+                }
+                StateHasChanged();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error deleting job: {ex.Message}";
+            Console.WriteLine($"DeleteJob error: {ex}");
+        }
+    }
+
+    private async Task DeleteNewJob(int index)
+    {
+        try
+        {
+            if (index < 0 || index >= newJobs.Count)
+            {
+                errorMessage = "Invalid new job index for deletion.";
+                return;
+            }
+
+            var result = await DialogService.Confirm("Are you sure you want to delete?", "Confirmation");
+
+            if (result.HasValue && result.Value)
+            {
+                newJobs.RemoveAt(index);
+                // Find all keys where isnewjob matches the specified value
+                var keysToRemove = priceHistory.Keys.Where(key => key.isnewjob && key.inedex == index).ToList();
+
+                // Remove each of these keys from the dictionary
+                foreach (var key in keysToRemove)
+                {
+                    priceHistory.Remove(key);
+                }
+
+                StateHasChanged();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error deleting new job: {ex.Message}";
+            Console.WriteLine($"DeleteNewJob error: {ex}");
+        }
+    }
+ 
+}

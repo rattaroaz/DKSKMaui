@@ -1,0 +1,471 @@
+@page "/accountsreceivable"
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using Radzen
+@using Newtonsoft.Json;
+
+@inject InvoiceService InvoiceService
+@inject NotificationService NotificationService
+@inject DialogService DialogService
+@inject NavigationManager Navigation
+@inject JobDescriptionService JobDescriptionService
+@inject CompanyService CompanyService
+@inject MyCompanyInfoService MyCompanyInfoService
+@inject IJSRuntime JS
+
+<h3 class="text-center my-4"><RadzenIcon Icon="account_balance" />Accounts Receivable</h3>
+
+<div class="container">
+    <!-- Company Name Filter Dropdown -->
+    <div class="row mb-3">
+        <div class="col-12">
+            <RadzenDropDown TValue="string" @bind-Value="selectedCompanyName" Data="companyNames" Placeholder="Select Company"
+                            Change="OnCompanyNameChanged" />
+        </div>
+    </div>
+
+    @if (filteredInvoices != null && filteredInvoices.Any())
+    {
+        <div class="row">
+            <div class="col-12">
+                <RadzenDataGrid TItem="Invoice" Data="@filteredInvoices" AllowPaging="true" PageSize="10" AllowSorting="true" AllowColumnReorder="true" ColumnWidth="140px" AllowColumnResize="true" ColumnReordered="@OnColumnReordered" @ref="filteredInvoicesGrid">
+                    <Columns>
+                        <!-- Invoice Number -->
+                        <RadzenDataGridColumn TItem="Invoice"  Title="Invoice Number">
+                            <Template Context="item">
+                                @((item.Id + 10000).ToString())
+                            </Template>
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="Invoice" Property="WorkDate" Title="WorkDate" FormatString="{0:MM/dd/yyyy}" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="CompanyName" Title="Company Name" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="AmountCost" Title="Amount Cost" />
+
+                        <!-- Checkbox Column -->
+                        <RadzenDataGridColumn TItem="Invoice" Title="Select" Sortable="false" Filterable="false">
+                            <Template Context="item">
+                                   <input type="checkbox" @onchange="e => OnCheckboxChanged(item, e.Value)" />
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                        <!-- Editable Columns (Amount Paid, Date Paid, Check Number) -->
+                        <RadzenDataGridColumn TItem="Invoice" Title="1st Payment">
+                            <Template Context="item">
+                                @if (selectedInvoices.Contains(item))
+                                {
+                                    <RadzenNumeric @bind-Value="item.AmountPaid1" Style="width: 100%" Placeholder="Paid Amount"/>
+                                    <tr/>
+                                    <RadzenDatePicker @bind-Value="item.DatePaid1" DateFormat="MM/dd/yyyy" Style="width: 100%" Placeholder="Paid Date" />
+                                    <tr/>
+                                    <RadzenTextBox @bind-Value="item.CheckNumber1" Style="width: 100%" Placeholder="CheckNumber" />
+                                }
+
+                            </Template>
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="Invoice" Title="2nd Payment">
+                            <Template Context="item">
+                                @if (selectedInvoices.Contains(item))
+                                {
+                                    <RadzenNumeric @bind-Value="item.AmountPaid2" Style="width: 100%" Placeholder="Paid Amount" />
+                                    <tr />
+                                    <RadzenDatePicker @bind-Value="item.DatePaid2" DateFormat="MM/dd/yyyy" Style="width: 100%" Placeholder="Paid Date" />
+                                    <tr />
+                                    <RadzenTextBox @bind-Value="item.CheckNumber2" Style="width: 100%" Placeholder="CheckNumber" />
+                                }
+
+                            </Template>
+                        </RadzenDataGridColumn>
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.SpecialNote" Title="Special Note" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.PropertyAddress" Title="Property Address" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.Unit" Title="Unit" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.GateCode" Title="Gate Code" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.LockBox" Title="Lock Box" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.SizeBedroom" Title="Bedrooms" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.SizeBathroom" Title="Bathrooms" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.WorkOrder" Title="Work Order" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.JobDescriptionChoice" Title="Job Description" />
+                        <RadzenDataGridColumn TItem="Invoice" Property="Invoice.ContractorName" Title="Contractor Name" />
+                    </Columns>
+                </RadzenDataGrid>
+            </div>
+        </div>
+    }
+    <RadzenRow class="mt-3">
+        <RadzenColumn class="mb-3">
+            <RadzenButton Text="Done" Click="Done" Icon="description" Style="width: 100%;" ButtonStyle="ButtonStyle.Primary" />
+        </RadzenColumn>
+        <RadzenColumn class="mb-3">
+            <RadzenButton Text="Download to PDF" Click="DownloadPDF" Icon="description" Style="width: 100%;" ButtonStyle="ButtonStyle.Info" />
+        </RadzenColumn>
+        <RadzenColumn class="mb-3">
+            <RadzenButton Text="Download to Excel" Click="DownloadExcel" Icon="table_view" Style="width: 100%;" ButtonStyle="ButtonStyle.Success" />
+        </RadzenColumn>
+    </RadzenRow>
+</div>
+
+
+@code {
+    private List<Invoice> selectedInvoices = new List<Invoice>();
+    private List<Invoice> invoices = new List<Invoice>();
+    private List<Invoice> filteredInvoices = new List<Invoice>();
+    private List<Invoice> particialInvoices = new List<Invoice>();
+    private string selectedCompanyName = "View All";
+    private List<string> companyNames = new List<string>();
+
+    List<string> columnOrder = new List<string>();
+    private RadzenDataGrid<Invoice> filteredInvoicesGrid = null!;
+
+    private List<JobDiscription> jobs = new List<JobDiscription>();
+
+    private Companny company = new Companny { Name = "" };
+    private List<Companny> compannies = new List<Companny>();
+    private MyCompanyInfo myCompanyInfo = new MyCompanyInfo() { };
+
+
+    private void OnColumnReordered(Radzen.DataGridColumnReorderedEventArgs<Invoice> args)
+    {
+        var currentColumnOrder = filteredInvoicesGrid.ColumnsCollection.Select(c => c.Title).ToList();
+        SaveColumnOrderToLocalStorage(currentColumnOrder);
+    }
+
+
+    private async void SaveColumnOrderToLocalStorage(List<string> columnOrder)
+    {
+        var columnOrderString = string.Join(",", columnOrder);
+        await JS.InvokeVoidAsync("localStorage.setItem", "AccountReceivablecolumnOrder", columnOrderString);
+    }
+
+    private async Task ReorderColumns(List<string> columnOrder)
+    {
+        if (filteredInvoicesGrid == null)
+        {
+            Console.WriteLine("filteredInvoicesGrid is not initialized.");
+            return;
+        }
+
+        // Reorder the columns based on saved columnOrder
+        var reorderedColumns = filteredInvoicesGrid.ColumnsCollection
+            .OrderBy(c => columnOrder.IndexOf(c.Title))
+            .ToList();
+
+        filteredInvoicesGrid.ColumnsCollection.Clear();
+        foreach (var column in reorderedColumns)
+        {
+            filteredInvoicesGrid.ColumnsCollection.Add(column);
+        }
+        StateHasChanged();
+    }
+    private System.Timers.Timer? initializationTimer;
+    private bool isGridInitialized = false;
+    private const int TimerInterval = 500; // Check every 500 millisecon
+    private void CheckGridInitialization(object state)
+    {
+        if (filteredInvoicesGrid != null && !isGridInitialized)
+        {
+            // Ensure this code runs on the UI thread
+            InvokeAsync(() =>
+            {
+                if (filteredInvoicesGrid.Data.Any())
+                {
+                    // Stop the timer
+                    initializationTimer?.Stop();
+                    isGridInitialized = true;
+
+                    // Call your initialization method
+                    OnGridInitialized();
+                }
+            });
+        }
+    }
+
+    private async Task OnGridInitialized()
+    {
+        // Your initialization logic here
+        var savedColumnOrder = await JS.InvokeAsync<string>("localStorage.getItem", "AccountReceivablecolumnOrder");
+        if (!string.IsNullOrEmpty(savedColumnOrder))
+        {
+            var columnOrderList = savedColumnOrder.Split(',').ToList();
+            if (filteredInvoicesGrid != null)
+            {
+                await ReorderColumns(columnOrderList);
+            }
+        }
+        Console.WriteLine("Grid has been initialized.");
+    }
+
+    public void Dispose()
+    {
+        initializationTimer?.Dispose();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            invoices = await InvoiceService.GetInvoicesReceivable();
+            myCompanyInfo = await MyCompanyInfoService.GetInfoAsync();
+
+            await LoadComapnyDataAsync();
+            await LoadJobDataAsync();
+            // Extract unique company names from invoices and add "View All"
+            companyNames = invoices.Select(i => i.CompanyName).Distinct().ToList();
+            companyNames.Insert(0, "View All");
+
+            // Initialize filtered invoices to show all by default
+            filteredInvoices = invoices;
+
+            StateHasChanged();
+
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            // Handle the exception as needed
+        }
+    }
+
+    private async Task LoadComapnyDataAsync()
+    {
+        compannies = await CompanyService.GetAllCompaniesAsync();
+    }
+    private async Task LoadJobDataAsync()
+    {
+        jobs = await JobDescriptionService.GetAllJobsAsync();
+
+    }
+
+    protected List<JobDiscription> GetJDList(Invoice invoice)
+    {
+        List<JobDiscription> jobDescriptions = new List<JobDiscription>();
+        if (!string.IsNullOrEmpty(invoice.JobDescriptionChoice))
+        {
+            try
+            {
+                List<string> jobDescriptionsStrings = JsonConvert.DeserializeObject<List<string>>(invoice.JobDescriptionChoice);
+                foreach (string jds in jobDescriptionsStrings)
+                {
+                    bool flag = true;
+                    foreach (JobDiscription job in jobs)
+                    {
+                        if (job.description == jds)
+                        {
+                            jobDescriptions.Add(job);
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        jobDescriptions.Add(new JobDiscription { description = jds, price = 0 });
+                    }
+                }
+            }
+            catch
+            {
+                // Handle JSON deserialization errors
+            }
+        }
+        return jobDescriptions;
+    }
+    private void OnCompanyNameChanged(object value)
+    {
+        selectedCompanyName = value.ToString();
+
+        OnFilter();
+    }
+    private void OnFilter()
+    {
+        // Filter invoices based on selected company name
+        if (selectedCompanyName == "View All")
+        {
+            filteredInvoices = invoices;
+        }
+        else
+        {
+            filteredInvoices = invoices.Where(i => (i.CompanyName == selectedCompanyName )).ToList();
+
+        }
+        // Combine both lists with a separator row in between
+        StateHasChanged();
+    }
+
+    private void OnCheckboxChanged(Invoice invoice, object isChecked)
+    {
+        bool checkedStatus = (bool)isChecked;
+        if (checkedStatus)
+        {
+            if (!selectedInvoices.Contains(invoice))
+            {
+                selectedInvoices.Add(invoice);
+            }
+        }
+        else
+        {
+            selectedInvoices.Remove(invoice);
+        }
+    }
+
+    private async Task Done()
+    {
+        try
+        {
+            foreach(Invoice invoice in selectedInvoices)
+            {
+
+                int PaidAmount = invoice.AmountPaid1 + invoice.AmountPaid2;
+
+                if (invoice.AmountCost < PaidAmount)
+                {
+                    NotificationService.Notify(new NotificationMessage
+                        {
+                            Severity = NotificationSeverity.Error,
+                            Summary = "Error",
+                            Detail = "The paid amount can not be greater than amount due!",
+                            Duration = 3000
+                        });
+                    return;
+                }
+            }
+            var result = await DialogService.Confirm("Are you sure you want to Submit?", "Confirmation");
+
+
+            if (result.HasValue && result.Value)
+            {
+                List<Invoice> selectedInvoiceList = new List<Invoice>();
+
+                foreach (Invoice invoice in selectedInvoices)
+                {
+                    int PaidAmount = invoice.AmountPaid1 + invoice.AmountPaid2;
+
+                    if (invoice.AmountCost == PaidAmount) invoice.Status = 2;
+
+                    selectedInvoiceList.Add(invoice);
+                }
+
+                await InvoiceService.UpdateInvoicesAsync(selectedInvoiceList);
+
+                // Remove processed invoices from the list
+                invoices = await InvoiceService.GetInvoicesReceivable();
+                OnFilter();
+
+                // Clear the selection
+                selectedInvoices.Clear();
+                NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Success,
+                    Summary = "Success",
+                    Detail = "Invoices successfully submitted!",
+                    Duration = 3000
+                });
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "Error",
+                Detail = $"Failed to updating invoice: {ex.Message}",
+                Duration = 3000
+            });
+        }
+    }
+    private async Task DownloadExcel()
+    {
+        // Filter only necessary data from the invoices
+        var invoiceData = selectedInvoices.Select(i => new
+        {
+            i.Id,
+            i.TodaysDate,
+            i.WorkDate,
+            i.CompanyName,
+            i.AmountCost,
+            i.AmountPaid1,
+            i.CheckNumber1,
+            i.AmountPaid2,
+            i.CheckNumber2,
+            i.SpecialNote,
+            i.PropertyAddress,
+            i.Unit,
+            i.GateCode,
+            i.LockBox,
+            i.SizeBedroom,
+            i.SizeBathroom,
+            i.WorkOrder,
+            i.JobDescriptionChoice
+        }).ToList();
+
+        // Call JS function to download Excel
+        await JS.InvokeVoidAsync("saveAsExcel", invoiceData);
+    }
+
+    private async Task DownloadPDF()
+    {
+        // Check if any invoices are selected
+        if (selectedInvoices == null || !selectedInvoices.Any())
+        {
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Warning,
+                Summary = "No Selection",
+                Detail = "Please select at least one invoice to generate a PDF."
+            });
+            return;
+        }
+
+        try
+        {
+            // Always use data-based PDF generation for Accounts Receivable (more reliable than HTML templates)
+            var pdfData = selectedInvoices.Select(i => new
+            {
+                InvoiceNumber = (i.Id + 10000).ToString(),
+                WorkDate = i.WorkDate.ToString("MM/dd/yyyy"),
+                CompanyName = i.CompanyName,
+                AmountCost = i.AmountCost,
+                AmountPaid1 = i.AmountPaid1,
+                DatePaid1 = i.DatePaid1.ToString("MM/dd/yyyy"),
+                CheckNumber1 = i.CheckNumber1,
+                AmountPaid2 = i.AmountPaid2,
+                DatePaid2 = i.DatePaid2.ToString("MM/dd/yyyy"),
+                CheckNumber2 = i.CheckNumber2,
+                SpecialNote = i.SpecialNote,
+                PropertyAddress = i.PropertyAddress,
+                Unit = i.Unit,
+                GateCode = i.GateCode,
+                LockBox = i.LockBox,
+                SizeBedroom = i.SizeBedroom,
+                SizeBathroom = i.SizeBathroom,
+                WorkOrder = i.WorkOrder,
+                JobDescription = i.JobDescriptionChoice,
+                ContractorName = i.ContractorName
+            }).ToList();
+
+            // Set the PDF data
+            await JS.InvokeVoidAsync("setPdfData", pdfData);
+
+            // Small delay to ensure data is set
+            await Task.Delay(100);
+
+            // Generate PDF using data-based approach (more reliable)
+            string filename = $"Accounts_Receivable_{selectedInvoices.Count}_selected";
+
+            await JS.InvokeVoidAsync("saveAsPDFFallback", "accounts_receivable_data", filename, true);
+
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Success,
+                Summary = "PDF Generated",
+                Detail = $"Accounts receivable report created with {selectedInvoices.Count} invoice(s)."
+            });
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "PDF Export Failed",
+                Detail = $"Error generating PDF: {ex.Message}"
+            });
+        }
+    }
+}

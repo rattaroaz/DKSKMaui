@@ -1,0 +1,6 @@
+﻿.separator-row {
+    grid-column: 1 / -1; /* Span all columns */
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}

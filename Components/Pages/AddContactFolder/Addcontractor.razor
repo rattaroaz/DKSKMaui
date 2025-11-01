@@ -1,0 +1,45 @@
+<h3>Addcontractor</h3>
+@page "/addcontacts/addcontractor"
+
+@if (selectedValue == 1)
+{
+   <input type="text" value="Contractor Name" />
+<input type="text" value="License Number" />
+<input type="text" value="Social Security Number" />
+<input type="text" value="ID" />
+<input type="text" value="Payroll percent" />
+<input type="text" value="Cell Phone" />
+<input type="text" value="E-mail" />
+<input type="text" value="Address" />
+<input type="text" value="City" />
+<input type="text" value="Zip" />
+<input type="text" value="Special note" /> 
+}
+ 
+
+@if (selectedValue == 2) {
+<div>Contractor name:  Amanda Huginkis</div>
+<div>License Number:  R31223</div>
+<div>Social Security Number:  333-22-5566</div>
+<div>ID:  4422</div>
+<div>Cell Phone:  333-225-7765</div>
+<div>E-mail:  ahk@yahoo.com</div>
+<div>11664 Plaza Place</div>
+<div>City:  Century City</div>
+<div>Zip:  99221</div>
+<div>Special Note:  </div>
+}
+
+<input type="button" value="Cancel" />
+<input type="Submit" @onclick="Done"/>
+
+
+@code {
+    public int selectedValue { get; set; } = 1;
+    public void Done()
+    {
+        selectedValue = 2;
+    }
+
+
+}
