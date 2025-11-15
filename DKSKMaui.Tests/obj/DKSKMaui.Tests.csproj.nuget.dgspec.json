@@ -63,7 +63,7 @@
             },
             "ClosedXML": {
               "target": "Package",
-              "version": "[0.104.1, )"
+              "version": "[0.105.0, )"
             },
             "Microsoft.AspNetCore.Components.QuickGrid": {
               "target": "Package",
@@ -99,11 +99,11 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[13.0.4, )"
             },
             "PdfSharp": {
               "target": "Package",
-              "version": "[6.1.1, )"
+              "version": "[6.2.2, )"
             },
             "Radzen.Blazor": {
               "target": "Package",
@@ -111,7 +111,7 @@
             },
             "SixLabors.ImageSharp": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.12, )"
             },
             "System.IO.Packaging": {
               "target": "Package",
@@ -119,7 +119,7 @@
             },
             "System.Linq.Dynamic.Core": {
               "target": "Package",
-              "version": "[1.4.5, )"
+              "version": "[1.7.0, )"
             }
           },
           "imports": [
@@ -493,7 +493,7 @@
             },
             "Bogus": {
               "target": "Package",
-              "version": "[35.5.0, )"
+              "version": "[35.6.5, )"
             },
             "FluentAssertions": {
               "target": "Package",
@@ -505,7 +505,7 @@
             },
             "Microsoft.AspNetCore.Mvc.Testing": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
@@ -517,45 +517,45 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.10.0, )"
+              "version": "[18.0.1, )"
             },
             "Moq": {
               "target": "Package",
-              "version": "[4.20.70, )"
+              "version": "[4.20.72, )"
             },
             "ReportGenerator": {
               "target": "Package",
-              "version": "[5.3.8, )"
+              "version": "[5.5.0, )"
             },
             "bunit": {
               "target": "Package",
-              "version": "[1.28.2, )"
+              "version": "[1.28.9, )"
             },
             "bunit.web": {
               "target": "Package",
-              "version": "[1.28.2, )"
+              "version": "[1.28.9, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.4, )"
             },
             "coverlet.msbuild": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.4, )"
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.8.1, )"
+              "version": "[2.9.3, )"
             },
             "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.8.1, )"
+              "version": "[3.1.5, )"
             }
           },
           "imports": [

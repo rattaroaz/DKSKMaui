@@ -36,6 +36,7 @@
         <!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
         <WindowsPackageType>None</WindowsPackageType>
         <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+        <NeutralLanguage>en-US</NeutralLanguage>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
@@ -69,7 +70,7 @@
         
         <!-- Original DKSK Dependencies -->
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-        <PackageReference Include="ClosedXML" Version="0.104.1" />
+        <PackageReference Include="ClosedXML" Version="0.105.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="10.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
             <PrivateAssets>all</PrivateAssets>
@@ -80,11 +81,11 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="PdfSharp" Version="6.1.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+        <PackageReference Include="PdfSharp" Version="6.2.2" />
         <PackageReference Include="Radzen.Blazor" Version="5.2.0" />
-        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.5" />
-        <PackageReference Include="System.Linq.Dynamic.Core" Version="1.4.5" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
+        <PackageReference Include="System.Linq.Dynamic.Core" Version="1.7.0" />
         <PackageReference Include="System.IO.Packaging" Version="10.0.0" />
     </ItemGroup>
 

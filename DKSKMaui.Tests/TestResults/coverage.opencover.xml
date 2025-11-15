@@ -2,9 +2,9 @@
 <CoverageSession>
   <Summary numSequencePoints="965" visitedSequencePoints="194" numBranchPoints="264" visitedBranchPoints="39" sequenceCoverage="20.1" branchCoverage="14.77" maxCyclomaticComplexity="354" minCyclomaticComplexity="354" visitedClasses="29" numClasses="47" visitedMethods="41" numMethods="149" />
   <Modules>
-    <Module hash="6EF304F4-2E81-4E00-A5FF-165E20F5E843">
+    <Module hash="E7FCFE68-B622-4AF8-8D9C-C0C2F9253C4E">
       <ModulePath>DKSKMaui.dll</ModulePath>
-      <ModuleTime>2025-11-15T04:25:55</ModuleTime>
+      <ModuleTime>2025-11-15T04:48:23</ModuleTime>
       <ModuleName>DKSKMaui</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\Users\kimri\.nuget\packages\microsoft.windowsappsdk\1.7.250909003\include\WindowsAppRuntimeAutoInitializer.cs" />

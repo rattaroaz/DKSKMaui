@@ -1374,8 +1374,6 @@ C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\zh-HK\Microsoft.Maui.Controls.resources.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\zh-Hans\Microsoft.Maui.Controls.resources.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\zh-Hant\Microsoft.Maui.Controls.resources.dll
-C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\de\PdfSharp.Charting.resources.dll
-C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\de\PdfSharp.resources.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Graphics.Canvas.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\WebView2Loader.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
@@ -1588,3 +1586,6 @@ C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\PdfSharp.BarCodes.dll
+C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\PdfSharp.Cryptography.dll
+C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\PdfSharp.Shared.dll
