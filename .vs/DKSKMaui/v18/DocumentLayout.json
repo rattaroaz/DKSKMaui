@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD25950-C151-4623-AA99-221E6FB0E145}|DKSKMaui.csproj|c:\\users\\kimri\\onedrive\\desktop\\cloned\\dkskmaui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5AD25950-C151-4623-AA99-221E6FB0E145}|DKSKMaui.csproj|solutionrelative:dkskmaui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD25950-C151-4623-AA99-221E6FB0E145}|DKSKMaui.csproj|c:\\users\\kimri\\onedrive\\desktop\\cloned\\backend\\data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AD25950-C151-4623-AA99-221E6FB0E145}|DKSKMaui.csproj|solutionrelative:backend\\data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9E7FD63-17C2-4537-B4DD-16CD5E1C429B}|DKSKMaui.Tests\\DKSKMaui.Tests.csproj|c:\\users\\kimri\\onedrive\\desktop\\cloned\\dkskmaui.tests\\xunit.runner.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C9E7FD63-17C2-4537-B4DD-16CD5E1C429B}|DKSKMaui.Tests\\DKSKMaui.Tests.csproj|solutionrelative:dkskmaui.tests\\xunit.runner.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9E7FD63-17C2-4537-B4DD-16CD5E1C429B}|DKSKMaui.Tests\\DKSKMaui.Tests.csproj|c:\\users\\kimri\\onedrive\\desktop\\cloned\\dkskmaui.tests\\dkskmaui.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C9E7FD63-17C2-4537-B4DD-16CD5E1C429B}|DKSKMaui.Tests\\DKSKMaui.Tests.csproj|solutionrelative:dkskmaui.tests\\dkskmaui.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\Backend\\Data\\DbContext.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\DbContext.cs",
+              "ToolTip": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\Backend\\Data\\DbContext.cs",
+              "RelativeToolTip": "Backend\\Data\\DbContext.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T05:49:34.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "xunit.runner.json",
+              "DocumentMoniker": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\DKSKMaui.Tests\\xunit.runner.json",
+              "RelativeDocumentMoniker": "DKSKMaui.Tests\\xunit.runner.json",
+              "ToolTip": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\DKSKMaui.Tests\\xunit.runner.json",
+              "RelativeToolTip": "DKSKMaui.Tests\\xunit.runner.json",
+              "ViewState": "AgIAAAQAAAAAAAAAAABSwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-15T05:47:00.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DKSKMaui.Tests.csproj",
+              "DocumentMoniker": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\DKSKMaui.Tests\\DKSKMaui.Tests.csproj",
+              "RelativeDocumentMoniker": "DKSKMaui.Tests\\DKSKMaui.Tests.csproj",
+              "ToolTip": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\DKSKMaui.Tests\\DKSKMaui.Tests.csproj",
+              "RelativeToolTip": "DKSKMaui.Tests\\DKSKMaui.Tests.csproj",
+              "ViewState": "AgIAAF8AAAAAAAAAAABIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-15T05:31:43.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DKSKMaui.csproj",
+              "DocumentMoniker": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\DKSKMaui.csproj",
+              "RelativeDocumentMoniker": "DKSKMaui.csproj",
+              "ToolTip": "C:\\Users\\kimri\\OneDrive\\Desktop\\Cloned\\DKSKMaui.csproj",
+              "RelativeToolTip": "DKSKMaui.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-15T05:28:14.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

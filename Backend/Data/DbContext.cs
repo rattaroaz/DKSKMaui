@@ -1,9 +1,4 @@
-using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Spreadsheet;
-using ICSharpCode.SharpZipLib.GZip;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
-using BCrypt.Net;
 using DKSKMaui.Backend.Models;
 
 namespace DKSKMaui.Backend.Data;

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>DKSK Official - Painting Contractor</title>
+    <base href="/" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="DKSKMaui.styles.css" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body>
+
+    <div class="status-bar-safe-area"></div>
+
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.webview.js" autostart="false"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+    
+    <!-- SheetJS for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- Include jsPDF UMD version -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- jsPDF AutoTable plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script>
+        window.saveAsExcel = (data) => {
+            const ws = XLSX.utils.json_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Invoices");
+            XLSX.writeFile(wb, "Invoices.xlsx");
+        };
+
+        // Function to set PDF data globally for fallback
+        window.setPdfData = (data) => {
+            console.log('Setting PDF data:', data); // Debug log
+            window.pdfData = data;
+        };
+
+        window.saveAsPDF = (data) => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const columns = Object.keys(data[0]);
+            const rows = data.map(obj => Object.values(obj));
+
+            const defaultWidth = 40;
+            const columnStyles = {};
+            columns.forEach((_, index) => {
+                columnStyles[index] = { cellWidth: defaultWidth };
+            });
+
+            doc.text("Invoices", 10, 10);
+            doc.autoTable({
+                head: [columns],
+                body: rows,
+            });
+            doc.save("Invoices.pdf");
+        };
+
+        window.saveAsPDFByTemplate = (templateID, filename, isLandscape = false) => {
+            console.log('saveAsPDFByTemplate called with:', templateID, filename, isLandscape);
+            console.log('Current window.pdfData:', window.pdfData);
+            
+            try {
+                const templateElement = document.getElementById(templateID);
+                if (!templateElement) {
+                    console.error('Template element not found:', templateID);
+                    // Try fallback if element not found
+                    window.saveAsPDFFallback(templateID, filename, isLandscape);
+                    return;
+                }
+
+                const { jsPDF } = window.jspdf;
+                if (!jsPDF) {
+                    console.error('jsPDF library not loaded');
+                    return;
+                }
+
+                const orientation = isLandscape ? 'landscape' : 'portrait';
+                const doc = new jsPDF({
+                    orientation: orientation,
+                    unit: 'mm',
+                    format: 'a4'
+                });
+
+                // Get the HTML content
+                const templateHtml = templateElement.innerHTML;
+                console.log('Template HTML content length:', templateHtml ? templateHtml.length : 0);
+                if (!templateHtml || templateHtml.trim() === '') {
+                    console.error('Template content is empty');
+                    // Try fallback if template is empty
+                    window.saveAsPDFFallback(templateID, filename, isLandscape);
+                    return;
+                }
+
+                // Create a temporary container
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = templateHtml;
+                tempContainer.style.position = 'absolute';
+                tempContainer.style.left = '-9999px';
+                tempContainer.style.top = '-9999px';
+                tempContainer.style.width = isLandscape ? '297mm' : '210mm';
+                tempContainer.style.backgroundColor = 'white';
+                document.body.appendChild(tempContainer);
+
+                // Configure html2pdf options
+                const options = {
+                    margin: [10, 10, 10, 10],
+                    filename: filename + '.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: {
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: '#ffffff'
+                    },
+                    jsPDF: {
+                        unit: 'mm',
+                        format: isLandscape ? [297, 210] : [210, 297],
+                        orientation: orientation
+                    }
+                };
+
+                // Generate PDF
+                html2pdf()
+                    .set(options)
+                    .from(tempContainer)
+                    .toPdf()
+                    .get('pdf')
+                    .then(function(pdf) {
+                        pdf.save(filename + '.pdf');
+                        document.body.removeChild(tempContainer);
+                    })
+                    .catch(function(error) {
+                        console.error('PDF generation failed, trying fallback:', error);
+                        document.body.removeChild(tempContainer);
+                        // Fallback to data-based PDF generation
+                        window.saveAsPDFFallback(templateID, filename, isLandscape);
+                    });
+
+            } catch (error) {
+                console.error('Error in saveAsPDFByTemplate:', error);
+                // Fallback to data-based PDF generation
+                window.saveAsPDFFallback(templateID, filename, isLandscape);
+            }
+        };
+
+        window.saveAsPDFFallback = (templateID, filename, isLandscape = false) => {
+            console.log('saveAsPDFFallback called with:', templateID, filename, isLandscape);
+            console.log('Available window.pdfData:', window.pdfData);
+            
+            try {
+                // Get data from Blazor component via a global variable
+                // This assumes the component sets window.pdfData
+                if (!window.pdfData || !Array.isArray(window.pdfData) || window.pdfData.length === 0) {
+                    console.error('No PDF data available for fallback generation');
+                    alert('No data available for PDF generation. Please ensure there is data to export.');
+                    return;
+                }
+
+                const { jsPDF } = window.jspdf;
+                const orientation = isLandscape ? 'landscape' : 'portrait';
+                const doc = new jsPDF({
+                    orientation: orientation,
+                    unit: 'mm',
+                    format: 'a4'
+                });
+
+                // Create table from data
+                const data = window.pdfData;
+                const columns = Object.keys(data[0] || {});
+                const rows = data.map(obj => Object.values(obj));
+
+                // Add title
+                doc.setFontSize(16);
+                doc.text(filename.replace(/_/g, ' ').toUpperCase(), 14, 20);
+
+                // Add timestamp
+                doc.setFontSize(10);
+                doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 30);
+
+                // Create table
+                doc.autoTable({
+                    head: [columns],
+                    body: rows,
+                    startY: 40,
+                    styles: {
+                        fontSize: 8,
+                        cellPadding: 2
+                    },
+                    headStyles: {
+                        fillColor: [41, 128, 185],
+                        textColor: 255
+                    },
+                    alternateRowStyles: {
+                        fillColor: [245, 245, 245]
+                    }
+                });
+
+                doc.save(filename + '_fallback.pdf');
+
+            } catch (error) {
+                console.error('Fallback PDF generation also failed:', error);
+            }
+        };
+
+        function parseJwt(token) {
+            if (!token) return null;
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '');
+            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+    </script>
+
+</body>
+
+</html>

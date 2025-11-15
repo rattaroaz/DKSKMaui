@@ -1,4 +1,17 @@
-SF:C:\Users\kimri\.nuget\packages\microsoft.windowsappsdk\1.5.240802000\include\UndockedRegFreeWinRT-AutoInitializer.cs
+SF:C:\Users\kimri\.nuget\packages\microsoft.windowsappsdk\1.7.250909003\include\WindowsAppRuntimeAutoInitializer.cs
+FN:15,System.Void Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Common.AutoInitialize::InitializeWindowsAppSDK()
+FNDA:1,System.Void Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Common.AutoInitialize::InitializeWindowsAppSDK()
+DA:16,1
+DA:25,1
+DA:32,1
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\Users\kimri\.nuget\packages\microsoft.windowsappsdk\1.7.250909003\include\UndockedRegFreeWinRT-AutoInitializer.cs
 FN:24,System.Void Microsoft.Windows.Foundation.UndockedRegFreeWinRTCS.AutoInitialize::AccessWindowsAppSDK()
 FNDA:1,System.Void Microsoft.Windows.Foundation.UndockedRegFreeWinRTCS.AutoInitialize::AccessWindowsAppSDK()
 DA:25,1
@@ -12,7 +25,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\App.xaml.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\App.xaml.cs
 FN:10,Microsoft.Maui.Controls.Window DKSKMaui.App::CreateWindow(Microsoft.Maui.IActivationState)
 FNDA:0,Microsoft.Maui.Controls.Window DKSKMaui.App::CreateWindow(Microsoft.Maui.IActivationState)
 DA:11,0
@@ -36,7 +49,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\MainPage.xaml.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\MainPage.xaml.cs
 FN:4,System.Void DKSKMaui.MainPage::.ctor()
 FNDA:0,System.Void DKSKMaui.MainPage::.ctor()
 DA:5,0
@@ -50,7 +63,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\TestApp.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\TestApp.razor
 FN:2,System.Void DKSKMaui.Components.TestApp::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.TestApp::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:3,0
@@ -61,7 +74,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Counter.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Counter.razor
 FN:4,System.Void DKSKMaui.Components.Pages.Counter::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:27,System.Void DKSKMaui.Components.Pages.Counter::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:5,27
@@ -80,7 +93,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Error.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Error.razor
 FN:18,System.Void DKSKMaui.Components.Pages.Error::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:9,System.Void DKSKMaui.Components.Pages.Error::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:19,9
@@ -111,7 +124,7 @@ BRH:7
 FNF:2
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Home.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Home.razor
 FN:5,System.Void DKSKMaui.Components.Pages.Home::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:6,System.Void DKSKMaui.Components.Pages.Home::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:6,6
@@ -126,7 +139,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Weather.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Weather.razor
 FN:6,System.Void DKSKMaui.Components.Pages.Weather::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:40,System.Void DKSKMaui.Components.Pages.Weather::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:7,40
@@ -155,7 +168,7 @@ BRH:4
 FNF:2
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AccountsReceivable\AccountsReceivable.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AccountsReceivable\AccountsReceivable.razor
 FN:25,System.Void DKSKMaui.Components.Pages.AccountsReceivable.AccountsReceivable::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.AccountsReceivable.AccountsReceivable::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:26,0
@@ -303,7 +316,7 @@ BRH:0
 FNF:9
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Test\TestPage.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Test\TestPage.razor
 FN:137,System.Void DKSKMaui.Components.Pages.Test.TestPage::AddLog(System.String,System.String)
 FNDA:0,System.Void DKSKMaui.Components.Pages.Test.TestPage::AddLog(System.String,System.String)
 DA:138,0
@@ -354,7 +367,7 @@ BRH:0
 FNF:4
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Startjob\Startjob.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Startjob\Startjob.razor
 FN:118,System.Void DKSKMaui.Components.Pages.Startjob.Startjob::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.Startjob.Startjob::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:119,0
@@ -475,7 +488,7 @@ BRH:0
 FNF:7
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Startjob\StartJobConfirmDialogComponent.razor
 FN:125,System.Void DKSKMaui.Components.Pages.Startjob.StartJobConfirmDialogComponent::OnInitialized()
 FNDA:0,System.Void DKSKMaui.Components.Pages.Startjob.StartJobConfirmDialogComponent::OnInitialized()
 DA:126,0
@@ -498,7 +511,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Sales\Sales.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Sales\Sales.razor
 FN:44,System.Void DKSKMaui.Components.Pages.Sales.Sales::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.Sales.Sales::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:45,0
@@ -663,7 +676,7 @@ BRH:0
 FNF:10
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Sales\SalesDetail.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Sales\SalesDetail.razor
 FN:115,System.Void DKSKMaui.Components.Pages.Sales.SalesDetail::CloseDialog()
 FNDA:0,System.Void DKSKMaui.Components.Pages.Sales.SalesDetail::CloseDialog()
 DA:116,0
@@ -676,7 +689,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\Payroll\Payroll.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\Payroll\Payroll.razor
 FN:109,System.Void DKSKMaui.Components.Pages.Payroll.Payroll::OnStartDateChanged(System.Nullable`1<System.DateTime>)
 FNDA:0,System.Void DKSKMaui.Components.Pages.Payroll.Payroll::OnStartDateChanged(System.Nullable`1<System.DateTime>)
 DA:110,0
@@ -724,7 +737,7 @@ BRH:2
 FNF:6
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\NewJobs\Newjobs.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\NewJobs\Newjobs.razor
 FN:38,System.Void DKSKMaui.Components.Pages.NewJobs.Newjobs::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:10,System.Void DKSKMaui.Components.Pages.NewJobs.Newjobs::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:39,10
@@ -867,7 +880,7 @@ BRH:3
 FNF:10
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\MajorFunctions\FunctionsList.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\MajorFunctions\FunctionsList.razor
 FN:4,System.Void DKSKMaui.Components.Pages.MajorFunctions.FunctionsList::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:44,System.Void DKSKMaui.Components.Pages.MajorFunctions.FunctionsList::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:5,44
@@ -891,7 +904,7 @@ BRH:2
 FNF:3
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\JobDescription\Jobdescription.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\JobDescription\Jobdescription.razor
 FN:7,System.Void DKSKMaui.Components.Pages.JobDescription.Jobdescription::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:115,System.Void DKSKMaui.Components.Pages.JobDescription.Jobdescription::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:8,115
@@ -911,7 +924,7 @@ BRH:2
 FNF:2
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\EditContacts\Editcontacts.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\EditContacts\Editcontacts.razor
 FN:18,System.Void DKSKMaui.Components.Pages.EditContacts.Editcontacts::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:5,System.Void DKSKMaui.Components.Pages.EditContacts.Editcontacts::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:19,5
@@ -934,7 +947,7 @@ BRH:3
 FNF:2
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\EditContacts\EditContractor\Editcontractor.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\EditContacts\EditContractor\Editcontractor.razor
 FN:97,System.Void DKSKMaui.Components.Pages.EditContacts.EditContractor.Editcontractor::OnChange(System.Object)
 FNDA:0,System.Void DKSKMaui.Components.Pages.EditContacts.EditContractor.Editcontractor::OnChange(System.Object)
 DA:98,0
@@ -965,7 +978,7 @@ BRH:0
 FNF:4
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\EditContacts\EditCompanny\Editcompany.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\EditContacts\EditCompanny\Editcompany.razor
 FN:226,System.Void DKSKMaui.Components.Pages.EditContacts.EditCompanny.Editcompany::ToggleSupervisorDetails(System.Int32)
 FNDA:0,System.Void DKSKMaui.Components.Pages.EditContacts.EditCompanny.Editcompany::ToggleSupervisorDetails(System.Int32)
 DA:227,0
@@ -1060,7 +1073,7 @@ BRH:0
 FNF:10
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\CreteInvoice\CreateInvoice.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\CreteInvoice\CreateInvoice.razor
 FN:32,System.Void DKSKMaui.Components.Pages.CreteInvoice.CreateInvoice::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:17,System.Void DKSKMaui.Components.Pages.CreteInvoice.CreateInvoice::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:33,17
@@ -1081,7 +1094,7 @@ BRH:4
 FNF:2
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\CreteInvoice\CreateInvoiceConfirmDialogComponent.razor
 FN:186,System.Void DKSKMaui.Components.Pages.CreteInvoice.CreateInvoiceConfirmDialogComponent::CloseDialog()
 FNDA:0,System.Void DKSKMaui.Components.Pages.CreteInvoice.CreateInvoiceConfirmDialogComponent::CloseDialog()
 DA:187,0
@@ -1134,7 +1147,7 @@ BRH:0
 FNF:6
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\ContractorJobs\ContractorJobs.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\ContractorJobs\ContractorJobs.razor
 FN:95,System.Void DKSKMaui.Components.Pages.ContractorJobs.ContractorJobs::OnDateChanged()
 FNDA:0,System.Void DKSKMaui.Components.Pages.ContractorJobs.ContractorJobs::OnDateChanged()
 DA:96,0
@@ -1156,7 +1169,7 @@ BRH:0
 FNF:3
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AgingReports\Agingreports.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AgingReports\Agingreports.razor
 FN:45,System.Void DKSKMaui.Components.Pages.AgingReports.Agingreports::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:10,System.Void DKSKMaui.Components.Pages.AgingReports.Agingreports::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:46,10
@@ -1284,7 +1297,7 @@ BRH:4
 FNF:9
 FNH:3
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcompany.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AddContactFolder\Addcompany.razor
 FN:109,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcompany::Cancel()
 FNDA:0,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcompany::Cancel()
 DA:110,0
@@ -1300,7 +1313,7 @@ BRH:0
 FNF:2
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcontacts.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AddContactFolder\Addcontacts.razor
 FN:14,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcontacts::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcontacts::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:15,0
@@ -1337,7 +1350,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addcontractor.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AddContactFolder\Addcontractor.razor
 FN:3,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcontractor::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:24,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addcontractor::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:4,24
@@ -1361,7 +1374,7 @@ BRH:4
 FNF:2
 FNH:2
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addmanager.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AddContactFolder\Addmanager.razor
 FN:3,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addmanager::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addmanager::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:4,0
@@ -1389,7 +1402,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addproperty.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AddContactFolder\Addproperty.razor
 FN:3,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addproperty::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addproperty::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:4,0
@@ -1417,7 +1430,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\AddContactFolder\Addsupervisor.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\AddContactFolder\Addsupervisor.razor
 FN:3,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addsupervisor::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.AddContactFolder.Addsupervisor::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:4,0
@@ -1446,7 +1459,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Pages\ActiveJobs\ActiveJobs.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Pages\ActiveJobs\ActiveJobs.razor
 FN:36,System.Void DKSKMaui.Components.Pages.ActiveJobs.ActiveJobs::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Pages.ActiveJobs.ActiveJobs::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:37,0
@@ -1603,7 +1616,7 @@ BRH:0
 FNF:11
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Common\CustomErrorBoundary.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Common\CustomErrorBoundary.razor
 FN:35,System.Void DKSKMaui.Components.Common.CustomErrorBoundary::Recover()
 FNDA:0,System.Void DKSKMaui.Components.Common.CustomErrorBoundary::Recover()
 DA:36,0
@@ -1626,7 +1639,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Common\EditableDropdown.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Common\EditableDropdown.razor
 FN:12,System.Void DKSKMaui.Components.Common.EditableDropdown::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 FNDA:0,System.Void DKSKMaui.Components.Common.EditableDropdown::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
 DA:13,0
@@ -1643,7 +1656,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Components\Common\SelectItemDialog.razor
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Components\Common\SelectItemDialog.razor
 FN:30,System.Void DKSKMaui.Components.Common.SelectItemDialog::OnItemChange(System.Object)
 FNDA:0,System.Void DKSKMaui.Components.Common.SelectItemDialog::OnItemChange(System.Object)
 DA:31,0
@@ -1668,7 +1681,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Platforms\Windows\App.xaml.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Platforms\Windows\App.xaml.cs
 FN:21,Microsoft.Maui.Hosting.MauiApp DKSKMaui.WinUI.App::CreateMauiApp()
 FNDA:0,Microsoft.Maui.Hosting.MauiApp DKSKMaui.WinUI.App::CreateMauiApp()
 DA:22,0
@@ -1685,7 +1698,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\CompanyService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\CompanyService.cs
 FN:94,DKSKMaui.Backend.Models.Companny DKSKMaui.Backend.Services.CompanyService::GetCompanyInfo(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1<DKSKMaui.Backend.Models.Companny>)
 FNDA:0,DKSKMaui.Backend.Models.Companny DKSKMaui.Backend.Services.CompanyService::GetCompanyInfo(DKSKMaui.Backend.Models.Invoice,System.Collections.Generic.List`1<DKSKMaui.Backend.Models.Companny>)
 DA:95,0
@@ -1769,7 +1782,7 @@ BRH:0
 FNF:4
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\ContractorService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\ContractorService.cs
 FN:12,System.Void DKSKMaui.Backend.Services.ContractorService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.ContractorService>)
 FNDA:34,System.Void DKSKMaui.Backend.Services.ContractorService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.ContractorService>)
 DA:13,34
@@ -1784,7 +1797,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\GlobalStateService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\GlobalStateService.cs
 FN:8,System.Void DKSKMaui.Backend.Services.GlobalStateService::NotifyStateChanged()
 FNDA:6,System.Void DKSKMaui.Backend.Services.GlobalStateService::NotifyStateChanged()
 DA:9,6
@@ -1797,7 +1810,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\InvoiceService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\InvoiceService.cs
 FN:12,System.Void DKSKMaui.Backend.Services.InvoiceService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.InvoiceService>)
 FNDA:54,System.Void DKSKMaui.Backend.Services.InvoiceService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.InvoiceService>)
 DA:13,54
@@ -1812,7 +1825,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\MyCompanyInfoService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\MyCompanyInfoService.cs
 FN:12,System.Void DKSKMaui.Backend.Services.MyCompanyInfoService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.MyCompanyInfoService>)
 FNDA:12,System.Void DKSKMaui.Backend.Services.MyCompanyInfoService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.MyCompanyInfoService>)
 DA:13,12
@@ -1827,7 +1840,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\NewJobsService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\NewJobsService.cs
 FN:12,System.Void DKSKMaui.Backend.Services.JobDescriptionService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.JobDescriptionService>)
 FNDA:25,System.Void DKSKMaui.Backend.Services.JobDescriptionService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.JobDescriptionService>)
 DA:13,25
@@ -1842,7 +1855,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\PropertiesService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\PropertiesService.cs
 FN:12,System.Void DKSKMaui.Backend.Services.PropertiesService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.PropertiesService>)
 FNDA:25,System.Void DKSKMaui.Backend.Services.PropertiesService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.PropertiesService>)
 DA:13,25
@@ -1857,7 +1870,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Users\kimri\OneDrive\Desktop\DKSK\Backend\Services\SupervisorService.cs
+SF:C:\Users\kimri\OneDrive\Desktop\cloned repos\DKSK Maui\Backend\Services\SupervisorService.cs
 FN:12,System.Void DKSKMaui.Backend.Services.SupervisorService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.SupervisorService>)
 FNDA:21,System.Void DKSKMaui.Backend.Services.SupervisorService::.ctor(DKSKMaui.Backend.Data.AppDbContext,Microsoft.Extensions.Logging.ILogger`1<DKSKMaui.Backend.Services.SupervisorService>)
 DA:13,21
